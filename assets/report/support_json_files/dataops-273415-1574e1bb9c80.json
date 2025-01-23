@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "xxxx",
+  "private_key_id": "xxxx",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQDFlmUJeP/yvOYT\n9dXlAn53mL5kXb8zu1va5p3C7vBrl9j8TXC7WiMw25bVnGIQM4HuwtAoYEzUuwYK\nIqID/OCwVidGRKz79IcbViSzB9Jx6WeKe+rLl/CVRo8idKyUJmd+Oc3ZL7gDlwMo\nWiTkphEQNp0LvhyUUdQ5Hr7THSFeFexanvw4GKTBKPdXF2o95Fm3mmKgvnAbEP9R\n19AaML8QGISKsgBKfXuI58P/Mkyx2nyDlIXA7Kf1Qj8KR9jqD2BaPPzJ0BFZ+IXU\nsgHXwO3VStFkVQHjdp1wIdEVQHoqFHERSaIAknRfvw3xNuYTD7o62QxfgeYIjWQN\ngXgp3W6rAgMBAAECggEACwqo38i2v8JhEf4OBblsmRyBH9TdmtgeT+WECG7Fa/ys\nAAqaZe8E7/7PwGUu57fe3gc5abJ/aKcTNUGlNE5GK0kWYA/1tDHuQOsJ9LL7/U02\ncdal7kf7BlI9LL33aGMudK9E+tQtoEUo6RW6PRGvjSNTmGJ3lRsl1QFVMsNxDI80\n8ATVRLiFNQDo5bZ5RQ2rGIUzPtGdlz5AGbqlaNLCeO1kkKN5ab1Q4meWyEgGGrKP\nKdvb8P/S4iQZZc0wHRmhjnJstZTOCf1s11GxyPAao3lecAnNBTRahdHxTSAMgB9U\nXSIhHgUZuw0q120iEULRBgDm3XBbdBxzDE2L4hs0zQKBgQDj2vGIZ1IV/SEE1QvN\nRBMY70s194/xIQzDYmrfC28cHLM4BUO4ZkX8ht/I4m6N8SezwMYidVlbu1rgdICW\n+tBl4/0v5AylZyEso4DTLGPLNBrSXbFeACNy3UAli+oavT/dmpc3SfrPkcmixTn4\nXsZAmdLtHP2EJdtS1Dyqwu8gRwKBgQDd/lkWa3/yyp0NOKi13lNv30LGBp+FbB1v\nI4EIhXXWwkFUqtrMKG2x9v+vRQLErcTX3DQSZoS2Nmj0/hk/IN49hpy6GVGhaCBh\nkCjDFBos5kdIv1BwkNdfNODDSvjISypPTGcYwTEnANVRIJ2x22OuzkeVPiXVrsGk\n2HcVJ3H0fQKBgCHwoP2ydjW0SNDRczqWI0oZith1EcnXJHGOHWEv8NL9K2zyy82R\n3mbpKDhiEhmujD1oP5suY6sYU0cP03+pyJUEytfxXjjdDcH6cNwDxrGkB0LClgLs\nfltDvaRaHPryqaq2tkOUD3oPuzs1qZbndxx0TUjogpLGmM7Tsl21P61NAoGBAK7H\nKEDcljoDh673Iu09g5eawanDYSjcvDfaTib1XJefDWypr+X5FpR9EUVfIhTTcx04\ng87Q5D/Jis0Imbv4FsF+EDr84CYiIwxtQYqFcy5Sh2EhLyXRA6Azs5pOlpyrgT45\nuxnkUNySbWCYO0/imRLx2a4I5iTcmB0/SFJhYfjJAoGAeow9oh8mW5YPPQ2je2Eq\nrSmjSli2J6UKVonPYKWB4h3lsWxGcZZNxlniDFZjWEV/S9pv6irQuh+mfK7TTA9k\nDLTEvwCVEilXYynj3WfL64Xw4IUXgRy8On0q+3xgswshn+xiOsVWIzgzqD2w0gGN\ncXJIcF8RilvdwvHjKBT4S6M=\n-----END PRIVATE KEY-----\n",
+  "client_email": "sonde-app-engine-admin@dataops-273415.iam.gserviceaccount.com",
+  "client_id": "xxxx",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/sonde-app-engine-admin%40dataops-273415.iam.gserviceaccount.com"
+}

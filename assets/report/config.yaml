@@ -1,0 +1,78 @@
+Account_To_Use : 'QAMUMBAI-2'
+
+
+EMAIL_FROM              : sondeproject@gmail.com
+USERNAME                : sondeproject@gmail.com
+PASSWORD                : SondeTest@123
+WRITE_ON_DASHBOARD      : False
+INSTRUCTION_JSON_FILE   : support_json_files/instruction.json
+GOOGLE_CREDENTIAL_JSON_FILE : support_json_files/dataops-273415-1574e1bb9c80.json
+STUDY_REFERENCE_FILE    : support_json_files/meta_reference_file.json
+SENT_MAIL               : True
+META_VALIDATE           : True
+
+QAMUMBAI-2 :
+        INCOMING_BUCKET         : mumbai2-qa-sonde-default-samples
+        STUDY_PREFIX            : activities/study/
+        MEASURE_PREFIX          : activities/measure/
+        DB_USERNAME             : services_admin_user
+        DBPASSWORD              : niocolOowk
+        HOSTNAME                : rds.mumbai2.services.sondehealth.com
+        DB_NAME                 : platform_services_admin_db
+        BACKDATED_REPORT_DURATION : 1
+        STACK_NAME_TO_SHOW_IN_REPORT : QA Mumbai-2 Stack Report
+        EMAIL_TO                : ['sachin.singh@gslab.com']
+        GOOGLE_SHEET_TO_UPDATE  : Test_nikhil
+
+
+GSLAB :
+        INCOMING_BUCKET         : gslab-prod-sonde-default-samples
+        STUDY_PREFIX            : activities/study/
+        MEASURE_PREFIX          : activities/measure/
+        DB_USERNAME             : services_admin_user
+        DBPASSWORD              : S0ndeDBGsL@b
+        HOSTNAME                : rds.gslab.services.sondehealth.com
+        DB_NAME                 : platform_services_admin_db
+        BACKDATED_REPORT_DURATION : 1
+        STACK_NAME_TO_SHOW_IN_REPORT : India Stack Daily report
+        #EMAIL_TO               : ['yogesh.rasal@gslab.com', 'nikhil.jagshettiwar@gslab.com', 'rshorin@sondehealth.com', 'YJain@sondehealth.com','elarsen@sondehealth.com', 'jim@sondehealth.com', 'rshaikh@sondehealth.com']
+        EMAIL_TO                : ['nikhil.jagshettiwar@gslab.com']
+        GOOGLE_SHEET_TO_UPDATE  : Test_nikhil
+        #GOOGLE_SHEET_TO_UPDATE  : GSLab_India
+
+
+
+NORTH_VIRGINIA :
+        INCOMING_BUCKET         : virginia-prod-sonde-default-samples
+        STUDY_PREFIX            : activities/study
+        MEASURE_PREFIX          : activities/measure/
+
+        DB_USERNAME             : services_admin_user
+        DBPASSWORD              : S0nd@health
+        HOSTNAME                : rds.virginia.services.sondehealth.com
+        DB_NAME                 : platform_services_admin_db
+        BACKDATED_REPORT_DURATION : 1
+        STACK_NAME_TO_SHOW_IN_REPORT : North Virginia Stack Daily report
+        #EMAIL_TO               : ['yogesh.rasal@gslab.com', 'nikhil.jagshettiwar@gslab.com', 'rshorin@sondehealth.com', 'YJain@sondehealth.com','elarsen@sondehealth.com','jim@sondehealth.com']
+        EMAIL_TO                : ['nikhil.jagshettiwar@gslab.com']
+        #GOOGLE_SHEET_TO_UPDATE  : Test_nikhil
+        GOOGLE_SHEET_TO_UPDATE  : North_Virginia_stack
+
+
+
+
+QUEST :
+        INCOMING_BUCKET         : mumbai-prod-sonde-default-samples
+        STUDY_PREFIX            : activities/study
+        MEASURE_PREFIX          : activities/measure/
+
+        DB_USERNAME             : services_admin_user
+        DBPASSWORD              : S0nd@health
+        HOSTNAME                : rds.mumbai.services.sondehealth.com
+        DB_NAME                 : platform_services_admin_db
+        BACKDATED_REPORT_DURATION : 1
+        STACK_NAME_TO_SHOW_IN_REPORT : Quest Daily report
+        #EMAIL_TO               : ['yogesh.rasal@gslab.com', 'drprasad344@gmail.com', 'rshaikh@sondehealth.com', 'nikhil.jagshettiwar@gslab.com', 'questclinicalservices@gmail.com', 'rshorin@sondehealth.com', 'YJain@sondehealth.com','elarsen@sondehealth.com','jim@sondehealth.com']
+        EMAIL_TO                : ['nikhil.jagshettiwar@gslab.com']
+        #GOOGLE_SHEET_TO_UPDATE  : Test_nikhil
+        GOOGLE_SHEET_TO_UPDATE  : quest

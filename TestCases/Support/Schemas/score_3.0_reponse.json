@@ -1,0 +1,96 @@
+  {"AsyncResponse": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "$ref": "#/components/schemas/AsyncJobStatus"
+          },
+          "result": {
+            "description": "voice feature async result",
+            "$ref": "#/components/schemas/VoiceFeatureResponse"
+          },
+          "requestId": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "status",
+          "result",
+          "requestId"
+        ]
+      },
+	  "VoiceFeatureResponse": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "$ref": "#/components/schemas/AsyncJobResultType"
+          },
+          "id": {
+            "type": "string"
+          },
+          "filePath": {
+            "type": "string"
+          },
+          "measureName": {
+            "type": "string",
+            "description": "Measure name"
+          },
+          "userIdentifier": {
+            "type": "string",
+            "description": "User identifier."
+          },
+          "inferredAt": {
+            "type": "string"
+          },
+          "inference": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/VoiceFeatureAsyncInferenceResponse"
+            }
+          }
+        }
+      },
+	   "VoiceFeatureAsyncInferenceResponse": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string",
+            "enum": [
+              "Acoustic"
+            ]
+          },
+          "version": {
+            "type": "string",
+            "description": "Acoustic voice-feature version"
+          },
+          "score": {
+            "type": "object",
+            "$ref": "#/components/schemas/VfFinalScore"
+          },
+          "voiceFeatures": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/VoiceFeatures"
+            }
+          }
+        }
+      },
+	  "VfFinalScore": {
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "integer",
+            "description": "Generated VoiceFeatureFinalScore"
+          }
+        }
+      },
+	  "VoiceFeatures": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "score": {
+            "type": "string"
+          }
+        }
+      }}

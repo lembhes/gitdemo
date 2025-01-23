@@ -1,0 +1,1072 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8"/>
+    <title>Test Report</title>
+    <link href="assets/style.css" rel="stylesheet" type="text/css"/></head>
+  <body onLoad="init()">
+    <script>/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this file,
+ * You can obtain one at http://mozilla.org/MPL/2.0/. */
+
+
+function toArray(iter) {
+    if (iter === null) {
+        return null;
+    }
+    return Array.prototype.slice.call(iter);
+}
+
+function find(selector, elem) {
+    if (!elem) {
+        elem = document;
+    }
+    return elem.querySelector(selector);
+}
+
+function find_all(selector, elem) {
+    if (!elem) {
+        elem = document;
+    }
+    return toArray(elem.querySelectorAll(selector));
+}
+
+function sort_column(elem) {
+    toggle_sort_states(elem);
+    var colIndex = toArray(elem.parentNode.childNodes).indexOf(elem);
+    var key;
+    if (elem.classList.contains('numeric')) {
+        key = key_num;
+    } else if (elem.classList.contains('result')) {
+        key = key_result;
+    } else {
+        key = key_alpha;
+    }
+    sort_table(elem, key(colIndex));
+}
+
+function show_all_extras() {
+    find_all('.col-result').forEach(show_extras);
+}
+
+function hide_all_extras() {
+    find_all('.col-result').forEach(hide_extras);
+}
+
+function show_extras(colresult_elem) {
+    var extras = colresult_elem.parentNode.nextElementSibling;
+    var expandcollapse = colresult_elem.firstElementChild;
+    extras.classList.remove("collapsed");
+    expandcollapse.classList.remove("expander");
+    expandcollapse.classList.add("collapser");
+}
+
+function hide_extras(colresult_elem) {
+    var extras = colresult_elem.parentNode.nextElementSibling;
+    var expandcollapse = colresult_elem.firstElementChild;
+    extras.classList.add("collapsed");
+    expandcollapse.classList.remove("collapser");
+    expandcollapse.classList.add("expander");
+}
+
+function show_filters() {
+    var filter_items = document.getElementsByClassName('filter');
+    for (var i = 0; i < filter_items.length; i++)
+        filter_items[i].hidden = false;
+}
+
+function add_collapse() {
+    // Add links for show/hide all
+    var resulttable = find('table#results-table');
+    var showhideall = document.createElement("p");
+    showhideall.innerHTML = '<a href="javascript:show_all_extras()">Show all details</a> / ' +
+                            '<a href="javascript:hide_all_extras()">Hide all details</a>';
+    resulttable.parentElement.insertBefore(showhideall, resulttable);
+
+    // Add show/hide link to each result
+    find_all('.col-result').forEach(function(elem) {
+        var collapsed = get_query_parameter('collapsed') || 'Passed';
+        var extras = elem.parentNode.nextElementSibling;
+        var expandcollapse = document.createElement("span");
+        if (collapsed.includes(elem.innerHTML)) {
+            extras.classList.add("collapsed");
+            expandcollapse.classList.add("expander");
+        } else {
+            expandcollapse.classList.add("collapser");
+        }
+        elem.appendChild(expandcollapse);
+
+        elem.addEventListener("click", function(event) {
+            if (event.currentTarget.parentNode.nextElementSibling.classList.contains("collapsed")) {
+                show_extras(event.currentTarget);
+            } else {
+                hide_extras(event.currentTarget);
+            }
+        });
+    })
+}
+
+function get_query_parameter(name) {
+    var match = RegExp('[?&]' + name + '=([^&]*)').exec(window.location.search);
+    return match && decodeURIComponent(match[1].replace(/\+/g, ' '));
+}
+
+function init () {
+    reset_sort_headers();
+
+    add_collapse();
+
+    show_filters();
+
+    sort_column(find('.initial-sort'));
+
+    find_all('.sortable').forEach(function(elem) {
+        elem.addEventListener("click",
+                              function(event) {
+                                  sort_column(elem);
+                              }, false)
+    });
+
+};
+
+function sort_table(clicked, key_func) {
+    var rows = find_all('.results-table-row');
+    var reversed = !clicked.classList.contains('asc');
+    var sorted_rows = sort(rows, key_func, reversed);
+    /* Whole table is removed here because browsers acts much slower
+     * when appending existing elements.
+     */
+    var thead = document.getElementById("results-table-head");
+    document.getElementById('results-table').remove();
+    var parent = document.createElement("table");
+    parent.id = "results-table";
+    parent.appendChild(thead);
+    sorted_rows.forEach(function(elem) {
+        parent.appendChild(elem);
+    });
+    document.getElementsByTagName("BODY")[0].appendChild(parent);
+}
+
+function sort(items, key_func, reversed) {
+    var sort_array = items.map(function(item, i) {
+        return [key_func(item), i];
+    });
+
+    sort_array.sort(function(a, b) {
+        var key_a = a[0];
+        var key_b = b[0];
+
+        if (key_a == key_b) return 0;
+
+        if (reversed) {
+            return (key_a < key_b ? 1 : -1);
+        } else {
+            return (key_a > key_b ? 1 : -1);
+        }
+    });
+
+    return sort_array.map(function(item) {
+        var index = item[1];
+        return items[index];
+    });
+}
+
+function key_alpha(col_index) {
+    return function(elem) {
+        return elem.childNodes[1].childNodes[col_index].firstChild.data.toLowerCase();
+    };
+}
+
+function key_num(col_index) {
+    return function(elem) {
+        return parseFloat(elem.childNodes[1].childNodes[col_index].firstChild.data);
+    };
+}
+
+function key_result(col_index) {
+    return function(elem) {
+        var strings = ['Error', 'Failed', 'Rerun', 'XFailed', 'XPassed',
+                       'Skipped', 'Passed'];
+        return strings.indexOf(elem.childNodes[1].childNodes[col_index].firstChild.data);
+    };
+}
+
+function reset_sort_headers() {
+    find_all('.sort-icon').forEach(function(elem) {
+        elem.parentNode.removeChild(elem);
+    });
+    find_all('.sortable').forEach(function(elem) {
+        var icon = document.createElement("div");
+        icon.className = "sort-icon";
+        icon.textContent = "vvv";
+        elem.insertBefore(icon, elem.firstChild);
+        elem.classList.remove("desc", "active");
+        elem.classList.add("asc", "inactive");
+    });
+}
+
+function toggle_sort_states(elem) {
+    //if active, toggle between asc and desc
+    if (elem.classList.contains('active')) {
+        elem.classList.toggle('asc');
+        elem.classList.toggle('desc');
+    }
+
+    //if inactive, reset all other functions and add ascending active
+    if (elem.classList.contains('inactive')) {
+        reset_sort_headers();
+        elem.classList.remove('inactive');
+        elem.classList.add('active');
+    }
+}
+
+function is_all_rows_hidden(value) {
+  return value.hidden == false;
+}
+
+function filter_table(elem) {
+    var outcome_att = "data-test-result";
+    var outcome = elem.getAttribute(outcome_att);
+    class_outcome = outcome + " results-table-row";
+    var outcome_rows = document.getElementsByClassName(class_outcome);
+
+    for(var i = 0; i < outcome_rows.length; i++){
+        outcome_rows[i].hidden = !elem.checked;
+    }
+
+    var rows = find_all('.results-table-row').filter(is_all_rows_hidden);
+    var all_rows_hidden = rows.length == 0 ? true : false;
+    var not_found_message = document.getElementById("not-found-message");
+    not_found_message.hidden = !all_rows_hidden;
+}
+</script>
+    <h1>Stub_Server_Report.html</h1>
+    <p>Report generated on 02-Mar-2020 at 16:41:20 by <a href="https://pypi.python.org/pypi/pytest-html">pytest-html</a> v2.0.1</p>
+    <h2>Environment</h2>
+    <table id="environment">
+      <tr>
+        <td>Packages</td>
+        <td>{&apos;pytest&apos;: &apos;5.3.5&apos;, &apos;py&apos;: &apos;1.8.1&apos;, &apos;pluggy&apos;: &apos;0.13.1&apos;}</td></tr>
+      <tr>
+        <td>Platform</td>
+        <td>Windows-10-10.0.18362-SP0</td></tr>
+      <tr>
+        <td>Plugins</td>
+        <td>{&apos;html&apos;: &apos;2.0.1&apos;, &apos;metadata&apos;: &apos;1.8.0&apos;, &apos;voluptuous&apos;: &apos;1.1.0&apos;}</td></tr>
+      <tr>
+        <td>Python</td>
+        <td>3.8.1</td></tr></table>
+    <h2>Summary</h2>
+    <p>89 tests ran in 61.97 seconds. </p>
+    <p class="filter" hidden="true">(Un)check the boxes to filter the results.</p><input checked="true" class="filter" data-test-result="passed" hidden="true" name="filter_checkbox" onChange="filter_table(this)" type="checkbox"/><span class="passed">49 passed</span>, <input checked="true" class="filter" data-test-result="skipped" disabled="true" hidden="true" name="filter_checkbox" onChange="filter_table(this)" type="checkbox"/><span class="skipped">0 skipped</span>, <input checked="true" class="filter" data-test-result="failed" hidden="true" name="filter_checkbox" onChange="filter_table(this)" type="checkbox"/><span class="failed">40 failed</span>, <input checked="true" class="filter" data-test-result="error" disabled="true" hidden="true" name="filter_checkbox" onChange="filter_table(this)" type="checkbox"/><span class="error">0 errors</span>, <input checked="true" class="filter" data-test-result="xfailed" disabled="true" hidden="true" name="filter_checkbox" onChange="filter_table(this)" type="checkbox"/><span class="xfailed">0 expected failures</span>, <input checked="true" class="filter" data-test-result="xpassed" disabled="true" hidden="true" name="filter_checkbox" onChange="filter_table(this)" type="checkbox"/><span class="xpassed">0 unexpected passes</span>
+    <h2>Results</h2>
+    <table id="results-table">
+      <thead id="results-table-head">
+        <tr>
+          <th class="sortable result initial-sort" col="result">Result</th>
+          <th class="sortable" col="name">Test</th>
+          <th class="sortable numeric" col="duration">Duration</th>
+          <th>Links</th></tr>
+        <tr hidden="true" id="not-found-message">
+          <th colspan="4">No results found. Try to check the filters</th></tr></thead>
+      <tbody class="failed results-table-row">
+        <tr>
+          <td class="col-result">Failed</td>
+          <td class="col-name">test_api_b_negative.py::test_token_api_request_body_scope_key_blank</td>
+          <td class="col-duration">0.71</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">@pytest.mark.token_api<br/>    def test_token_api_request_body_scope_key_blank():<br/>        status, data = Api_functions.token_api(BASE_URL, REQUEST_SCOPE_KEY_BLANK, BASE_TOKEN, CONTENT_TYPE_URL_ENCODED)<br/>&gt;       assert status == 400<br/><span class="error">E       assert 200 == 400</span><br/><br/>test_api_b_negative.py:41: AssertionError<br/></div></td></tr></tbody>
+      <tbody class="failed results-table-row">
+        <tr>
+          <td class="col-result">Failed</td>
+          <td class="col-name">test_api_b_negative.py::test_token_api_request_body_scope_key_invalid</td>
+          <td class="col-duration">0.30</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">@pytest.mark.token_api<br/>    def test_token_api_request_body_scope_key_invalid():<br/>        status, data = Api_functions.token_api(BASE_URL, REQUEST_SCOPE_KEY_INVALID, BASE_TOKEN, CONTENT_TYPE_URL_ENCODED)<br/>&gt;       assert status == 400<br/><span class="error">E       assert 200 == 400</span><br/><br/>test_api_b_negative.py:49: AssertionError<br/></div></td></tr></tbody>
+      <tbody class="failed results-table-row">
+        <tr>
+          <td class="col-result">Failed</td>
+          <td class="col-name">test_api_b_negative.py::test_token_api_request_body_scope_key_missing</td>
+          <td class="col-duration">0.32</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">@pytest.mark.token_api<br/>    def test_token_api_request_body_scope_key_missing():<br/>        status, data = Api_functions.token_api(BASE_URL, REQUEST_SCOPE_KEY_MISSING, BASE_TOKEN, CONTENT_TYPE_URL_ENCODED)<br/>&gt;       assert status == 400<br/><span class="error">E       assert 200 == 400</span><br/><br/>test_api_b_negative.py:57: AssertionError<br/></div></td></tr></tbody>
+      <tbody class="failed results-table-row">
+        <tr>
+          <td class="col-result">Failed</td>
+          <td class="col-name">test_api_b_negative.py::test_token_api_request_body_client_id_key_blank</td>
+          <td class="col-duration">0.87</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">@pytest.mark.token_api<br/>    def test_token_api_request_body_client_id_key_blank():<br/>        status, data = Api_functions.token_api(BASE_URL, REQUEST_CLIENT_ID_KEY_BLANK, BASE_TOKEN, CONTENT_TYPE_URL_ENCODED)<br/>&gt;       assert status == 400<br/><span class="error">E       assert 200 == 400</span><br/><br/>test_api_b_negative.py:65: AssertionError<br/></div></td></tr></tbody>
+      <tbody class="failed results-table-row">
+        <tr>
+          <td class="col-result">Failed</td>
+          <td class="col-name">test_api_b_negative.py::test_token_api_request_body_client_id_key_invalid</td>
+          <td class="col-duration">0.31</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">@pytest.mark.token_api<br/>    def test_token_api_request_body_client_id_key_invalid():<br/>        status, data = Api_functions.token_api(BASE_URL, REQUEST_CLIENT_ID_KEY_INVALID, BASE_TOKEN,<br/>                                               CONTENT_TYPE_URL_ENCODED)<br/>&gt;       assert status == 400<br/><span class="error">E       assert 200 == 400</span><br/><br/>test_api_b_negative.py:73: AssertionError<br/></div></td></tr></tbody>
+      <tbody class="failed results-table-row">
+        <tr>
+          <td class="col-result">Failed</td>
+          <td class="col-name">test_api_b_negative.py::test_token_api_request_body_client_id_key_missing</td>
+          <td class="col-duration">0.34</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">@pytest.mark.token_api<br/>    def test_token_api_request_body_client_id_key_missing():<br/>        status, data = Api_functions.token_api(BASE_URL, REQUEST_CLIENT_ID_KEY_MISSING, BASE_TOKEN,<br/>                                               CONTENT_TYPE_URL_ENCODED)<br/>&gt;       assert status == 400<br/><span class="error">E       assert 200 == 400</span><br/><br/>test_api_b_negative.py:82: AssertionError<br/></div></td></tr></tbody>
+      <tbody class="failed results-table-row">
+        <tr>
+          <td class="col-result">Failed</td>
+          <td class="col-name">test_api_b_negative.py::test_token_api_request_extra_key_added</td>
+          <td class="col-duration">0.32</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">@pytest.mark.token_api<br/>    def test_token_api_request_extra_key_added():<br/>        status, data = Api_functions.token_api(BASE_URL, REQUEST_EXTRA_KEY_ADDED, BASE_TOKEN, CONTENT_TYPE_URL_ENCODED)<br/>&gt;       assert status == 400<br/><span class="error">E       assert 200 == 400</span><br/><br/>test_api_b_negative.py:113: AssertionError<br/></div></td></tr></tbody>
+      <tbody class="failed results-table-row">
+        <tr>
+          <td class="col-result">Failed</td>
+          <td class="col-name">test_api_b_negative.py::test_token_api_Content_type_header_missing</td>
+          <td class="col-duration">0.39</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">@pytest.mark.token_api<br/>    def test_token_api_Content_type_header_missing():<br/>        headers1 = {&#x27;Authorization&#x27;: BASE_TOKEN}<br/>        r = requests.post(BASE_URL + &#x27;/oauth2/token&#x27;, data=DATA_VALID, headers=headers1)<br/>&gt;       assert r.status_code == 400<br/><span class="error">E       assert 200 == 400</span><br/><span class="error">E        +  where 200 = &lt;Response [200]&gt;.status_code</span><br/><br/>test_api_b_negative.py:146: AssertionError<br/></div></td></tr></tbody>
+      <tbody class="failed results-table-row">
+        <tr>
+          <td class="col-result">Failed</td>
+          <td class="col-name">test_api_b_negative.py::test_storage_api_contentType_header_value_missing</td>
+          <td class="col-duration">0.00</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">@pytest.mark.storage_api<br/>    def test_storage_api_contentType_header_value_missing():<br/>&gt;       status, data = Api_functions.storage_api(BASE_URL, STORAGE_REQUEST_BODY, BASE_TOKEN, HEADER_KEY_BLANK_VALUE)<br/><br/>test_api_b_negative.py:331: <br/>_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ <br/>Api_functions.py:33: in storage_api<br/>    res = requests.post(url=BASE_URL + STORAGE_END_POINT, data=json.dumps(VALID_STORAGE_DATA), headers=headers_storage)<br/>..\venv\lib\site-packages\requests\api.py:116: in post<br/>    return request(&#x27;post&#x27;, url, data=data, json=json, **kwargs)<br/>..\venv\lib\site-packages\requests\api.py:60: in request<br/>    return session.request(method=method, url=url, **kwargs)<br/>..\venv\lib\site-packages\requests\sessions.py:519: in request<br/>    prep = self.prepare_request(req)<br/>..\venv\lib\site-packages\requests\sessions.py:452: in prepare_request<br/>    p.prepare(<br/>..\venv\lib\site-packages\requests\models.py:314: in prepare<br/>    self.prepare_headers(headers)<br/>..\venv\lib\site-packages\requests\models.py:448: in prepare_headers<br/>    check_header_validity(header)<br/>_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ <br/><br/>header = (&#x27;Content-Type&#x27;, &#x27; &#x27;)<br/><br/>    def check_header_validity(header):<br/>        &quot;&quot;&quot;Verifies that header value is a string which doesn&#x27;t contain<br/>        leading whitespace or return characters. This prevents unintended<br/>        header injection.<br/>    <br/>        :param header: tuple, in the format (name, value).<br/>        &quot;&quot;&quot;<br/>        name, value = header<br/>    <br/>        if isinstance(value, bytes):<br/>            pat = _CLEAN_HEADER_REGEX_BYTE<br/>        else:<br/>            pat = _CLEAN_HEADER_REGEX_STR<br/>        try:<br/>            if not pat.match(value):<br/>&gt;               raise InvalidHeader(&quot;Invalid return character or leading space in header: %s&quot; % name)<br/><span class="error">E               requests.exceptions.InvalidHeader: Invalid return character or leading space in header: Content-Type</span><br/><br/>..\venv\lib\site-packages\requests\utils.py:942: InvalidHeader<br/></div></td></tr></tbody>
+      <tbody class="failed results-table-row">
+        <tr>
+          <td class="col-result">Failed</td>
+          <td class="col-name">test_api_b_negative.py::test_subject_api_request_body_gender_key_blank</td>
+          <td class="col-duration">0.72</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">@pytest.mark.subject_api<br/>    def test_subject_api_request_body_gender_key_blank():<br/>        status, data = Api_functions.subject_api(BASE_URL, REQUEST_GENDER_KEY_BLANK, BASE_TOKEN,<br/>                                                 CONTENT_TYPE_APPLICATION_JSON)<br/>&gt;       assert status == 400<br/><span class="error">E       assert 401 == 400</span><br/><br/>test_api_b_negative.py:366: AssertionError<br/></div></td></tr></tbody>
+      <tbody class="failed results-table-row">
+        <tr>
+          <td class="col-result">Failed</td>
+          <td class="col-name">test_api_b_negative.py::test_subject_api_request_body_gender_key_invalid</td>
+          <td class="col-duration">0.67</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">@pytest.mark.subject_api<br/>    def test_subject_api_request_body_gender_key_invalid():<br/>        status, data = Api_functions.subject_api(BASE_URL, REQUEST_GENDER_KEY_INVALID, BASE_TOKEN,<br/>                                                 CONTENT_TYPE_APPLICATION_JSON)<br/>&gt;       assert status == 400<br/><span class="error">E       assert 401 == 400</span><br/><br/>test_api_b_negative.py:375: AssertionError<br/></div></td></tr></tbody>
+      <tbody class="failed results-table-row">
+        <tr>
+          <td class="col-result">Failed</td>
+          <td class="col-name">test_api_b_negative.py::test_subject_api_request_body_gender_key_missing</td>
+          <td class="col-duration">0.38</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">@pytest.mark.subject_api<br/>    def test_subject_api_request_body_gender_key_missing():<br/>        status, data = Api_functions.subject_api(BASE_URL, REQUEST_GENDER_KEY_MISSING, BASE_TOKEN,<br/>                                                 CONTENT_TYPE_APPLICATION_JSON)<br/>&gt;       assert status == 400<br/><span class="error">E       assert 401 == 400</span><br/><br/>test_api_b_negative.py:384: AssertionError<br/></div></td></tr></tbody>
+      <tbody class="failed results-table-row">
+        <tr>
+          <td class="col-result">Failed</td>
+          <td class="col-name">test_api_b_negative.py::test_subject_api_request_body_gender_key_invalid_data_type</td>
+          <td class="col-duration">0.67</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">@pytest.mark.subject_api<br/>    def test_subject_api_request_body_gender_key_invalid_data_type():<br/>        status, data = Api_functions.subject_api(BASE_URL, REQUEST_GENDER_KEY_INVALID_DATA_TYPE, BASE_TOKEN,<br/>                                                 CONTENT_TYPE_APPLICATION_JSON)<br/>&gt;       assert status == 400<br/><span class="error">E       assert 401 == 400</span><br/><br/>test_api_b_negative.py:393: AssertionError<br/></div></td></tr></tbody>
+      <tbody class="failed results-table-row">
+        <tr>
+          <td class="col-result">Failed</td>
+          <td class="col-name">test_api_b_negative.py::test_subject_api_request_body_year_of_birth_key_blank</td>
+          <td class="col-duration">0.64</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">@pytest.mark.subject_api<br/>    def test_subject_api_request_body_year_of_birth_key_blank():<br/>        status, data = Api_functions.subject_api(BASE_URL, REQUEST_YEAROFBIRTH_KEY_BLANK, BASE_TOKEN,<br/>                                                 CONTENT_TYPE_APPLICATION_JSON)<br/>&gt;       assert status == 400<br/><span class="error">E       assert 401 == 400</span><br/><br/>test_api_b_negative.py:400: AssertionError<br/></div></td></tr></tbody>
+      <tbody class="failed results-table-row">
+        <tr>
+          <td class="col-result">Failed</td>
+          <td class="col-name">test_api_b_negative.py::test_subject_api_request_body_year_of_birth_key_invalid</td>
+          <td class="col-duration">0.31</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">@pytest.mark.subject_api<br/>    def test_subject_api_request_body_year_of_birth_key_invalid():<br/>        status, data = Api_functions.subject_api(BASE_URL, REQUEST_YEAROFBIRTH_KEY_INVALID, BASE_TOKEN,<br/>                                                 CONTENT_TYPE_APPLICATION_JSON)<br/>&gt;       assert status == 400<br/><span class="error">E       assert 401 == 400</span><br/><br/>test_api_b_negative.py:408: AssertionError<br/></div></td></tr></tbody>
+      <tbody class="failed results-table-row">
+        <tr>
+          <td class="col-result">Failed</td>
+          <td class="col-name">test_api_b_negative.py::test_subject_api_request_body_year_of_birth_key_missing</td>
+          <td class="col-duration">0.31</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">@pytest.mark.subject_api<br/>    def test_subject_api_request_body_year_of_birth_key_missing():<br/>        status, data = Api_functions.subject_api(BASE_URL, REQUEST_YEAROFBIRTH_KEY_MISSING, BASE_TOKEN,<br/>                                                 CONTENT_TYPE_APPLICATION_JSON)<br/>&gt;       assert status == 400<br/><span class="error">E       assert 401 == 400</span><br/><br/>test_api_b_negative.py:417: AssertionError<br/></div></td></tr></tbody>
+      <tbody class="failed results-table-row">
+        <tr>
+          <td class="col-result">Failed</td>
+          <td class="col-name">test_api_b_negative.py::test_subject_api_request_body_year_of_birth_key_invalid_data_type</td>
+          <td class="col-duration">0.70</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">@pytest.mark.subject_api<br/>    def test_subject_api_request_body_year_of_birth_key_invalid_data_type():<br/>        status, data = Api_functions.subject_api(BASE_URL, REQUEST_YEAROFBIRTH_KEY_INVALID_DATA_TYPE, BASE_TOKEN,<br/>                                                 CONTENT_TYPE_APPLICATION_JSON)<br/>&gt;       assert status == 400<br/><span class="error">E       assert 401 == 400</span><br/><br/>test_api_b_negative.py:426: AssertionError<br/></div></td></tr></tbody>
+      <tbody class="failed results-table-row">
+        <tr>
+          <td class="col-result">Failed</td>
+          <td class="col-name">test_api_b_negative.py::test_subject_api_request_body_language_key_blank</td>
+          <td class="col-duration">0.30</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">@pytest.mark.subject_api<br/>    def test_subject_api_request_body_language_key_blank():<br/>        status, data = Api_functions.subject_api(BASE_URL, REQUEST_LANGUAGE_KEY_BLANK, BASE_TOKEN,<br/>                                                 CONTENT_TYPE_APPLICATION_JSON)<br/>&gt;       assert status == 400<br/><span class="error">E       assert 401 == 400</span><br/><br/>test_api_b_negative.py:433: AssertionError<br/></div></td></tr></tbody>
+      <tbody class="failed results-table-row">
+        <tr>
+          <td class="col-result">Failed</td>
+          <td class="col-name">test_api_b_negative.py::test_subject_api_request_body_language_key_invalid</td>
+          <td class="col-duration">0.69</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">@pytest.mark.subject_api<br/>    def test_subject_api_request_body_language_key_invalid():<br/>        status, data = Api_functions.subject_api(BASE_URL, REQUEST_LANGUAGE_KEY_INVALID, BASE_TOKEN,<br/>                                                 CONTENT_TYPE_APPLICATION_JSON)<br/>&gt;       assert status == 400<br/><span class="error">E       assert 401 == 400</span><br/><br/>test_api_b_negative.py:442: AssertionError<br/></div></td></tr></tbody>
+      <tbody class="failed results-table-row">
+        <tr>
+          <td class="col-result">Failed</td>
+          <td class="col-name">test_api_b_negative.py::test_subject_api_request_body_language_key_missing</td>
+          <td class="col-duration">0.37</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">@pytest.mark.subject_api<br/>    def test_subject_api_request_body_language_key_missing():<br/>        status, data = Api_functions.subject_api(BASE_URL, REQUEST_LANGUAGE_KEY_MISSING, BASE_TOKEN,<br/>                                                 CONTENT_TYPE_APPLICATION_JSON)<br/>&gt;       assert status == 400<br/><span class="error">E       assert 401 == 400</span><br/><br/>test_api_b_negative.py:450: AssertionError<br/></div></td></tr></tbody>
+      <tbody class="failed results-table-row">
+        <tr>
+          <td class="col-result">Failed</td>
+          <td class="col-name">test_api_b_negative.py::test_subject_api_request_extra_key_added</td>
+          <td class="col-duration">0.37</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">@pytest.mark.subject_api<br/>    def test_subject_api_request_extra_key_added():<br/>        status, data = Api_functions.subject_api(BASE_URL, REQUEST_SUBJECT_API_EXTRA_KEY, BASE_TOKEN,<br/>                                                 CONTENT_TYPE_APPLICATION_JSON)<br/>&gt;       assert status == 400<br/><span class="error">E       assert 401 == 400</span><br/><br/>test_api_b_negative.py:459: AssertionError<br/></div></td></tr></tbody>
+      <tbody class="failed results-table-row">
+        <tr>
+          <td class="col-result">Failed</td>
+          <td class="col-name">test_api_b_negative.py::test_score_api_request_body_subjectIdentifier_key_blank</td>
+          <td class="col-duration">0.92</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">@pytest.mark.score_api<br/>    def test_score_api_request_body_subjectIdentifier_key_blank():<br/>        status, data = Api_functions.score_api(BASE_URL, REQUEST_SCORE_SUBJECT_IDENTIFIER_KEY_BLANK, ACCESS_TOKEN,<br/>                                               CONTENT_TYPE_APPLICATION_JSON)<br/>&gt;       assert status == 400<br/><span class="error">E       assert 201 == 400</span><br/><br/>test_api_b_negative.py:541: AssertionError<br/></div></td></tr></tbody>
+      <tbody class="failed results-table-row">
+        <tr>
+          <td class="col-result">Failed</td>
+          <td class="col-name">test_api_b_negative.py::test_score_api_request_body_subjectIdentifier_key_invalid</td>
+          <td class="col-duration">0.68</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">@pytest.mark.score_api<br/>    def test_score_api_request_body_subjectIdentifier_key_invalid():<br/>        status, data = Api_functions.score_api(BASE_URL, REQUEST_SCORE_SUBJECT_IDENTIFIER_KEY_INVALID, ACCESS_TOKEN,<br/>                                               CONTENT_TYPE_APPLICATION_JSON)<br/>&gt;       assert status == 400<br/><span class="error">E       assert 201 == 400</span><br/><br/>test_api_b_negative.py:550: AssertionError<br/></div></td></tr></tbody>
+      <tbody class="failed results-table-row">
+        <tr>
+          <td class="col-result">Failed</td>
+          <td class="col-name">test_api_b_negative.py::test_score_api_request_body_subjectIdentifier_key_missing</td>
+          <td class="col-duration">0.72</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">@pytest.mark.score_api<br/>    def test_score_api_request_body_subjectIdentifier_key_missing():<br/>&gt;       status, data = Api_functions.score_api(BASE_URL, REQUEST_SCORE_SUBJECT_IDENTIFIER_KEY_MISSING, ACCESS_TOKEN,<br/>                                               CONTENT_TYPE_APPLICATION_JSON)<br/><br/>test_api_b_negative.py:557: <br/>_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ <br/>Api_functions.py:44: in score_api<br/>    return res.status_code, res.json()<br/>..\venv\lib\site-packages\requests\models.py:897: in json<br/>    return complexjson.loads(self.text, **kwargs)<br/>..\..\..\AppData\Local\Programs\Python\Python38\lib\json\__init__.py:357: in loads<br/>    return _default_decoder.decode(s)<br/>..\..\..\AppData\Local\Programs\Python\Python38\lib\json\decoder.py:337: in decode<br/>    obj, end = self.raw_decode(s, idx=_w(s, 0).end())<br/>_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ <br/><br/>self = &lt;json.decoder.JSONDecoder object at 0x000002074B797DC0&gt;<br/>s = &#x27;&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 3.2 Final//EN&quot;&gt;\n&lt;title&gt;404 Not Found&lt;/title&gt;\n&lt;h1&gt;Not Found&lt;/h1&gt;\n&lt;p&gt;The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.&lt;/p&gt;\n&#x27;<br/>idx = 0<br/><br/>    def raw_decode(self, s, idx=0):<br/>        &quot;&quot;&quot;Decode a JSON document from ``s`` (a ``str`` beginning with<br/>        a JSON document) and return a 2-tuple of the Python<br/>        representation and the index in ``s`` where the document ended.<br/>    <br/>        This can be used to decode a JSON document from a string that may<br/>        have extraneous data at the end.<br/>    <br/>        &quot;&quot;&quot;<br/>        try:<br/>            obj, end = self.scan_once(s, idx)<br/>        except StopIteration as err:<br/>&gt;           raise JSONDecodeError(&quot;Expecting value&quot;, s, err.value) from None<br/><span class="error">E           json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)</span><br/><br/>..\..\..\AppData\Local\Programs\Python\Python38\lib\json\decoder.py:355: JSONDecodeError<br/></div></td></tr></tbody>
+      <tbody class="failed results-table-row">
+        <tr>
+          <td class="col-result">Failed</td>
+          <td class="col-name">test_api_b_negative.py::test_score_api_request_body_subjectIdentifier_key_invalid_data_type</td>
+          <td class="col-duration">0.70</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">@pytest.mark.score_api<br/>    def test_score_api_request_body_subjectIdentifier_key_invalid_data_type():<br/>        status, data = Api_functions.score_api(BASE_URL, REQUEST_SCORE_SUBJECT_IDENTIFIER_INVALID_DATA_TYPE, ACCESS_TOKEN,<br/>                                               CONTENT_TYPE_APPLICATION_JSON)<br/>&gt;       assert status == 400<br/><span class="error">E       assert 201 == 400</span><br/><br/>test_api_b_negative.py:568: AssertionError<br/></div></td></tr></tbody>
+      <tbody class="failed results-table-row">
+        <tr>
+          <td class="col-result">Failed</td>
+          <td class="col-name">test_api_b_negative.py::test_score_api_request_body_fileLocation_key_blank</td>
+          <td class="col-duration">0.48</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">@pytest.mark.score_api<br/>    def test_score_api_request_body_fileLocation_key_blank():<br/>        status, data = Api_functions.score_api(BASE_URL, REQUEST_FILE_LOCATION_KEY_BLANK, ACCESS_TOKEN,<br/>                                               CONTENT_TYPE_APPLICATION_JSON)<br/>&gt;       assert status == 400<br/><span class="error">E       assert 201 == 400</span><br/><br/>test_api_b_negative.py:575: AssertionError<br/></div></td></tr></tbody>
+      <tbody class="failed results-table-row">
+        <tr>
+          <td class="col-result">Failed</td>
+          <td class="col-name">test_api_b_negative.py::test_score_api_request_body_fileLocation_key_invalid</td>
+          <td class="col-duration">1.70</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">@pytest.mark.score_api<br/>    def test_score_api_request_body_fileLocation_key_invalid():<br/>        status, data = Api_functions.score_api(BASE_URL, REQUEST_FILE_LOCATION_KEY_INVALID, ACCESS_TOKEN,<br/>                                               CONTENT_TYPE_APPLICATION_JSON)<br/>&gt;       assert status == 400<br/><span class="error">E       assert 201 == 400</span><br/><br/>test_api_b_negative.py:583: AssertionError<br/></div></td></tr></tbody>
+      <tbody class="failed results-table-row">
+        <tr>
+          <td class="col-result">Failed</td>
+          <td class="col-name">test_api_b_negative.py::test_score_api_request_body_fileLocation_key_missing</td>
+          <td class="col-duration">0.78</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">@pytest.mark.score_api<br/>    def test_score_api_request_body_fileLocation_key_missing():<br/>        status, data = Api_functions.score_api(BASE_URL, REQUEST_FILE_LOCATION_KEY_MISSING, ACCESS_TOKEN,<br/>                                               CONTENT_TYPE_APPLICATION_JSON)<br/>&gt;       assert status == 400<br/><span class="error">E       assert 201 == 400</span><br/><br/>test_api_b_negative.py:592: AssertionError<br/></div></td></tr></tbody>
+      <tbody class="failed results-table-row">
+        <tr>
+          <td class="col-result">Failed</td>
+          <td class="col-name">test_api_b_negative.py::test_score_api_request_body_measureName_key_blank</td>
+          <td class="col-duration">0.88</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">@pytest.mark.score_api<br/>    def test_score_api_request_body_measureName_key_blank():<br/>        status, data = Api_functions.score_api(BASE_URL, REQUEST_MEASURE_NAME_KEY_BLANK, ACCESS_TOKEN,<br/>                                               CONTENT_TYPE_APPLICATION_JSON)<br/>&gt;       assert status == 400<br/><span class="error">E       assert 201 == 400</span><br/><br/>test_api_b_negative.py:602: AssertionError<br/></div></td></tr></tbody>
+      <tbody class="failed results-table-row">
+        <tr>
+          <td class="col-result">Failed</td>
+          <td class="col-name">test_api_b_negative.py::test_score_api_request_body_measureName_key_invalid</td>
+          <td class="col-duration">0.68</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">@pytest.mark.score_api<br/>    def test_score_api_request_body_measureName_key_invalid():<br/>&gt;       status, data = Api_functions.score_api(BASE_URL, REQUEST_MEASURE_NAME_KEY_INVALID, ACCESS_TOKEN,<br/>                                               CONTENT_TYPE_APPLICATION_JSON)<br/><br/>test_api_b_negative.py:609: <br/>_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ <br/>Api_functions.py:44: in score_api<br/>    return res.status_code, res.json()<br/>..\venv\lib\site-packages\requests\models.py:897: in json<br/>    return complexjson.loads(self.text, **kwargs)<br/>..\..\..\AppData\Local\Programs\Python\Python38\lib\json\__init__.py:357: in loads<br/>    return _default_decoder.decode(s)<br/>..\..\..\AppData\Local\Programs\Python\Python38\lib\json\decoder.py:337: in decode<br/>    obj, end = self.raw_decode(s, idx=_w(s, 0).end())<br/>_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ <br/><br/>self = &lt;json.decoder.JSONDecoder object at 0x000002074B797DC0&gt;<br/>s = &#x27;&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 3.2 Final//EN&quot;&gt;\n&lt;title&gt;404 Not Found&lt;/title&gt;\n&lt;h1&gt;Not Found&lt;/h1&gt;\n&lt;p&gt;The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.&lt;/p&gt;\n&#x27;<br/>idx = 0<br/><br/>    def raw_decode(self, s, idx=0):<br/>        &quot;&quot;&quot;Decode a JSON document from ``s`` (a ``str`` beginning with<br/>        a JSON document) and return a 2-tuple of the Python<br/>        representation and the index in ``s`` where the document ended.<br/>    <br/>        This can be used to decode a JSON document from a string that may<br/>        have extraneous data at the end.<br/>    <br/>        &quot;&quot;&quot;<br/>        try:<br/>            obj, end = self.scan_once(s, idx)<br/>        except StopIteration as err:<br/>&gt;           raise JSONDecodeError(&quot;Expecting value&quot;, s, err.value) from None<br/><span class="error">E           json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)</span><br/><br/>..\..\..\AppData\Local\Programs\Python\Python38\lib\json\decoder.py:355: JSONDecodeError<br/></div></td></tr></tbody>
+      <tbody class="failed results-table-row">
+        <tr>
+          <td class="col-result">Failed</td>
+          <td class="col-name">test_api_b_negative.py::test_score_api_request_body_measureName_key_missing</td>
+          <td class="col-duration">0.74</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">@pytest.mark.score_api<br/>    def test_score_api_request_body_measureName_key_missing():<br/>&gt;       status, data = Api_functions.score_api(BASE_URL, REQUEST_MEASURE_NAME_KEY_MISSING, ACCESS_TOKEN,<br/>                                               CONTENT_TYPE_APPLICATION_JSON)<br/><br/>test_api_b_negative.py:617: <br/>_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ <br/>Api_functions.py:44: in score_api<br/>    return res.status_code, res.json()<br/>..\venv\lib\site-packages\requests\models.py:897: in json<br/>    return complexjson.loads(self.text, **kwargs)<br/>..\..\..\AppData\Local\Programs\Python\Python38\lib\json\__init__.py:357: in loads<br/>    return _default_decoder.decode(s)<br/>..\..\..\AppData\Local\Programs\Python\Python38\lib\json\decoder.py:337: in decode<br/>    obj, end = self.raw_decode(s, idx=_w(s, 0).end())<br/>_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ <br/><br/>self = &lt;json.decoder.JSONDecoder object at 0x000002074B797DC0&gt;<br/>s = &#x27;&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 3.2 Final//EN&quot;&gt;\n&lt;title&gt;404 Not Found&lt;/title&gt;\n&lt;h1&gt;Not Found&lt;/h1&gt;\n&lt;p&gt;The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.&lt;/p&gt;\n&#x27;<br/>idx = 0<br/><br/>    def raw_decode(self, s, idx=0):<br/>        &quot;&quot;&quot;Decode a JSON document from ``s`` (a ``str`` beginning with<br/>        a JSON document) and return a 2-tuple of the Python<br/>        representation and the index in ``s`` where the document ended.<br/>    <br/>        This can be used to decode a JSON document from a string that may<br/>        have extraneous data at the end.<br/>    <br/>        &quot;&quot;&quot;<br/>        try:<br/>            obj, end = self.scan_once(s, idx)<br/>        except StopIteration as err:<br/>&gt;           raise JSONDecodeError(&quot;Expecting value&quot;, s, err.value) from None<br/><span class="error">E           json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)</span><br/><br/>..\..\..\AppData\Local\Programs\Python\Python38\lib\json\decoder.py:355: JSONDecodeError<br/></div></td></tr></tbody>
+      <tbody class="failed results-table-row">
+        <tr>
+          <td class="col-result">Failed</td>
+          <td class="col-name">test_api_b_negative.py::test_score_api_request_extra_key_added</td>
+          <td class="col-duration">0.73</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">@pytest.mark.score_api<br/>    def test_score_api_request_extra_key_added():<br/>        status, data = Api_functions.score_api(BASE_URL, REQUEST_SCORE_API_EXTRA_KEY, ACCESS_TOKEN,<br/>                                               CONTENT_TYPE_APPLICATION_JSON)<br/>&gt;       assert status == 400<br/><span class="error">E       assert 201 == 400</span><br/><br/>test_api_b_negative.py:628: AssertionError<br/></div></td></tr></tbody>
+      <tbody class="failed results-table-row">
+        <tr>
+          <td class="col-result">Failed</td>
+          <td class="col-name">test_api_b_negative.py::test_score_api_content_type_header_missing</td>
+          <td class="col-duration">0.33</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">@pytest.mark.score_api<br/>    def test_score_api_content_type_header_missing():<br/>        header1 = {&#x27;Authorization&#x27;: ACCESS_TOKEN}<br/>        r = requests.post(BASE_URL + SCORE_END_POINT, data=VALID_SCORE_DATA, headers=header1)<br/>&gt;       assert r.status_code == 404<br/><span class="error">E       assert 500 == 404</span><br/><span class="error">E        +  where 500 = &lt;Response [500]&gt;.status_code</span><br/><br/>test_api_b_negative.py:663: AssertionError<br/></div></td></tr></tbody>
+      <tbody class="failed results-table-row">
+        <tr>
+          <td class="col-result">Failed</td>
+          <td class="col-name">test_api_b_negative.py::test_score_api_contentType_header_value_invalid</td>
+          <td class="col-duration">0.29</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">@pytest.mark.score_api<br/>    def test_score_api_contentType_header_value_invalid():<br/>&gt;       status, data = Api_functions.score_api(BASE_URL, VALID_SCORE_DATA, ACCESS_TOKEN, CONTENT_TYPE_URL_ENCODED)<br/><br/>test_api_b_negative.py:677: <br/>_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ <br/>Api_functions.py:44: in score_api<br/>    return res.status_code, res.json()<br/>..\venv\lib\site-packages\requests\models.py:897: in json<br/>    return complexjson.loads(self.text, **kwargs)<br/>..\..\..\AppData\Local\Programs\Python\Python38\lib\json\__init__.py:357: in loads<br/>    return _default_decoder.decode(s)<br/>..\..\..\AppData\Local\Programs\Python\Python38\lib\json\decoder.py:337: in decode<br/>    obj, end = self.raw_decode(s, idx=_w(s, 0).end())<br/>_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ <br/><br/>self = &lt;json.decoder.JSONDecoder object at 0x000002074B797DC0&gt;<br/>s = &#x27;&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 3.2 Final//EN&quot;&gt;\n&lt;title&gt;404 Not Found&lt;/title&gt;\n&lt;h1&gt;Not Found&lt;/h1&gt;\n&lt;p&gt;The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.&lt;/p&gt;\n&#x27;<br/>idx = 0<br/><br/>    def raw_decode(self, s, idx=0):<br/>        &quot;&quot;&quot;Decode a JSON document from ``s`` (a ``str`` beginning with<br/>        a JSON document) and return a 2-tuple of the Python<br/>        representation and the index in ``s`` where the document ended.<br/>    <br/>        This can be used to decode a JSON document from a string that may<br/>        have extraneous data at the end.<br/>    <br/>        &quot;&quot;&quot;<br/>        try:<br/>            obj, end = self.scan_once(s, idx)<br/>        except StopIteration as err:<br/>&gt;           raise JSONDecodeError(&quot;Expecting value&quot;, s, err.value) from None<br/><span class="error">E           json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)</span><br/><br/>..\..\..\AppData\Local\Programs\Python\Python38\lib\json\decoder.py:355: JSONDecodeError<br/></div></td></tr></tbody>
+      <tbody class="failed results-table-row">
+        <tr>
+          <td class="col-result">Failed</td>
+          <td class="col-name">test_api_b_negative.py::test_measure_header_missing</td>
+          <td class="col-duration">0.66</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">@pytest.mark.measure_api<br/>    def test_measure_header_missing():<br/>        r = requests.post(BASE_URL + SCORE_END_POINT)<br/>&gt;       assert r.status_code == 400<br/><span class="error">E       assert 401 == 400</span><br/><span class="error">E        +  where 401 = &lt;Response [401]&gt;.status_code</span><br/><br/>test_api_b_negative.py:703: AssertionError<br/></div></td></tr></tbody>
+      <tbody class="failed results-table-row">
+        <tr>
+          <td class="col-result">Failed</td>
+          <td class="col-name">test_api_b_negative.py::test_measure_api_invalid_access_token</td>
+          <td class="col-duration">0.32</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">@pytest.mark.measure_api<br/>    def test_measure_api_invalid_access_token():<br/>        status, data = Api_functions.measure_api(BASE_URL, MEASURE_END_POINT, INVALID_ACCESS_TOKEN)<br/>&gt;       assert status == 403<br/><span class="error">E       assert 401 == 403</span><br/><br/>test_api_b_negative.py:710: AssertionError<br/></div></td></tr></tbody>
+      <tbody class="failed results-table-row">
+        <tr>
+          <td class="col-result">Failed</td>
+          <td class="col-name">test_api_b_negative.py::test_measure_api_with_put_request</td>
+          <td class="col-duration">0.68</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">@pytest.mark.measure_api<br/>    def test_measure_api_with_put_request():<br/>        headers1 = {&#x27;Authorization&#x27;: ACCESS_TOKEN}<br/>        r = requests.put(BASE_URL + &#x27;/measures&#x27; , headers=headers1)<br/>&gt;       assert r.status_code == 405<br/><span class="error">E       assert 403 == 405</span><br/><span class="error">E        +  where 403 = &lt;Response [403]&gt;.status_code</span><br/><br/>test_api_b_negative.py:721: AssertionError<br/></div></td></tr></tbody>
+      <tbody class="failed results-table-row">
+        <tr>
+          <td class="col-result">Failed</td>
+          <td class="col-name">test_api_b_negative.py::test_measure_api_with_get_request</td>
+          <td class="col-duration">0.49</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">@pytest.mark.measure_api<br/>    def test_measure_api_with_get_request():<br/>        headers1 = {&#x27;Authorization&#x27;: ACCESS_TOKEN}<br/>        r = requests.get(BASE_URL + &#x27;/measures&#x27;, headers=headers1)<br/>&gt;       assert r.status_code == 403<br/><span class="error">E       assert 200 == 403</span><br/><span class="error">E        +  where 200 = &lt;Response [200]&gt;.status_code</span><br/><br/>test_api_b_negative.py:728: AssertionError<br/></div></td></tr></tbody>
+      <tbody class="failed results-table-row">
+        <tr>
+          <td class="col-result">Failed</td>
+          <td class="col-name">test_api_b_negative.py::test_measure_api_with_delete_request</td>
+          <td class="col-duration">0.75</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">@pytest.mark.measure_api<br/>    def test_measure_api_with_delete_request():<br/>        headers1 = {&#x27;Authorization&#x27;: ACCESS_TOKEN}<br/>        r = requests.delete(BASE_URL + &#x27;/measures&#x27;, headers=headers1)<br/>&gt;       assert r.status_code == 405<br/><span class="error">E       assert 403 == 405</span><br/><span class="error">E        +  where 403 = &lt;Response [403]&gt;.status_code</span><br/><br/>test_api_b_negative.py:735: AssertionError<br/></div></td></tr></tbody>
+      <tbody class="failed results-table-row">
+        <tr>
+          <td class="col-result">Failed</td>
+          <td class="col-name">test_api_b_negative.py::test_measure_id_api_invalid_end_point</td>
+          <td class="col-duration">0.69</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">@pytest.mark.measure_id_api<br/>    def test_measure_id_api_invalid_end_point():<br/>        status, data = Api_functions.measure_id_api(BASE_URL, INVALID_MEASURE_ID_END_POINT, ACCESS_TOKEN)<br/>&gt;       assert status == 403<br/><span class="error">E       assert 200 == 403</span><br/><br/>test_api_b_negative.py:747: AssertionError<br/></div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">test_api_a_positive.py::test_token_api</td>
+          <td class="col-duration">0.84</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="empty log">No log output captured.</div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">test_api_a_positive.py::test_get_measure_api</td>
+          <td class="col-duration">0.41</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="empty log">No log output captured.</div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">test_api_a_positive.py::test_subject_api</td>
+          <td class="col-duration">2.55</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="empty log">No log output captured.</div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">test_api_a_positive.py::test_measure_id_api</td>
+          <td class="col-duration">0.81</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="empty log">No log output captured.</div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">test_api_a_positive.py::test_storage_api</td>
+          <td class="col-duration">2.05</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="empty log">No log output captured.</div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">test_api_a_positive.py::test_score_api</td>
+          <td class="col-duration">0.82</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="empty log">No log output captured.</div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">test_api_b_negative.py::test_token_api_invalid_endpoint</td>
+          <td class="col-duration">0.70</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="empty log">No log output captured.</div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">test_api_b_negative.py::test_token_api_request_body_grant_type_key_blank</td>
+          <td class="col-duration">0.64</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="empty log">No log output captured.</div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">test_api_b_negative.py::test_token_api_request_body_grant_type_key_invalid</td>
+          <td class="col-duration">0.39</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="empty log">No log output captured.</div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">test_api_b_negative.py::test_token_api_request_body_grant_type_key_missing</td>
+          <td class="col-duration">0.35</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="empty log">No log output captured.</div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">test_api_b_negative.py::test_token_api_auth_header_missing</td>
+          <td class="col-duration">0.91</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="empty log">No log output captured.</div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">test_api_b_negative.py::test_token_auth_header_value_invalid</td>
+          <td class="col-duration">0.35</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="empty log">No log output captured.</div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">test_api_b_negative.py::test_token_api_with_put_request</td>
+          <td class="col-duration">0.31</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="empty log">No log output captured.</div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">test_api_b_negative.py::test_token_api_with_get_request</td>
+          <td class="col-duration">0.09</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="empty log">No log output captured.</div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">test_api_b_negative.py::test_token_api_with_delete_request</td>
+          <td class="col-duration">0.39</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="empty log">No log output captured.</div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">test_api_b_negative.py::test_storage_api_invalid_endpoint</td>
+          <td class="col-duration">0.67</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="empty log">No log output captured.</div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">test_api_b_negative.py::test_storage_api_request_body_countryCode_key_blank</td>
+          <td class="col-duration">0.74</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="empty log">No log output captured.</div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">test_api_b_negative.py::test_storage_api_request_body_countryCode_invalid</td>
+          <td class="col-duration">1.14</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="empty log">No log output captured.</div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">test_api_b_negative.py::test_storage_api_request_body_countryCode_key_missing</td>
+          <td class="col-duration">0.71</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="empty log">No log output captured.</div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">test_api_b_negative.py::test_storage_api_request_body_countryCode_not_supported</td>
+          <td class="col-duration">0.72</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="empty log">No log output captured.</div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">test_api_b_negative.py::test_storage_api_request_body_countryCode_not_registered</td>
+          <td class="col-duration">0.40</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="empty log">No log output captured.</div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">test_api_b_negative.py::test_storage_api_request_body_subject_identifier_key_blank</td>
+          <td class="col-duration">0.72</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="empty log">No log output captured.</div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">test_api_b_negative.py::test_storage_api_request_body_subject_identifier_key_invalid</td>
+          <td class="col-duration">0.33</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="empty log">No log output captured.</div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">test_api_b_negative.py::test_storage_api_request_body_subject_identifier_key_missing</td>
+          <td class="col-duration">0.69</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="empty log">No log output captured.</div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">test_api_b_negative.py::test_storage_api_request_body_file_type_key_blank</td>
+          <td class="col-duration">0.31</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="empty log">No log output captured.</div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">test_api_b_negative.py::test_storage_api_request_body_file_type_key_invalid</td>
+          <td class="col-duration">0.70</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="empty log">No log output captured.</div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">test_api_b_negative.py::test_storage_api_request_body_file_type_key_missing</td>
+          <td class="col-duration">0.30</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="empty log">No log output captured.</div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">test_api_b_negative.py::test_storage_api_request_extra_key_added</td>
+          <td class="col-duration">0.29</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="empty log">No log output captured.</div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">test_api_b_negative.py::test_storage_api_auth_header_missing</td>
+          <td class="col-duration">0.32</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="empty log">No log output captured.</div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">test_api_b_negative.py::test_storage_api_auth_header_expired</td>
+          <td class="col-duration">0.71</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="empty log">No log output captured.</div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">test_api_b_negative.py::test_storage_api_Content_type_header_missing</td>
+          <td class="col-duration">0.41</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="empty log">No log output captured.</div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">test_api_b_negative.py::test_storage_api_contentType_header_value_invalid</td>
+          <td class="col-duration">0.60</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="empty log">No log output captured.</div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">test_api_b_negative.py::test_storage_api_with_put_request</td>
+          <td class="col-duration">1.12</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="empty log">No log output captured.</div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">test_api_b_negative.py::test_storage_api_with_get_request</td>
+          <td class="col-duration">0.40</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="empty log">No log output captured.</div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">test_api_b_negative.py::test_subject_api_with_put_request</td>
+          <td class="col-duration">0.64</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="empty log">No log output captured.</div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">test_api_b_negative.py::test_subject_api_with_get_request</td>
+          <td class="col-duration">0.09</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="empty log">No log output captured.</div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">test_api_b_negative.py::test_subject_api_with_delete_request</td>
+          <td class="col-duration">0.35</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="empty log">No log output captured.</div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">test_api_b_negative.py::test_subject_access_token_missing</td>
+          <td class="col-duration">0.71</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="empty log">No log output captured.</div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">test_api_b_negative.py::test_subject_access_token_value_invalid</td>
+          <td class="col-duration">0.71</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="empty log">No log output captured.</div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">test_api_b_negative.py::test_subject_api_content_type_header_missing</td>
+          <td class="col-duration">0.41</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="empty log">No log output captured.</div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">test_api_b_negative.py::test_subject_api_contentType_header_value_invalid</td>
+          <td class="col-duration">0.40</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="empty log">No log output captured.</div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">test_api_b_negative.py::test_score_access_token_missing</td>
+          <td class="col-duration">0.37</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="empty log">No log output captured.</div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">test_api_b_negative.py::test_score_access_token_value_invalid</td>
+          <td class="col-duration">0.72</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="empty log">No log output captured.</div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">test_api_b_negative.py::test_measure_api_invalid_end_point</td>
+          <td class="col-duration">0.30</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="empty log">No log output captured.</div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">test_api_b_negative.py::test_measure_id_header_missing</td>
+          <td class="col-duration">0.77</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="empty log">No log output captured.</div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">test_api_b_negative.py::test_measure_id_api_invalid_access_token</td>
+          <td class="col-duration">0.30</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="empty log">No log output captured.</div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">test_api_b_negative.py::test_measure_id_api_with_put_request</td>
+          <td class="col-duration">0.65</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="empty log">No log output captured.</div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">test_api_b_negative.py::test_measure_id_api_with_get_request</td>
+          <td class="col-duration">0.37</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="empty log">No log output captured.</div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">test_api_b_negative.py::test_measure_id_api_with_delete_request</td>
+          <td class="col-duration">0.72</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="empty log">No log output captured.</div></td></tr></tbody></table></body></html>

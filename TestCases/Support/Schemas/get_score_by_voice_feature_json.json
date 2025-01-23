@@ -1,0 +1,80 @@
+ {
+ 	"VoiceFeaturesScores": {
+ 		"type": "object",
+ 		"properties": {
+ 			"id": {
+ 				"type": "string",
+ 				"description": "voice feature score group id"
+ 			},
+ 			"filePath": {
+ 				"type": "string",
+ 				"description": "wav file path for which voice-features has been extracted"
+ 			},
+ 			"measureName": {
+ 				"type": "string",
+ 				"description": "measure for which voice-features scores are calculated"
+ 			},
+ 			"userIdentifier": {
+ 				"type": "string",
+ 				"description": "user identifier for which score calculated"
+ 			},
+ 			"inferredAt": {
+ 				"type": "string",
+ 				"format": "date-time",
+ 				"description": "Time at which voice feature is performed Date time in ISO-8601 format."
+ 			},
+ 			"inference": {
+ 				"type": "array",
+ 				"items": {
+ 					"$ref": "#/components/schemas/VfInference"
+ 				}
+ 			}
+ 		}
+ 	},
+ 	"VfInference": {
+ 		"type": "object",
+ 		"properties": {
+ 			"type": {
+ 				"type": "string",
+ 				"description": "ia name"
+ 			},
+ 			"version": {
+ 				"type": "string",
+ 				"description": "ia version"
+ 			},
+ 			"score": {
+ 				"type": "object",
+ 				"$ref": "#/components/schemas/VfFinalScore"
+ 			},
+ 			"voiceFeatures": {
+ 				"type": "array",
+ 				"items": {
+ 					"$ref": "#/components/schemas/VoiceFeatures"
+ 				}
+ 			}
+ 		}
+ 	},
+
+
+ 	"VfFinalScore": {
+ 		"type": "object",
+ 		"properties": {
+ 			"value": {
+ 				"type": "integer",
+ 				"description": "Generated VoiceFeatureFinalScore"
+ 			}
+ 		}
+ 	},
+
+ 	"VoiceFeatures": {
+ 		"type": "object",
+ 		"properties": {
+ 			"name": {
+ 				"type": "string"
+ 			},
+ 			"score": {
+ 				"type": "string"
+ 			}
+ 		}
+ 	}
+ }

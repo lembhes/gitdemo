@@ -1,0 +1,53 @@
+{"CreateQuestionnaireResponse": {
+				"type": "object",
+				"properties": {
+					"questionnaire": {
+						"type": "object",
+						"properties": {
+							"id": {
+								"type": "string",
+								"description": "Questionnaire id. Example qnr_e23er432w"
+							},
+							"language": {
+								"$ref": "#/components/schemas/Language"
+							},
+							"userIdentifier": {
+								"type": "string",
+								"description": "User identifier. You will get this identifier in response of POST /platform/v1/users"
+							},
+							"respondedAt": {
+								"description": "Date time in ISO-8601 format. This is the data-time user has given answer to quetionnaire. For more detail on ISO-8601, Refer https://www.w3.org/TR/NOTE-datetime",
+								"type": "string",
+								"format": "date-time"
+							},
+							"questionResponses": {
+								"type": "array",
+								"description": "The size of this array should be equivalent to number of questions in questionnaire.",
+								"items": {
+									"oneOf": [
+										{
+											"$ref": "#/components/schemas/TextFieldQuestionResponse"
+										},
+										{
+											"$ref": "#/components/schemas/MultipleChoiceQuestionResponse"
+										},
+										{
+											"$ref": "#/components/schemas/MultipleSelectQuestionResponse"
+										},
+										{
+											"$ref": "#/components/schemas/UserSkipResponse"
+										}
+									]
+								}
+							}
+						},
+						"required": [
+							"id",
+							"language",
+							"userIdentifier",
+							"respondedAt",
+							"questionResponses"
+						]
+					}
+				}
+			}}

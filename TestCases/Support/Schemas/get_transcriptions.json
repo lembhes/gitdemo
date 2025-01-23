@@ -1,0 +1,27 @@
+{"VoiceFeatureTranscriptionHistoryResponse": {
+        "type": "object",
+        "properties": {
+          "transcripts": {
+            "description": "list of speech text presigned url",
+            "$ref": "#/components/schemas/VoiceTranscriptionHistoryResponse"
+          },
+          "requestId": {
+            "type": "string"
+          }
+        }
+      },
+      "VoiceTranscriptionHistoryResponse": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "filePath": {
+              "type": "string"
+            },
+            "speechTextURL": {
+              "type": "string",
+              "description": "Pre signed url of speech text file"
+            }
+          }
+        }
+      } }

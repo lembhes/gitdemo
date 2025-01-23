@@ -1,0 +1,353 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "$id": "http://example.com/example.json",
+    "type": "object",
+    "title": "The root schema",
+    "description": "The root schema comprises the entire JSON document.",
+    "default": {},
+    "examples": [
+        {
+            "id": "qnr_e23er432w",
+            "title": "covid_19",
+            "language": "en",
+            "questions": [
+                {
+                    "type": "MULTIPLE_CHOICE",
+                    "text": "Have you been within 6 feet of a person with a lab confirmed case of COVID-19 or with symptoms of COVID-19 for at least 15 minutes, or had direct contact with their mucus or saliva,in the past 14 days?",
+                    "isSkippable": false,
+                    "options": [
+                        {
+                            "text": "No",
+                            "score": 0
+                        },
+                        {
+                            "text": "Yes",
+                            "score": 1
+                        }
+                    ]
+                },
+                {
+                    "type": "MULTIPLE_SELECT",
+                    "text": "In the last 48 hours, have you had any of the following NEW symptoms? Select all that apply.",
+                    "isSkippable": false,
+                    "options": [
+                        {
+                            "text": "Fever of 100.4° F or above",
+                            "score": 3
+                        },
+                        {
+                            "body": "Cough",
+                            "score": 2
+                        },
+                        {
+                            "text": "Trouble breathing",
+                            "score": 1
+                        },
+                        {
+                            "text": "None of the above",
+                            "score": 0
+                        }
+                    ]
+                },
+                {
+                    "type": "TEXT_FIELD",
+                    "text": "How many covid center do you have in your city?",
+                    "isSkippable": true,
+                    "inputDataType": "INTEGER"
+                },
+                {
+                    "type": "TEXT_FIELD",
+                    "text": "What is your body temperature?",
+                    "isSkippable": false,
+                    "inputDataType": "BODY_TEMPERATURE"
+                }
+            ]
+        }
+    ],
+    "required": [
+        "id",
+        "title",
+        "language",
+        "questions"
+    ],
+    "properties": {
+        "id": {
+            "$id": "#/properties/id",
+            "type": "string",
+            "title": "The id schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "qnr_e23er432w"
+            ]
+        },
+        "title": {
+            "$id": "#/properties/title",
+            "type": "string",
+            "title": "The title schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "covid_19"
+            ]
+        },
+        "language": {
+            "$id": "#/properties/language",
+            "type": "string",
+            "title": "The language schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "en"
+            ]
+        },
+        "questions": {
+            "$id": "#/properties/questions",
+            "type": "array",
+            "title": "The questions schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": [],
+            "examples": [
+                [
+                    {
+                        "type": "MULTIPLE_CHOICE",
+                        "text": "Have you been within 6 feet of a person with a lab confirmed case of COVID-19 or with symptoms of COVID-19 for at least 15 minutes, or had direct contact with their mucus or saliva,in the past 14 days?",
+                        "isSkippable": false,
+                        "options": [
+                            {
+                                "text": "No",
+                                "score": 0
+                            },
+                            {
+                                "text": "Yes",
+                                "score": 1
+                            }
+                        ]
+                    },
+                    {
+                        "type": "MULTIPLE_SELECT",
+                        "text": "In the last 48 hours, have you had any of the following NEW symptoms? Select all that apply.",
+                        "isSkippable": false,
+                        "options": [
+                            {
+                                "text": "Fever of 100.4° F or above",
+                                "score": 3
+                            },
+                            {
+                                "body": "Cough",
+                                "score": 2
+                            },
+                            {
+                                "text": "Trouble breathing",
+                                "score": 1
+                            },
+                            {
+                                "text": "None of the above",
+                                "score": 0
+                            }
+                        ]
+                    }
+                ]
+            ],
+            "additionalItems": true,
+            "items": {
+                "$id": "#/properties/questions/items",
+                "anyOf": [
+                    {
+                        "$id": "#/properties/questions/items/anyOf/0",
+                        "type": "object",
+                        "title": "The first anyOf schema",
+                        "description": "An explanation about the purpose of this instance.",
+                        "default": {},
+                        "examples": [
+                            {
+                                "type": "MULTIPLE_CHOICE",
+                                "text": "Have you been within 6 feet of a person with a lab confirmed case of COVID-19 or with symptoms of COVID-19 for at least 15 minutes, or had direct contact with their mucus or saliva,in the past 14 days?",
+                                "isSkippable": false,
+                                "options": [
+                                    {
+                                        "text": "No",
+                                        "score": 0
+                                    },
+                                    {
+                                        "text": "Yes",
+                                        "score": 1
+                                    }
+                                ]
+                            }
+                        ],
+                        "required": [
+                            "type",
+                            "text",
+                            "isSkippable",
+                            "options"
+                        ],
+                        "properties": {
+                            "type": {
+                                "$id": "#/properties/questions/items/anyOf/0/properties/type",
+                                "type": "string",
+                                "title": "The type schema",
+                                "description": "An explanation about the purpose of this instance.",
+                                "default": "",
+                                "examples": [
+                                    "MULTIPLE_CHOICE"
+                                ]
+                            },
+                            "text": {
+                                "$id": "#/properties/questions/items/anyOf/0/properties/text",
+                                "type": "string",
+                                "title": "The text schema",
+                                "description": "An explanation about the purpose of this instance.",
+                                "default": "",
+                                "examples": [
+                                    "Have you been within 6 feet of a person with a lab confirmed case of COVID-19 or with symptoms of COVID-19 for at least 15 minutes, or had direct contact with their mucus or saliva,in the past 14 days?"
+                                ]
+                            },
+                            "isSkippable": {
+                                "$id": "#/properties/questions/items/anyOf/0/properties/isSkippable",
+                                "type": "boolean",
+                                "title": "The isSkippable schema",
+                                "description": "An explanation about the purpose of this instance.",
+                                "default": false,
+                                "examples": [
+                                    false
+                                ]
+                            },
+                            "options": {
+                                "$id": "#/properties/questions/items/anyOf/0/properties/options",
+                                "type": "array",
+                                "title": "The options schema",
+                                "description": "An explanation about the purpose of this instance.",
+                                "default": [],
+                                "examples": [
+                                    [
+                                        {
+                                            "text": "No",
+                                            "score": 0
+                                        },
+                                        {
+                                            "text": "Yes",
+                                            "score": 1
+                                        }
+                                    ]
+                                ],
+                                "additionalItems": true,
+                                "items": {
+                                    "$id": "#/properties/questions/items/anyOf/0/properties/options/items",
+                                    "anyOf": [
+                                        {
+                                            "$id": "#/properties/questions/items/anyOf/0/properties/options/items/anyOf/0",
+                                            "type": "object",
+                                            "title": "The first anyOf schema",
+                                            "description": "An explanation about the purpose of this instance.",
+                                            "default": {},
+                                            "examples": [
+                                                {
+                                                    "text": "No",
+                                                    "score": 0
+                                                }
+                                            ],
+                                            "required": [
+                                                "text",
+                                                "score"
+                                            ],
+                                            "properties": {
+                                                "text": {
+                                                    "$id": "#/properties/questions/items/anyOf/0/properties/options/items/anyOf/0/properties/text",
+                                                    "type": "string",
+                                                    "title": "The text schema",
+                                                    "description": "An explanation about the purpose of this instance.",
+                                                    "default": "",
+                                                    "examples": [
+                                                        "No"
+                                                    ]
+                                                },
+                                                "score": {
+                                                    "$id": "#/properties/questions/items/anyOf/0/properties/options/items/anyOf/0/properties/score",
+                                                    "type": "integer",
+                                                    "title": "The score schema",
+                                                    "description": "An explanation about the purpose of this instance.",
+                                                    "default": 0,
+                                                    "examples": [
+                                                        0
+                                                    ]
+                                                }
+                                            },
+                                            "additionalProperties": true
+                                        }
+                                    ]
+                                }
+                            }
+                        },
+                        "additionalProperties": true
+                    },
+                    {
+                        "$id": "#/properties/questions/items/anyOf/1",
+                        "type": "object",
+                        "title": "The second anyOf schema",
+                        "description": "An explanation about the purpose of this instance.",
+                        "default": {},
+                        "examples": [
+                            {
+                                "type": "TEXT_FIELD",
+                                "text": "How many covid center do you have in your city?",
+                                "isSkippable": true,
+                                "inputDataType": "INTEGER"
+                            }
+                        ],
+                        "required": [
+                            "type",
+                            "text",
+                            "isSkippable",
+                            "inputDataType"
+                        ],
+                        "properties": {
+                            "type": {
+                                "$id": "#/properties/questions/items/anyOf/1/properties/type",
+                                "type": "string",
+                                "title": "The type schema",
+                                "description": "An explanation about the purpose of this instance.",
+                                "default": "",
+                                "examples": [
+                                    "TEXT_FIELD"
+                                ]
+                            },
+                            "text": {
+                                "$id": "#/properties/questions/items/anyOf/1/properties/text",
+                                "type": "string",
+                                "title": "The text schema",
+                                "description": "An explanation about the purpose of this instance.",
+                                "default": "",
+                                "examples": [
+                                    "How many covid center do you have in your city?"
+                                ]
+                            },
+                            "isSkippable": {
+                                "$id": "#/properties/questions/items/anyOf/1/properties/isSkippable",
+                                "type": "boolean",
+                                "title": "The isSkippable schema",
+                                "description": "An explanation about the purpose of this instance.",
+                                "default": false,
+                                "examples": [
+                                    true
+                                ]
+                            },
+                            "inputDataType": {
+                                "$id": "#/properties/questions/items/anyOf/1/properties/inputDataType",
+                                "type": "string",
+                                "title": "The inputDataType schema",
+                                "description": "An explanation about the purpose of this instance.",
+                                "default": "",
+                                "examples": [
+                                    "INTEGER"
+                                ]
+                            }
+                        },
+                        "additionalProperties": true
+                    }
+                ]
+            }
+        }
+    },
+    "additionalProperties": true
+}

@@ -1,0 +1,41 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "$id": "http://example.com/example.json",
+    "type": "object",
+    "title": "The root schema",
+    "description": "The root schema comprises the entire JSON document.",
+    "default": {},
+    "examples": [
+        {
+            "requestId": "3c45dc0840er",
+            "signedURL": "s3://s3.aws.sondesample.bucket/8c4784bf-254f-49ff-a395-4811cc3e6fe1/voice-samples/665efc4a-99ec-440c-b596-b53a01a916d3.wav"
+        }
+    ],
+    "required": [
+        "requestId",
+        "signedURL"
+    ],
+    "properties": {
+        "requestId": {
+            "$id": "#/properties/requestId",
+            "type": "string",
+            "title": "The requestId schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "3c45dc0840er"
+            ]
+        },
+        "signedURL": {
+            "$id": "#/properties/signedURL",
+            "type": "string",
+            "title": "The signedURL schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "s3://s3.aws.sondesample.bucket/8c4784bf-254f-49ff-a395-4811cc3e6fe1/voice-samples/665efc4a-99ec-440c-b596-b53a01a916d3.wav"
+            ]
+        }
+    },
+    "additionalProperties": true
+}

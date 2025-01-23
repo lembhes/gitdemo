@@ -1,0 +1,20 @@
+{
+	"201": {
+		"description": "Ok",
+		"content": {
+			"application/json": {
+				"schema": {
+					"type": "object",
+					"properties": {
+						"id": {
+							"type": "string"
+						}
+					}
+				},
+				"example": {
+					"id": "qrs_09d24ef60e73"
+				}
+			}
+		}
+	}
+}

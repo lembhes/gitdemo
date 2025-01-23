@@ -1,0 +1,41 @@
+{
+	"VoiceTranscriptionResponse": {
+		"type": "object",
+		"properties": {
+			"status": {
+				"$ref": "#/components/schemas/AsyncJobStatus"
+			},
+			"result": {
+				"description": "voice feature async result",
+				"$ref": "#/components/schemas/VoiceFeatureTranscriptionResponse"
+			},
+			"requestId": {
+				"type": "string"
+			}
+		},
+		"required": [
+			"status",
+			"result",
+			"requestId"
+		]
+	},
+	"VoiceFeatureTranscriptionResponse": {
+		"type": "object",
+		"properties": {
+			"type": {
+				"$ref": "#/components/schemas/AsyncJobResultType"
+			},
+			"transcripts": {
+				"type": "array",
+				"items": {
+					"type": "object",
+					"properties": {
+						"speechTextURL": {
+							"type": "string"
+						}
+					}
+				}
+			}
+		}
+	}
+}

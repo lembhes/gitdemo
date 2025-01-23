@@ -1,0 +1,56 @@
+{
+	"201": {
+		"description": "Resource is created",
+		"content": {
+			"application/json": {
+				"schema": {
+					"oneOf": [
+						{
+							"$ref": "#/components/schemas/InferenceParameter"
+						},
+						{
+							"$ref": "#/components/schemas/QuestionnaireScoreInferenceParameter"
+						}
+					]
+				},
+				"examples": {
+					"InferenceParameter": {
+						"value": {
+							"id": "inp_d1ew32r45",
+							"type": "MLScoreInferenceParameter",
+							"filePaths": [
+								"s3://dev-sondeplatform-x-subject-metadata/1b147047-4431-4488-82bb-aabdaae182de/voice-samples/da12a2b4-7755-408d-842e-74d5b379a325.wav"
+							],
+							"requestId": "3c45dc08405e"
+						}
+					},
+					"QuestionnaireScoreInferenceParameter": {
+						"value": {
+							"requestId": "f63d575a-f4d1-4343-9544-b96b1ac16b38",
+							"questionnaireResponse": "qrs_644596b20363",
+							"id": "inp_8e01f3adf",
+							"type": "QuestionnaireScoreInferenceParameter"
+						}
+					}
+				}
+			}
+		}
+	},
+	"202": {
+		"description": "Resource is not completely constrcuted some additional input is required in PUT call of the resource",
+		"content": {
+			"application/json": {
+				"schema": {
+					"$ref": "#/components/schemas/InferenceParameterResponse"
+				},
+				"example": {
+					"id": "inp_d1ew32r45",
+					"filePaths": [
+						"s3://dev-sondeplatform-x-subject-metadata/1b147047-4431-4488-82bb-aabdaae182de/voice-samples/da12a2b4-7755-408d-842e-74d5b379a325.wav"
+					],
+					"requestId": "3c45dc08405e"
+				}
+			}
+		}
+	}
+}

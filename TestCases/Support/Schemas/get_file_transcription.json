@@ -1,0 +1,14 @@
+{
+	"VoiceFeatureTranscriptionResponse": {
+		"type": "object",
+		"properties": {
+			"type": {
+				"$ref": "#/components/schemas/AsyncJobResultType"
+			},
+			"transcripts": {
+				"$ref": "#/components/schemas/transcripts"
+			}
+		}
+	}
+}
+

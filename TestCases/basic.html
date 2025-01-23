@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8"/>
+    <title>Test Report</title>
+    <link href="assets/style.css" rel="stylesheet" type="text/css"/></head>
+  <body onLoad="init()">
+  <b>
+  <script>/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this file,
+ * You can obtain one at http://mozilla.org/MPL/2.0/. */
+
+
+function toArray(iter) {
+    if (iter === null) {
+        return null;
+    }
+    return Array.prototype.slice.call(iter);
+}
+
+function find(selector, elem) { // eslint-disable-line no-redeclare
+    if (!elem) {
+        elem = document;
+    }
+    return elem.querySelector(selector);
+}
+
+function findAll(selector, elem) {
+    if (!elem) {
+        elem = document;
+    }
+    return toArray(elem.querySelectorAll(selector));
+}
+
+function sortColumn(elem) {
+    toggleSortStates(elem);
+    const colIndex = toArray(elem.parentNode.childNodes).indexOf(elem);
+    let key;
+    if (elem.classList.contains('result')) {
+        key = keyResult;
+    } else if (elem.classList.contains('links')) {
+        key = keyLink;
+    } else {
+        key = keyAlpha;
+    }
+    sortTable(elem, key(colIndex));
+}
+
+function showAllExtras() { // eslint-disable-line no-unused-vars
+    findAll('.col-result').forEach(showExtras);
+}
+
+function hideAllExtras() { // eslint-disable-line no-unused-vars
+    findAll('.col-result').forEach(hideExtras);
+}
+
+function showExtras(colresultElem) {
+    const extras = colresultElem.parentNode.nextElementSibling;
+    const expandcollapse = colresultElem.firstElementChild;
+    extras.classList.remove('collapsed');
+    expandcollapse.classList.remove('expander');
+    expandcollapse.classList.add('collapser');
+}
+
+function hideExtras(colresultElem) {
+    const extras = colresultElem.parentNode.nextElementSibling;
+    const expandcollapse = colresultElem.firstElementChild;
+    extras.classList.add('collapsed');
+    expandcollapse.classList.remove('collapser');
+    expandcollapse.classList.add('expander');
+}
+
+function showFilters() {
+    const filterItems = document.getElementsByClassName('filter');
+    for (let i = 0; i < filterItems.length; i++)
+        filterItems[i].hidden = false;
+}
+
+function addCollapse() {
+    // Add links for show/hide all
+    const resulttable = find('table#results-table');
+    const showhideall = document.createElement('p');
+    showhideall.innerHTML = '<a href="javascript:showAllExtras()">Show all details</a> / ' +
+                            '<a href="javascript:hideAllExtras()">Hide all details</a>';
+    resulttable.parentElement.insertBefore(showhideall, resulttable);
+
+    // Add show/hide link to each result
+    findAll('.col-result').forEach(function(elem) {
+        const collapsed = getQueryParameter('collapsed') || 'Passed';
+        const extras = elem.parentNode.nextElementSibling;
+        const expandcollapse = document.createElement('span');
+        if (extras.classList.contains('collapsed')) {
+            expandcollapse.classList.add('expander');
+        } else if (collapsed.includes(elem.innerHTML)) {
+            extras.classList.add('collapsed');
+            expandcollapse.classList.add('expander');
+        } else {
+            expandcollapse.classList.add('collapser');
+        }
+        elem.appendChild(expandcollapse);
+
+        elem.addEventListener('click', function(event) {
+            if (event.currentTarget.parentNode.nextElementSibling.classList.contains('collapsed')) {
+                showExtras(event.currentTarget);
+            } else {
+                hideExtras(event.currentTarget);
+            }
+        });
+    });
+}
+
+function getQueryParameter(name) {
+    const match = RegExp('[?&]' + name + '=([^&]*)').exec(window.location.search);
+    return match && decodeURIComponent(match[1].replace(/\+/g, ' '));
+}
+
+function init () { // eslint-disable-line no-unused-vars
+    resetSortHeaders();
+
+    addCollapse();
+
+    showFilters();
+
+    sortColumn(find('.initial-sort'));
+
+    findAll('.sortable').forEach(function(elem) {
+        elem.addEventListener('click',
+            function() {
+                sortColumn(elem);
+            }, false);
+    });
+}
+
+function sortTable(clicked, keyFunc) {
+    const rows = findAll('.results-table-row');
+    const reversed = !clicked.classList.contains('asc');
+    const sortedRows = sort(rows, keyFunc, reversed);
+    /* Whole table is removed here because browsers acts much slower
+     * when appending existing elements.
+     */
+    const thead = document.getElementById('results-table-head');
+    document.getElementById('results-table').remove();
+    const parent = document.createElement('table');
+    parent.id = 'results-table';
+    parent.appendChild(thead);
+    sortedRows.forEach(function(elem) {
+        parent.appendChild(elem);
+    });
+    document.getElementsByTagName('BODY')[0].appendChild(parent);
+}
+
+function sort(items, keyFunc, reversed) {
+    const sortArray = items.map(function(item, i) {
+        return [keyFunc(item), i];
+    });
+
+    sortArray.sort(function(a, b) {
+        const keyA = a[0];
+        const keyB = b[0];
+
+        if (keyA == keyB) return 0;
+
+        if (reversed) {
+            return keyA < keyB ? 1 : -1;
+        } else {
+            return keyA > keyB ? 1 : -1;
+        }
+    });
+
+    return sortArray.map(function(item) {
+        const index = item[1];
+        return items[index];
+    });
+}
+
+function keyAlpha(colIndex) {
+    return function(elem) {
+        return elem.childNodes[1].childNodes[colIndex].firstChild.data.toLowerCase();
+    };
+}
+
+function keyLink(colIndex) {
+    return function(elem) {
+        const dataCell = elem.childNodes[1].childNodes[colIndex].firstChild;
+        return dataCell == null ? '' : dataCell.innerText.toLowerCase();
+    };
+}
+
+function keyResult(colIndex) {
+    return function(elem) {
+        const strings = ['Error', 'Failed', 'Rerun', 'XFailed', 'XPassed',
+            'Skipped', 'Passed'];
+        return strings.indexOf(elem.childNodes[1].childNodes[colIndex].firstChild.data);
+    };
+}
+
+function resetSortHeaders() {
+    findAll('.sort-icon').forEach(function(elem) {
+        elem.parentNode.removeChild(elem);
+    });
+    findAll('.sortable').forEach(function(elem) {
+        const icon = document.createElement('div');
+        icon.className = 'sort-icon';
+        icon.textContent = 'vvv';
+        elem.insertBefore(icon, elem.firstChild);
+        elem.classList.remove('desc', 'active');
+        elem.classList.add('asc', 'inactive');
+    });
+}
+
+function toggleSortStates(elem) {
+    //if active, toggle between asc and desc
+    if (elem.classList.contains('active')) {
+        elem.classList.toggle('asc');
+        elem.classList.toggle('desc');
+    }
+
+    //if inactive, reset all other functions and add ascending active
+    if (elem.classList.contains('inactive')) {
+        resetSortHeaders();
+        elem.classList.remove('inactive');
+        elem.classList.add('active');
+    }
+}
+
+function isAllRowsHidden(value) {
+    return value.hidden == false;
+}
+
+function filterTable(elem) { // eslint-disable-line no-unused-vars
+    const outcomeAtt = 'data-test-result';
+    const outcome = elem.getAttribute(outcomeAtt);
+    const classOutcome = outcome + ' results-table-row';
+    const outcomeRows = document.getElementsByClassName(classOutcome);
+
+    for(let i = 0; i < outcomeRows.length; i++){
+        outcomeRows[i].hidden = !elem.checked;
+    }
+
+    const rows = findAll('.results-table-row').filter(isAllRowsHidden);
+    const allRowsHidden = rows.length == 0 ? true : false;
+    const notFoundMessage = document.getElementById('not-found-message');
+    notFoundMessage.hidden = !allRowsHidden;
+}
+</script>
+    <h1>basic.html</h1>
+    <p>Report generated on 14-May-2021 at 15:00:33 by <a href="https://pypi.python.org/pypi/pytest-html">pytest-html</a> v3.1.1</p>
+    <h2>Environment</h2>
+    <table id="environment">
+
+      <tr>
+        <td>Packages</b></td>
+        <td>{"pluggy": "0.13.1", "py": "1.10.0", "pytest": "6.2.4"}</td></tr>
+      <tr>
+        <td>Platform</td>
+        <td>Windows-10-10.0.19041-SP0</td></tr>
+      <tr>
+        <td>Plugins</td>
+        <td>{"html": "3.1.1", "metadata": "1.11.0"}</td></tr>
+      <tr>
+        <td>Python</td>
+        <td>3.9.1</td></tr></table>
+    <h2>Summary</h2>
+    <p>3 tests ran in 14.54 seconds. </p>
+    <p class="filter" hidden="true">(Un)check the boxes to filter the results.</p><input checked="true" class="filter" data-test-result="passed" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="passed">3 passed</span>, <input checked="true" class="filter" data-test-result="skipped" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="skipped">0 skipped</span>, <input checked="true" class="filter" data-test-result="failed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="failed">0 failed</span>, <input checked="true" class="filter" data-test-result="error" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="error">0 errors</span>, <input checked="true" class="filter" data-test-result="xfailed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="xfailed">0 expected failures</span>, <input checked="true" class="filter" data-test-result="xpassed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="xpassed">0 unexpected passes</span>
+    <h2>Results</h2>
+    <table id="results-table">
+      <thead id="results-table-head">
+        <tr><b>
+          <th class="sortable result initial-sort" col="result">Result</th>
+          <th class="sortable" col="name">Test</th>
+          <th class="sortable" col="duration">Duration</th>
+          <th class="sortable links" col="links">Links</th></b></tr>
+        <tr hidden="true" id="not-found-message">
+          <th colspan="4">No results found. Try to check the filters</th></tr></thead>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">Test_positive_VIE.py::test_token_api</td>
+          <td class="col-duration">0.68</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log"> ------------------------------Captured stdout call------------------------------ <br/>200 {&#x27;access_token&#x27;: &#x27;eyJraWQiOiI3XC9RTGVHTjV1OEpIMytqMVBrT2JwcTh1TWRZR29sNENPejlKbllrdWlLQT0iLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiIydWN1ZzJkN3NrcGY1dWc0bjlubzI4MzdwZCIsInRva2VuX3VzZSI6ImFjY2VzcyIsInNjb3BlIjoic29uZGUtcGxhdGZvcm1cL3BhcnR5LndyaXRlIHNvbmRlLXBsYXRmb3JtXC9xdWVzdGlvbm5haXJlLXJlc3BvbnNlcy5saXN0IHNvbmRlLXBsYXRmb3JtXC9zdG9yYWdlLndyaXRlIHNvbmRlLXBsYXRmb3JtXC9zY29yZXMucmVhZCBzb25kZS1wbGF0Zm9ybVwvdXNlcnMud3JpdGUgc29uZGUtcGxhdGZvcm1cL21lYXN1cmVzLmxpc3Qgc29uZGUtcGxhdGZvcm1cL3VzZXJzLnJlYWQgc29uZGUtcGxhdGZvcm1cL3F1ZXN0aW9ubmFpcmUtcmVzcG9uc2VzLndyaXRlIHNvbmRlLXBsYXRmb3JtXC9xdWVzdGlvbm5haXJlcy5saXN0IHNvbmRlLXBsYXRmb3JtXC92b2ljZS1mZWF0dXJlLXNjb3Jlcy53cml0ZSBzb25kZS1wbGF0Zm9ybVwvc2NvcmVzLmxpc3Qgc29uZGUtcGxhdGZvcm1cL3BhcnR5LmRlbGV0ZSBzb25kZS1wbGF0Zm9ybVwvdm9pY2UtZmVhdHVyZS1zY29yZXMucmVhZCBzb25kZS1wbGF0Zm9ybVwvc3RvcmFnZS5yZWFkIHNvbmRlLXBsYXRmb3JtXC9zY29yZXMud3JpdGUgc29uZGUtcGxhdGZvcm1cL3VzZXJzLmxpc3Qgc29uZGUtcGxhdGZvcm1cL3F1ZXN0aW9ubmFpcmVzLnJlYWQgc29uZGUtcGxhdGZvcm1cL3BhcnR5LnJlYWQgc29uZGUtcGxhdGZvcm1cL3F1ZXN0aW9ubmFpcmVzLndyaXRlIHNvbmRlLXBsYXRmb3JtXC9tZWFzdXJlcy5yZWFkIHNvbmRlLXBsYXRmb3JtXC9wYXJ0eS5saXN0IHNvbmRlLXBsYXRmb3JtXC9xdWVzdGlvbm5haXJlLXJlc3BvbnNlcy5yZWFkIiwiYXV0aF90aW1lIjoxNjIwOTg0NjMxLCJpc3MiOiJodHRwczpcL1wvY29nbml0by1pZHAudXMtZWFzdC0xLmFtYXpvbmF3cy5jb21cL3VzLWVhc3QtMV95MlBBTlJacHAiLCJleHAiOjE2MjA5ODgyMzEsImlhdCI6MTYyMDk4NDYzMSwidmVyc2lvbiI6MiwianRpIjoiNjljMWY3OTMtMDUyZS00ODVjLThkZmQtMDc1NjM4MzhlZmY2IiwiY2xpZW50X2lkIjoiMnVjdWcyZDdza3BmNXVnNG45bm8yODM3cGQifQ.LCusKzswS0ZesTgOsl16jtlOmk5l3Lv8chFpgvwctwf2lIxRq588BVAtrO9Rkj_aYdT_VgpGskuDdnShN1oRDqVUmIFnYfLpm4Pz03ygEiRvlAkywZdaouxGdHEZqUKuNMEuSm6ey8ZaHlfPdjOf7vEn79VuxUR1OPcQ68dH8qhQdVp00d4oBx0RPT8_YTnRz_2fkL1WkoRq4GhWyJy__k_rn8z5SrJWzxrdslJfLqCqjFyi_xyC6ZTzOD-Ozjvc59D4sU93-iUYx-zjoRtNTzbTrAyA025TXtHMkbTBWBJBZFfdYN5X9JdT9lJU1QkmsxRm_3RWLtr7iRD-djtZEg&#x27;, &#x27;expires_in&#x27;: 3600, &#x27;token_type&#x27;: &#x27;Bearer&#x27;}
+<br/></div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">Test_positive_VIE.py::test_async_score_api</td>
+          <td class="col-duration">1.18</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log"> ------------------------------Captured stdout call------------------------------ <br/>201 {&#x27;requestId&#x27;: &#x27;f87619c0-6a8e-4f48-8bde-19c6f91a59a6&#x27;, &#x27;jobId&#x27;: &#x27;f1c49569-269e-4318-9725-6b4e56110575&#x27;}
+<br/></div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">Test_positive_VIE.py::test_get_async_score_api</td>
+          <td class="col-duration">1.05</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log"> ------------------------------Captured stdout call------------------------------ <br/>200 {&#x27;status&#x27;: &#x27;DONE&#x27;, &#x27;result&#x27;: {&#x27;id&#x27;: &#x27;voice-features-inference-id&#x27;, &#x27;filePath&#x27;: &#x27;wav file path for which voice-features has been extracted&#x27;, &#x27;measureName&#x27;: &#x27;measure for which voice-features scores are calculated&#x27;, &#x27;inferredAt&#x27;: &#x27;ISO timestamp TZ format UTC&#x27;, &#x27;inference&#x27;: [{&#x27;type&#x27;: &#x27;ACOUSTIC&#x27;, &#x27;version&#x27;: &#x27;version&#x27;, &#x27;voiceFeatures&#x27;: [{&#x27;name&#x27;: &#x27;meaningful name for developers&#x27;, &#x27;code&#x27;: &#x27;internal code of feature. For example jitter_jitter0&#x27;, &#x27;score&#x27;: &#x27;score generated for feature for given measure and audio file&#x27;}]}, {&#x27;type&#x27;: &#x27;LINGUISTIC&#x27;, &#x27;version&#x27;: &#x27;version&#x27;, &#x27;voiceFeatures&#x27;: [{&#x27;name&#x27;: &#x27;meaningful name for developers&#x27;, &#x27;code&#x27;: &#x27;internal code of feature. For example jitter_jitter0&#x27;, &#x27;score&#x27;: &#x27;score generated for feature for given measure and audio file&#x27;}]}]}}
+<br/></div></td></tr></tbody></table></b></body></html>

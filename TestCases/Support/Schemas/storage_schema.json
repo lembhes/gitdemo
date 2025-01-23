@@ -1,0 +1,53 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "$id": "http://example.com/example.json",
+    "type": "object",
+    "title": "The root schema",
+    "description": "The root schema comprises the entire JSON document.",
+    "default": {},
+    "examples": [
+        {
+            "signedURL": "https://qa-sondeplatformtest-us-subject-metadata.s3.amazonaws.com/a2e637e2-6625-4ec0-971a-9f94105f30da/voice-samples/98fe5d8c-28da-4756-8a09-83d7ede4d94c.wav?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAXLBVNRN4XPH5VCOK%2F20200804%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20200804T142938Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEN3%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLWVhc3QtMSJHMEUCIQCbbKoc%2BG7oRwNOufY4ouu3XokiLU66bjc4vZmyvYHW1wIgBSIbeiILNAsFiIbf%2B0IRN%2BaAvmzxPGPiMF3EQx%2BSU%2FYqhwIIpv%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARABGgw1MDQ3NzA2OTQwMDkiDB1lV82z7Yo51bKM7irbAefJsvVy4zItmARskBWLVe5KfPAUheJZBRHzVL4%2FMcxRqepvdHs3SZviiYFP0qIixaP1kLRxGmY7VqBiRk67CiIhHpVhj%2BGVOc6uPWSyGEAwdFzQWRr%2F62p5W%2FYJCl%2FbYLobLC3Umt842yzdp7Y7NP%2B%2F06N%2BAJRhfB26jOI9VOJETWCp9Ku1cDECknab1bSA%2Bg%2BDgNlaDJbFgVjLXwCeggjGW6mxDUm6kxclmvMEKGyasBWdt9ECm49fFHuntr8sfGHis3xIbOlFRvnSN%2FsgLZB0VZxgM95wgjHkFDDrsKX5BTrgAUuJLC0wH0oNaXYoyGlItM1kKsVpRG5eX8CJlkGWet%2BMYBBPnGYazWm2zcn7mZwkZ%2F1OBGnKsv83YSTPzhDb73w2oKQmEX92mbeOkgApHfKZZ70ouyeCWAOE8FyfUWtA2BG4m4C21dVOeXmHCnDrX8uUQNf%2FC9SP3eS%2B14yAdXENiV6X2w3qAd6Uv0dD3eBqb5%2FUaW5766FOWt3NlcdQQQX0LHwmbqkVLmZc5S6nzRrWdDev47p7pVjmbsJwMJOLyQmeXFTct2yvwk6rQjUZ6C1NmDuYvNePuaNqssk0bo3M&X-Amz-Signature=21644c4029a673a379f607d3c41ddf201fea009e662a27f251214891f75562a5",
+            "filePath": "s3://qa-sondeplatformtest-us-subject-metadata/a2e637e2-6625-4ec0-971a-9f94105f30da/voice-samples/98fe5d8c-28da-4756-8a09-83d7ede4d94c.wav",
+            "requestId": "449958af-64c3-4e23-b96a-1ae549c62e77"
+        }
+    ],
+    "required": [
+        "signedURL",
+        "filePath",
+        "requestId"
+    ],
+    "properties": {
+        "signedURL": {
+            "$id": "#/properties/signedURL",
+            "type": "string",
+            "title": "The signedURL schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "https://qa-sondeplatformtest-us-subject-metadata.s3.amazonaws.com/a2e637e2-6625-4ec0-971a-9f94105f30da/voice-samples/98fe5d8c-28da-4756-8a09-83d7ede4d94c.wav?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAXLBVNRN4XPH5VCOK%2F20200804%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20200804T142938Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEN3%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLWVhc3QtMSJHMEUCIQCbbKoc%2BG7oRwNOufY4ouu3XokiLU66bjc4vZmyvYHW1wIgBSIbeiILNAsFiIbf%2B0IRN%2BaAvmzxPGPiMF3EQx%2BSU%2FYqhwIIpv%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARABGgw1MDQ3NzA2OTQwMDkiDB1lV82z7Yo51bKM7irbAefJsvVy4zItmARskBWLVe5KfPAUheJZBRHzVL4%2FMcxRqepvdHs3SZviiYFP0qIixaP1kLRxGmY7VqBiRk67CiIhHpVhj%2BGVOc6uPWSyGEAwdFzQWRr%2F62p5W%2FYJCl%2FbYLobLC3Umt842yzdp7Y7NP%2B%2F06N%2BAJRhfB26jOI9VOJETWCp9Ku1cDECknab1bSA%2Bg%2BDgNlaDJbFgVjLXwCeggjGW6mxDUm6kxclmvMEKGyasBWdt9ECm49fFHuntr8sfGHis3xIbOlFRvnSN%2FsgLZB0VZxgM95wgjHkFDDrsKX5BTrgAUuJLC0wH0oNaXYoyGlItM1kKsVpRG5eX8CJlkGWet%2BMYBBPnGYazWm2zcn7mZwkZ%2F1OBGnKsv83YSTPzhDb73w2oKQmEX92mbeOkgApHfKZZ70ouyeCWAOE8FyfUWtA2BG4m4C21dVOeXmHCnDrX8uUQNf%2FC9SP3eS%2B14yAdXENiV6X2w3qAd6Uv0dD3eBqb5%2FUaW5766FOWt3NlcdQQQX0LHwmbqkVLmZc5S6nzRrWdDev47p7pVjmbsJwMJOLyQmeXFTct2yvwk6rQjUZ6C1NmDuYvNePuaNqssk0bo3M&X-Amz-Signature=21644c4029a673a379f607d3c41ddf201fea009e662a27f251214891f75562a5"
+            ]
+        },
+        "filePath": {
+            "$id": "#/properties/filePath",
+            "type": "string",
+            "title": "The filePath schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "s3://qa-sondeplatformtest-us-subject-metadata/a2e637e2-6625-4ec0-971a-9f94105f30da/voice-samples/98fe5d8c-28da-4756-8a09-83d7ede4d94c.wav"
+            ]
+        },
+        "requestId": {
+            "$id": "#/properties/requestId",
+            "type": "string",
+            "title": "The requestId schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "449958af-64c3-4e23-b96a-1ae549c62e77"
+            ]
+        }
+    },
+    "additionalProperties": true
+}

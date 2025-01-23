@@ -1,0 +1,68 @@
+{"CreateUserRequestV2": {
+        "type": "object",
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/UserDemography"
+          }
+        ],
+        "properties": {
+          "device": {
+            "$ref": "#/components/schemas/Device"
+          },
+          "diseases": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Disease"
+            }
+          }
+        },
+        "required": [
+          "device"
+        ]
+      },
+      "UserDemographyForUnknownSupport": {
+        "description": "Demography of your user. Here only deidentified information is required",
+        "type": "object",
+        "properties": {
+          "gender": {
+            "oneOf": [
+              {
+                "type": "string",
+                "enum": [
+                  "MALE",
+                  "FEMALE",
+                  "OTHER"
+                ]
+              },
+              {
+                "type": "string",
+                "enum": [
+                  "UNKNOWN"
+                ]
+              }
+            ]
+          },
+          "yearOfBirth": {
+            "oneOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "string",
+                "enum": [
+                  "UNKNOWN"
+                ]
+              }
+            ]
+          },
+          "language": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "gender",
+          "yearOfBirth"
+        ]
+      }
+
+	  }

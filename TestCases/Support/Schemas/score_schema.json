@@ -1,0 +1,77 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "$id": "http://example.com/example.json",
+    "type": "object",
+    "title": "The root schema",
+    "description": "The root schema comprises the entire JSON document.",
+    "default": {},
+    "examples": [
+        {
+            "measureId": "d553917c-d3f2-4bb0-be17-db81fbc1ddc2",
+            "name": "emotional-fitness",
+            "requestId": "0e423077-0f66-42a6-90af-c31734d93aa9",
+            "score": 73.37670922279358,
+            "scoreId": "851934c4-661e-4499-b22a-18b512619da5"
+        }
+    ],
+    "required": [
+        "measureId",
+        "name",
+        "requestId",
+        "score",
+        "scoreId"
+    ],
+    "properties": {
+        "measureId": {
+            "$id": "#/properties/measureId",
+            "type": "string",
+            "title": "The measureId schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "d553917c-d3f2-4bb0-be17-db81fbc1ddc2"
+            ]
+        },
+        "name": {
+            "$id": "#/properties/name",
+            "type": "string",
+            "title": "The name schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "emotional-fitness"
+            ]
+        },
+        "requestId": {
+            "$id": "#/properties/requestId",
+            "type": "string",
+            "title": "The requestId schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "0e423077-0f66-42a6-90af-c31734d93aa9"
+            ]
+        },
+        "score": {
+            "$id": "#/properties/score",
+            "type": "number",
+            "title": "The score schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0.0,
+            "examples": [
+                73.37670922279358
+            ]
+        },
+        "scoreId": {
+            "$id": "#/properties/scoreId",
+            "type": "string",
+            "title": "The scoreId schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "851934c4-661e-4499-b22a-18b512619da5"
+            ]
+        }
+    },
+    "additionalProperties": true
+}

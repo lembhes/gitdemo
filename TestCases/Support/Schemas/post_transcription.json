@@ -1,0 +1,14 @@
+{
+  "ScorePostAsyncResponse": {
+"type": "object",
+"properties": {
+"requestId": {
+"type": "string"
+},
+"jobId": {
+"type": "string",
+"description": "score job id"
+}
+}
+}
+}

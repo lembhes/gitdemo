@@ -1,0 +1,41 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "$id": "http://example.com/example.json",
+    "type": "object",
+    "title": "The root schema",
+    "description": "The root schema comprises the entire JSON document.",
+    "default": {},
+    "examples": [
+        {
+            "requestId": "f87619c0-6a8e-4f48-8bde-19c6f91a59a6",
+            "jobId": "f1c49569-269e-4318-9725-6b4e56110575"
+        }
+    ],
+    "required": [
+        "requestId",
+        "jobId"
+    ],
+    "properties": {
+        "requestId": {
+            "$id": "#/properties/requestId",
+            "type": "string",
+            "title": "The requestId schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "f87619c0-6a8e-4f48-8bde-19c6f91a59a6"
+            ]
+        },
+        "jobId": {
+            "$id": "#/properties/jobId",
+            "type": "string",
+            "title": "The jobId schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "f1c49569-269e-4318-9725-6b4e56110575"
+            ]
+        }
+    },
+    "additionalProperties": true
+}

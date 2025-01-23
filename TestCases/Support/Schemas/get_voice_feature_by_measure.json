@@ -1,0 +1,55 @@
+{
+"GetVoiceFeatureInfo": {
+        "type": "object",
+        "properties": {
+          "voiceFeatures": {
+            "$ref": "#/components/schemas/VoiceFeatureInfo"
+          },
+          "requestId": {
+            "type": "string"
+          }
+        }
+      },
+      "VoiceFeatureInfo": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string",
+            "enum": [
+              "Acoustic"
+            ]
+          },
+          "version": {
+            "type": "string",
+            "description": "version"
+          },
+          "name": {
+            "type": "string"
+          },
+          "code": {
+            "type": "string"
+          },
+          "range": {
+            "$ref": "#/components/schemas/VoiceFeatureCodeRange"
+          },
+          "unit": {
+            "type": "string"
+          },
+          "requestId": {
+            "type": "string"
+          }
+        }
+      },
+      "VoiceFeatureCodeRange": {
+        "type": "object",
+        "properties": {
+          "min": {
+            "type": "integer"
+          },
+          "max": {
+            "type": "integer"
+          }
+        }
+      }
+
+	  }

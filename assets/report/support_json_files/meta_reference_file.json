@@ -1,0 +1,237 @@
+{
+    "STUDY_KEYS":
+            {
+            "COMMON_META_KEYS": {
+                "app_version": "4.0.3",
+                "task_id": 2342,
+                "access_code": "giri",
+                "activity": "FOCUS",
+                "activity_id": 123,
+                "device_current_date_time": "2018-05-14 12:44:15",
+                "device_current_year": "2018",
+                "device_language": "en-IN",
+                "device_local_country_code": "IN",
+                "device_model": "Simulator",
+                "device_number_of_processors": "4",
+                "device_time_zone": "GMT",
+                "end_time": "2018-05-14 12:44:15",
+                "exercise_id": "1394",
+                "file_ids": "1394_1283_1631",
+                "gender": "Male",
+                "manufacturer": "Apple",
+                "start_time": "2018-05-14 12:44:08",
+                "system_version": "Version 10.2 (Build 14C89)",
+                "year_of_birth": "2000",
+                "study_version_id": 12,
+                "study_name": "",
+                "performed_activity_group_id": "",
+                "activity_group_end_time": "",
+                "activity_group_start_time": "<timestamp>",
+                "schema_version": "v3",
+                "user_id": "12"
+            },
+        
+            "USER_MODE": {
+                "token": "nikhil",
+                "token_version": "12"
+                
+            },
+        
+            "TECHNICIAN_MODE": {
+                "site_id": "18",
+                "site_name": "supriya",
+                "site_specific_id": "memory"
+            },
+            
+            "MEMORY": {
+                "digit_end_time": "2018-11-19T13:26:10Z",
+                "digit_start_time": "2018-11-19T13:26:08Z",
+                "digits": [5, 2, 3],
+                "directions": "YOu",
+                "inter_digit_delay": 200,
+                "post_sentence_pause": 1000,
+                "pre_sentence_pause": 1000,
+                "recording_start_time": "2018-11-19T13:26:04Z",
+                "repeat_sentence_end_time": "2018-11-19T13:26:08Z",
+                "run_count": 4,
+                "run_id": 1,
+                "sentence": "The quick brown fox jumped over the lazy dog",
+                "sentence_end_time": "2018-11-19T13:26:08Z",
+                "sentence_start_time": "2018-11-19T13:26:04Z",
+                "audio_encoder": "ENCODING_PCM_16BIT",
+                "number_of_channel": 1,
+                "raw_data_name": "9C2FCFD6-3034-4E29-B45E-469F3D5B2343.raw",
+                "recording_duration": 7490,
+                "sample_rate": 44100
+            },
+            
+            "SENTENCE_READING" : {
+                "directions": "Directions will go here.",
+                "sentence": "The quick brown fox jumps over the lazy dog.",
+                "audio_encoder": "ENCODING_PCM_16BIT",
+                "number_of_channel": 1,
+                "raw_data_name": "9C2FCFD6-3034-4E29-B45E-469F3D5B2343.raw",
+                "recording_duration": 7490,
+                "sample_rate": 44100
+            },
+            
+            "FREE_SPEECH" : {
+                "directions": "Directions will go here.",
+                "prompt": "How has your day been?",
+                "audio_encoder": "ENCODING_PCM_16BIT",
+                "number_of_channel": 1,
+                "raw_data_name": "9C2FCFD6-3034-4E29-B45E-469F3D5B2343.raw",
+                "recording_duration": 7490,
+                "sample_rate": 44100
+            },
+        
+            "TIMED_RECORDING" : {
+                "timer_duration": 15000,
+                "directions": "Directions will go here.",
+                "prompt": "Enter prompt here..",
+                "number_of_channel": 1,
+                "raw_data_name": "9C2FCFD6-3034-4E29-B45E-469F3D5B2343.raw",
+                "recording_duration": 7490,
+                "sample_rate": 44100
+            },
+        
+            "PASSAGE_READING" : {
+                "directions": "Directions will go here.",
+                "prompt": "prompt ",
+                "number_of_channel": 1,
+                "raw_data_name": "9C2FCFD6-3034-4E29-B45E-469F3D5B2343.raw",
+                "recording_duration": 7490,
+                "sample_rate": 44100
+            },
+        
+        
+            "BASELINE" : {
+                "directions": "Directions will go here.",
+                "prompt": "Say Ahh",
+                "sub_activity": "AHHH",
+                "number_of_channel": 1,
+                "raw_data_name": "9C2FCFD6-3034-4E29-B45E-469F3D5B2343.raw",
+                "recording_duration": 7490,
+                "sample_rate": 44100
+            },
+        
+            "FOCUS" : {
+                "directions": "Directions will go here.",
+                "prompt_colors": ["blue", "yellow", "orange", "yellow", "black", "orange", "blue", "black", "brown", "pink"],
+                "prompt_display_duration": 800,
+                "prompt_text": ["blue", "yellow", "orange", "yellow", "black", "orange", "blue", "black", "brown", "pink"],
+                "run_count": 4,
+                "run_id": 2,
+                "timer_duration": 8000,
+                "number_of_channel": 1,
+                "raw_data_name": "9C2FCFD6-3034-4E29-B45E-469F3D5B2343.raw",
+                "recording_duration": 7490,
+                "sample_rate": 44100
+            },
+        
+            "questionnaire_data" :{
+                "questionnaire_end_time": "2018-11-21T06:46:49Z",
+                "questionnaire_id": "1",
+                "questionnaire_response_id": "5d3e01fc-aa04-47d0-8535-c020725396c4",
+                "questionnaire_start_time": "2018-11-21T06:46:35Z",
+                "test_type": "PHQ9-English-02072018"
+            },
+                
+            "question_responses": {
+                "question_end_time": "2019-10-11T08:53:42Z",
+                "question_number": 1,
+                "question_start_time": "2019-10-11T08:53:38Z",
+                "user_did_skip": false,
+                "answer_type": "text_field",
+                "question": "What is your current age in years?"
+                }
+        },
+    "STUDY_SCORING":
+    {
+       "COMMON_KEYS": { 
+             "study_version_id": 12,
+             "study_name": ""
+             }
+    },
+
+    "HC_KEYS":
+        {
+
+        "COMMON_KEYS": {
+            "activity_group_end_time": "2018-12-03T09:42:37Z",
+            "activity_group_start_time": "2018-12-03T09:42:30Z",
+            "app_version": "2.1.6",
+            "device_current_date_time": "2018-12-03T09:42:37Z",
+            "device_current_year": "2018",
+            "device_language": "English",
+            "device_local_country_code": "IN",
+            "device_model": "JSN-L42",
+            "device_number_of_processors": "8",
+            "device_time_zone": "India Standard Time",
+            "end_time": "2018-12-03T09:42:37Z",
+            "gender": "Male",
+            "manufacturer": "HUAWEI",
+            "performed_activity_group_id": "82c99e01-e70c-4868-ae5d-7df2702b686f",
+            "start_time": "2018-12-03T09:42:30Z",
+            "system_version": "27",
+            "user_id": "70",
+            "schema_version": "v3",
+            "year_of_birth": "1900",
+            "token": "default",
+            "token_version": "12"
+        },
+    
+        "META_ONLY_KEYS": {
+            "activity_id": 687,
+            "activity": "TIMED_RECORDING",
+            "directions": "In this activity",
+            "measure_names": ["Sleepiness", "Sinus Congestion", "Voice Coordination", "Stress"],
+            "measures": [4, 1, 3, 6],
+            "measure_version_ids": [4,5,6],
+            "file_ids": "3b784098-0dac-4841-b755-d19900a6a2d5_687_895",
+            "prompt": "Repeat \u0027BANANA\u0027",
+            "timer_duration": 6000,
+            "audio_encoder": "ENCODING_PCM_16BIT",
+            "number_of_channel": 16,
+            "recording_duration": 7000,
+            "sample_rate": 44100,
+            "raw_data_name": "f3792db0-6f52-456b-9a10-59bfcf0f8978.wav",
+            "task_id": 895
+        },
+    
+        "ANSWERS_ONLY_KEYS": {
+            "refinement_of_inference_id": "33caed13-8572-439e-b4be-5e601479d7f2",
+            "measure_version_id": 4,
+            "measure_id":8
+        },
+    
+        "INFERANCE_DATA": {
+            "id": "33caed13-8572-439e-b4be-5e601479d7f2",
+            "inference_model_id": "1",
+            "inference_score": 2.5896778,
+            "inferred_at": "2018-12-01 14:15:26",
+            "measure_version_id": 4,
+            "performed_activity_group_id": "34c21f73-49bc-43bc-a459-689c5240e74b",
+            "user_id": "60"
+        },
+    
+        "QUESTIONNAIRE_DATA": {
+            "questionnaire_end_time": "2018-12-01T14:15:57Z",
+            "questionnaire_id": "6",
+            "questionnaire_response_id": "55537046-07c6-424f-8d61-e81cf3924f2c",
+            "questionnaire_scoring_system_id": 1,
+            "questionnaire_start_time": "2018-12-01T14:15:57Z",
+            "test_type": "Slider_refinement_questionaire"
+        },
+    
+    
+        "QUESTION_RESPONSES": {
+            "question_end_time": "2018-12-01T14:15:57Z",
+            "question_number": 1,
+            "question_start_time": "2018-12-01T14:15:57Z",
+            "score": 65,
+            "user_did_skip": false
+        }
+    }
+
+}

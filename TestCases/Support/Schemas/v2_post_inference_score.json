@@ -1,0 +1,41 @@
+{
+	"200": {
+		"description": "It returns InferenceScore either in INIT state or CONSTRUCTED state. If state is FAIL then it raise 500 HTTP status scode. <br> Wait for 5 seconds after calling POST /platform/v2/inference/scores and thereafter call this API at subsequent interval of 2 seconds till state == \"INIT\". <br/> On state == \"CONSTRUCTED\" you will get the score",
+		"content": {
+			"application/json": {
+				"schema": {
+					"$ref": "#/components/schemas/MeasureScoreResponse"
+				},
+				"examples": {
+					"INIT": {
+						"value": {
+							"requestId": "3c45dc08405e",
+							"state": "INIT",
+							"id": "scr_34redf451",
+							"type": "MLScore",
+							"measure": {
+								"id": "msr_67rerf231",
+								"name": "respiratory-symptoms-risk",
+								"variant": "v2"
+							}
+						}
+					},
+					"CONSTRUCTED": {
+						"value": {
+							"requestId": "3c45dc08405e",
+							"state": "CONSTRUCTED",
+							"id": "scr_34redf451",
+							"type": "MLScore",
+							"score": 40,
+							"measure": {
+								"id": "msr_67rerf231",
+								"name": "respiratory-symptoms-risk",
+								"variant": "v2"
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

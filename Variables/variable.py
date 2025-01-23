@@ -1,0 +1,2491 @@
+# BASE_URL = "https://dzkruogxwgg83.cloudfront.net/platform/v1"
+#BASE_URL = "https://d1d65rrfia4age.cloudfront.net/platform/v1"
+BASE_URL = "https://d2yh7ouv34mvzw.cloudfront.net/platform/v1"
+BASE_URL_V2 = "https://d2yh7ouv34mvzw.cloudfront.net/platform/v2"
+
+host_url = "https://d2yh7ouv34mvzw.cloudfront.net/platform/v1"
+#---------------------------------------------------------
+#Shruti's client credentials with questionnaire attached
+
+#live credentials
+CLIENT_ID_Shruti = '2dj4hs6h2d7cl0j43mokhotemd'
+CLIENT_SECRET_Shruti = '1ol66bfrthij0iat74v51j1o1lhee5h2t6ur42ggq73mamd27hhj'
+
+#testcredentials
+CLIENT_ID_Shruti_test = '5mjv7kgv0t6rgi01qoqlga58nn'
+CLIENT_SECRET_Shruti_test = 'cpk79ktkia8lp3ef9docfuj3v7ci2q5bk2lk9naepo9n1s8r1nv'
+
+#---------------------------------------------------------
+#Shruti's client credentials without questionnaire attached
+CLIENT_ID_WQ = '6vh0tc3g2okmevi4n2687n6lnt'
+CLIENT_SECRET_WQ ='1eivak5re450k0q8hp4lef211hns2767a256sc77n3orj0tth0lb'
+#base64 : NnZoMHRjM2cyb2ttZXZpNG4yNjg3bjZsbnQ6MWVpdmFrNXJlNDUwazBxOGhwNGxlZjIxMWhuczI3NjdhMjU2c2M3N24zb3JqMHR0aDBsYg==
+
+
+#--- 19oct1@yopmail.com---#
+CLIENT_ID_19OCT1 = '7c29oqmipns9uanofp89q048hb'
+CLIENT_SECRET_19OCT1 ='d762a0ti22bueuqikgnlvk10t3thdptdr6gvqi9nn773eklrfjh'
+
+#--- 28jul1@cool.fr.nf----#
+CLIENT_ID_28jul1 = '2itke354t8ccq18bj5talabjd9'
+CLIENT_SECRET_28jul1 = '167j7fqsil1fh54uksc4drpu2fkjhc9t28bg3ih3496ulqg5v1m0'
+
+
+# Shruti credentials for party is missing
+ #Party not found credentials
+
+ #user name 22oct1@yopmail.com
+CLIENT_ID_PARTYM = '6q4ci0e91bqa28l7gofja5iok4'
+CLIENT_SECRET_PARTYM = '1erpo910im6c06ughv6d0vb2iu3i6tveade8spq2ulsk003rc2qu'
+# url : https://d2yh7ouv34mvzw.cloudfront.net
+ #party id : 3e6d3a3e-8951-4650-856c-56a4a4333247
+
+
+INCORRECT_ACCESS_TOKEN = 'sdsdsdsdsds'
+EXPIRED_ACCESS_TOKEN = 'eyJraWQiOiJ3RVZzK25pc1wvZXJNTlNuZjRXcVNPc1ZzbTZvVm5uR2V3VWNFdkh3dWFraz0iLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiI2dmgwdGMzZzJva21ldmk0bjI2ODduNmxudCIsInRva2VuX3VzZSI6ImFjY2VzcyIsInNjb3BlIjoic29uZGUtcGxhdGZvcm1cL3N0b3JhZ2UucmVhZCBzb25kZS1wbGF0Zm9ybVwvc2NvcmVzLndyaXRlIHNvbmRlLXBsYXRmb3JtXC9xdWVzdGlvbm5haXJlcy5yZWFkIHNvbmRlLXBsYXRmb3JtXC9zdG9yYWdlLndyaXRlIHNvbmRlLXBsYXRmb3JtXC91c2Vycy53cml0ZSBzb25kZS1wbGF0Zm9ybVwvbWVhc3VyZXMubGlzdCBzb25kZS1wbGF0Zm9ybVwvcXVlc3Rpb25uYWlyZS1yZXNwb25zZXMud3JpdGUgc29uZGUtcGxhdGZvcm1cL21lYXN1cmVzLnJlYWQiLCJhdXRoX3RpbWUiOjE2MjEyMzk5MjYsImlzcyI6Imh0dHBzOlwvXC9jb2duaXRvLWlkcC51cy1lYXN0LTEuYW1hem9uYXdzLmNvbVwvdXMtZWFzdC0xX0dDNW5oTzBOaiIsImV4cCI6MTYyMTI0MzUyNiwiaWF0IjoxNjIxMjM5OTI2LCJ2ZXJzaW9uIjoyLCJqdGkiOiI4ZGJiYzJhNC0xOTUyLTRmM2YtODE1ZS05YWZiYTNmYmZlZjAiLCJjbGllbnRfaWQiOiI2dmgwdGMzZzJva21ldmk0bjI2ODduNmxudCJ9.XB3vhAU3UbfxR5aE57Q_8t1DvIITMwWlgfFwewIdzuSNxRXgC1KCbxFc8_6KBO1BpRnEnkPfwcqtbDcsQTTB6BPNIZjpJdILuxq5VyE1yqLbUDQOEh4GSz8NBpjYvb5r25Sv0KmxWMbiPQPsUxQpDA5nI_3IuQ4YG2EBYrBi4NPSzC9n5_2c0WOLDH4YKNRFPKUA9Yihh0q6tDJLAJpkoPiR_BKZpyfQl4TK2ZkawMsGJ_rSW65z-hvEae49e5JFvrL82V9BeR0h1xT_mMBkMtyTDo0DSSLrLUDQnl3f_Uz18Z5Ua1dmwe6TZewWaEyHk-azO6jOhePo0FCq3k6edQ'
+#Sachin's client credentials
+CLIENT_ID = '6jlir063d0kkmcmcp2mi0ksme5'
+CLIENT_SECRET = '597j106j0quh08faeaqmcperh0ndlusl31ensa9clvdie1nkmcl'
+# base64 : NmpsaXIwNjNkMGtrbWNtY3AybWkwa3NtZTU6NTk3ajEwNmowcXVoMDhmYWVhcW1jcGVyaDBuZGx1c2wzMWVuc2E5Y2x2ZGllMW5rbWNs
+
+TOKEN_END_POINT = '/oauth2/token'
+
+VALID_TOKEN_DATA = {
+    'grant_type': 'client_credentials'}
+
+SUBJECT_END_POINT = '/users'
+UPDATE_SUBJECT_END_POINT = 'device'
+
+#Sachin's subject data
+# VALID_SUBJECT_DATA = {
+#   "gender": "MALE",
+#   "yearOfBirth": "1985",
+#   "language": "ENGLISH",
+#   "device": {
+#     "type": "MOBILE",
+#     "manufacturer": "VIVO"
+#   },
+#   "diseases": [
+#     {
+#       "name": "Nasality"
+#     },
+#     {
+#       "name": "Hypertension"
+#     },
+#     {
+#       "name": "CHF"
+#     }
+#   ]
+# }
+
+#Shruti's subject data
+VALID_SUBJECT_DATA ={
+  "gender": "female",
+  "yearOfBirth": "1985",
+  "language": "ENGLISH",
+   "device": {
+    "type": "MOBILE",
+    "manufacturer": "VIVO"
+  },
+  "diseases": [
+    {"name":"test"}
+  ]
+}
+
+VALID_SUBJECT_DATA_V2 ={
+  "gender": "MALE",
+  "yearOfBirth": "1985",
+  "language": "ENGLISH",
+  "device": {
+    "type": "MOBILE",
+    "manufacturer": "VIVO"
+  },
+  "diseases": [
+    {
+      "name": "Nasality"
+    },
+    {
+      "name": "Hypertension"
+    },
+    {
+      "name": "CHF"
+    }
+  ]
+}
+SUBJECT_DATA_1 ={
+  "gender": "female",
+  "yearOfBirth": "1985",
+   "device": "unknown",
+  "diseases": [
+    {"name":"test"}
+  ]
+}
+
+VALID_SUBJECT_DATA_M ={
+  "gender": "male",
+  "yearOfBirth": "1985",
+  "language": "ENGLISH",
+   "device": {
+    "type": "MOBILE",
+    "manufacturer": "VIVO"
+  },
+  "diseases": [
+    {"name":"test"}
+  ]
+}
+
+VALID_SUBJECT_DATA_DEVICE_UNKNOWN = {
+  "gender": "male",
+  "yearOfBirth": "1985",
+  "language": "ENGLISH",
+   "device":  "UNKNOWN",
+  "diseases": [
+    {"name":"test"}
+  ]
+}
+
+
+VALID_SUBJECT_DATA_ALL_M_UNKNOWN = {
+  "gender": "UNKNOWN",
+  "yearOfBirth": "UNKNOWN",
+  "language": "ENGLISH",
+   "device":  "UNKNOWN",
+  "diseases": [
+    {"name":"test"}
+  ]
+}
+
+
+
+
+VALID_SUBJECT_DATA_ALL_M_UNKNOWN_IN_SMALL = {
+  "gender": "unknown",
+  "yearOfBirth": "unknown",
+   "device":  "unknown",
+  "language": "ENGLISH",
+  "diseases": [
+    {"name":"test"}
+  ]
+}
+
+VALID_SUBJECT_DATA_O ={
+  "gender": "other",
+  "yearOfBirth": "1985",
+   "device": {
+    "type": "MOBILE",
+    "manufacturer": "VIVO"
+  },
+  "diseases": [
+    {"name":"test"}
+  ]
+}
+
+UPDATE_SUBJECT_DATA = {
+    "type": "MOBILE",
+    "manufacturer": "VIVO"
+
+}
+
+STORAGE_END_POINT = '/storage/files'
+VALID_STORAGE_DATA = {
+    "fileType": "wav",
+    "countryCode": "US",
+    "subjectIdentifier": "fz6xlATjw"
+}
+
+
+SCORE_END_POINT = '/inference/scores'
+# VALID_SCORE_DATA = {
+#     "subjectIdentifier": "wiNODNcmI",
+#     "fileLocation": "s3://dev-sondeplatform-x-subject-metadata/1b147047-4431-4488-82bb-aabdaae182de/voice-samples/da12a2b4-7755-408d-842e-74d5b379a325.wav",
+#     "measureName": "emotional-resilience"
+# }
+
+#Shruti's data for no questionnaire score pojo with no questionnaire's client credentails
+VALID_SCORE_DATA_WITHOUT_QUESTIONNAIRE = {
+    "userIdentifier": "882314a62",
+    "filePath": "s3://qa-sondeplatformlive-us-subject-metadata/ff1c04e0-0bb6-4861-ab6d-faf857e44f90/voice-samples/b16a777f-f2d9-4d5f-8821-e583dce917ec.wav",
+    "measureName": "optimism"
+}
+MEASURE_END_POINT = '/measures/name/'
+
+MEASURE_NAME_WQ = "optimism"
+INVALID_BASE_URL = "https://d2yh7ouv34mvzw.cloudfront.net/platform/v1/oauth21/token"
+
+INVALID_TOKEN_END_POINT = '/oauth2/token'
+INVALID_TOKEN_DATA = {
+    'grant_type': 'client_credentials',
+    'scope': 'sonde-platform/storage.write sonde-platform/measures.list sonde-platform/'
+             'measures.read sonde-platform/subject.write sonde-platform/scores.write'}
+
+INVALID_BASE_TOKEN = "Basic MzFjcG81Y2dyMGxqb3B2dW9lN28yMnVuYmw6cjg3aHJrbGp1OXY4OTMxZTZiNXUxZXNjZDNrampqaTlmMGVhamloM3N2cDRkZ2pocWs5"
+
+INVALID_SUBJECT_END_POINT = '/invalid'
+INVALID_SUBJECT_DATA = {
+    "gender": 123,
+    "yearOfBirth": 1985,
+    "language": "ENGLISH"
+}
+
+FILE_PATH_NO_AUDIO_FILE = 's3://qa-sondeplatformlive-us-subject-metadata/a2e0928a-b17d-4552-a6c4-af302ce14929/voice-samples/0f6e6aaa-abca-49c9-aed8-a1a623e06001.wav'
+FILE_PATH_WITH_INCORRECT_AUDIO_FILE = 's3://qa-sondeplatformlive-us-subject-metadata/a2e0928a-b17d-4552-a6c4-af302ce14929/voice-samples/2d6e26e9-0b36-4220-8e04-257df11dce13.wav'
+
+INVALID_STORAGE_END_POINT = '/storage/files'
+INVALID_STORAGE_DATA = {
+    "fileType": "wav",
+    "countryCode": "US",
+    "subjectIdentifier": "fz6xlATjw"
+}
+
+INVALID_SCORE_END_POINT = '/inference/scores'
+
+INVALID_SCORE_DATA = {
+    "subjectIdentifier": "wiNODNcmI",
+    "fileLocation": "https://s3.aws.sonde-default-samples/activities/65e56d22498f.wav",
+
+}
+
+INVALID_MEASURE_END_POINT = 'dfsdsjdgsd'
+INVALID_MEASURE_ID_END_POINT = 'gdhsgds'
+
+# files = {'command': open(r'C:\Users\gsc-30427\Desktop\audio\c45164f2-cdc7-48f9-ad08-0fd621ae3be9_82da7ad9-bdeb-4fe6-bc80-138fdb7038d1_1247_1613_Nikhil_marathi_alz', 'rb')}
+#
+#
+INVALID_ACCESS_TOKEN = 'Invalid string of access token'
+
+CONTENT_TYPE_URL_ENCODED = 'application/x-www-form-urlencoded'
+
+CONTENT_TYPE_APPLICATION_JSON = 'application/json'
+
+CONTENT_TYPE_MULTIPART_FORM_DATA   = 'multipart/form-data'
+
+
+DATA_VALID = {'grant_type': 'client_credentials', 'client_id': '39433422erweerww',
+              'scope': 'sonde-platform/storage.write sonde-platform/measures.list sonde-platform/measures.read sonde-platform/subject.write sonde-platform/scores.write'}
+
+STORAGE_REQUEST_text = {"fileType": "wav", "countryCode": "US", "subjectIdentifier": "wiNODNXcm"}
+
+
+
+REQUEST_SCOPE_KEY_BLANK = {'grant_type': 'client_credentials', 'client_id': '39433422erweerww', 'scope': ''}
+
+REQUEST_SCOPE_KEY_INVALID = {'grant_type': 'client_credentials', 'client_id': '39433422erweerww',
+                             'scope': 'sonde-platform/storage123.write sonde-platform/measures.list sonde-platform/measures.read sonde-platform/subject.write sonde-platform/scores.write'}
+
+REQUEST_SCOPE_KEY_MISSING = {'grant_type': 'client_credentials', 'client_id': '39433422erweerww'}
+
+REQUEST_EXTRA_KEY_ADDED = {'auth': 'testauth', 'grant_type': 'client_credentials', 'client_id': '39433422erweerww',
+                           'scope': 'sonde-platform/storage.write sonde-platform/measures.list sonde-platform/measures.read sonde-platform/subject.write sonde-platform/scores.write'}
+
+REQUEST_CLIENT_ID_KEY_BLANK = {'grant_type': 'client_credentials', 'client_id': '',
+                               'scope': 'sonde-platform/storage.write sonde-platform/measures.list sonde-platform/measures.read sonde-platform/subject.write sonde-platform/scores.write'}
+
+REQUEST_CLIENT_ID_KEY_INVALID = {'grant_type': 'client_credentials', 'client_id': '39433422erweeeerww',
+                                 'scope': 'sonde-platform/storage.write sonde-platform/measures.list sonde-platform/measures.read sonde-platform/subject.write sonde-platform/scores.write'}
+
+REQUEST_CLIENT_ID_KEY_MISSING = {'grant_type': 'client_credentials',
+                                 'scope': 'sonde-platform/storage.write sonde-platform/measures.list sonde-platform/measures.read sonde-platform/subject.write sonde-platform/scores.write'}
+
+REQUEST_GRANT_TYPE_KEY_BLANK = {'grant_type': '', 'client_id': '39433422erweerww',
+                                'scope': 'sonde-platform/storage.write sonde-platform/measures.list sonde-platform/measures.read sonde-platform/subject.write sonde-platform/scores.write'}
+
+REQUEST_GRANT_TYPE_KEY_INVALID = {'grant_type': 'client_credentials123', 'client_id': '39433422erweerww',
+                                  'scope': 'sonde-platform/storage.write sonde-platform/measures.list sonde-platform/measures.read sonde-platform/subject.write sonde-platform/scores.write'}
+
+REQUEST_GRANT_TYPE_KEY_MISSING = {'client_id': '39433422erweerww',
+                                  'scope': 'sonde-platform/storage.write sonde-platform/measures.list sonde-platform/measures.read sonde-platform/subject.write sonde-platform/scores.write'}
+
+INVALID_REQUEST_RESPONSE = {"error": "invalid_request"}
+
+INVALID_GRANT_TYPE_RESPONSE = {
+    "error": "unsupported_grant_type"
+}
+
+INVALID_BASE_TOKEN = 'Basic MzFjcG81Y2dyMGxqb3B2dW9lN28yMnVuYmw6cjg3aHJrbGp1OXY4OTMxZTZiNXUxZXNjZDNrampqaThlmMGVhamloM3N2cDRkZ2pocWs51'
+
+EXPIRED_ACCESS_TOKEN = 'eyJraWQiOiIwcDEyN1FaMkhFc1FibWZJaEdxNU95M05jelhQZDE1MmtmKzZtZDByYlwvdz0iLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiIzMWNwbzVjZ3IwbGpvcHZ1b2U3bzIydW5ibCIsInRva2VuX3VzZSI6ImFjY2VzcyIsInNjb3BlIjoic29uZGUtcGxhdGZvcm1cL3N1YmplY3Qud3JpdGUgc29uZGUtcGxhdGZvcm1cL3Njb3Jlcy53cml0ZSBzb25kZS1wbGF0Zm9ybVwvc3RvcmFnZS53cml0ZSBzb25kZS1wbGF0Zm9ybVwvbWVhc3VyZXMubGlzdCBzb25kZS1wbGF0Zm9ybVwvbWVhc3VyZXMucmVhZCIsImF1dGhfdGltZSI6MTU4MjcwMDAyMSwiaXNzIjoiaHR0cHM6XC9cL2NvZ25pdG8taWRwLnVzLWVhc3QtMS5hbWF6b25hd3MuY29tXC91cy1lYXN0LTFfdFpjSWRuS1hiIiwiZXhwIjoxNTgyNzAzNjIxLCJpYXQiOjE1ODI3MDAwMjEsInZlcnNpb24iOjIsImp0aSI6ImQwMWY0NmFiLWZjYWMtNGRiYi04ZWM3LWI4MmQxY2UyN2FjOCIsImNsaWVudF9pZCI6IjMxY3BvNWNncjBsam9wdnVvZTdvMjJ1bmJsIn0.NIKT64Uy6EgmnAkVfrKWidu-p7Jm9K2A8L3WPWVEcG6uibga0a3rGH1hOmMMG-iJxOTDuGSNdtmv4S1GebD9x3gjd3RjOi-t-C_RIjx94AChS0hsAC4FEKqJGElDK_HNAomNiRv-mga2g4sch3PAPEYnMdFC9IAMyr-941of3aNijjdZOlxUGKpYEyilnYW6xkHFrsA29jifbIFYpsgc7nfA9KhL8wt4lA1QsSNOIIxX_gaoaGynn2EB4e8N5TWs0CPBwgmjGBDqLOTA7m3aMWWBWHYFnQwhdOowrhnOsEcYYE-XUW0ZJs86_a2jqv0clApQ3DDBjuffngJz6nS_qQ'
+
+HEADER_KEY_BLANK_VALUE = ''
+
+INVALID_HEADER_RESPONSE = {"error": "invalid_client"}
+
+# Invalid data for Storage API
+
+REQUEST_FILE_TYPE_KEY_BLANK = {"fileType": " ", "countryCode": "US", "subjectIdentifier": "wiNODNXcm"}
+
+REQUEST_FILE_TYPE_KEY_VALUE_INVALID = {"fileType": "jpeg ", "countryCode": "US", "subjectIdentifier": "wiNODNXcm"}
+
+REQUEST_FILE_TYPE_KEY_MISSING = {"countryCode": "US", "subjectIdentifier": "wiNODNXcm"}
+
+STORAGE_REQUEST_EXTRA_KEY_ADDED = {"auth": "auth123", "fileType": "wav ", "countryCode": "US",
+                                   "subjectIdentifier": "wiNODNXcm"}
+
+REQUEST_COUNTRY_CODE_KEY_BLANK = {"fileType": "wav ", "countryCode": " ", "subjectIdentifier": "wiNODNXcm"}
+
+REQUEST_COUNTRY_CODE_KEY_INVALID = {"fileType": "wav", "countryCode": "EU", "subjectIdentifier": "wiNODNXcm"}
+
+REQUEST_COUNTRY_CODE_KEY_MISSING = {"fileType": "wav", "subjectIdentifier": "wiNODNXcm"}
+
+REQUEST_COUNTRY_CODE_NOT_SUPPORTED = {"fileType": "wav ", "countryCode": "GH", "subjectIdentifier": "wiNODNXcm"}
+
+REQUEST_COUNTRY_CODE_NOT_REGISTERED = {"fileType": " wav", "countryCode": "IN", "subjectIdentifier": "wiNODNXcm"}
+
+REQUEST_SUBJECT_IDENTIFIER_KEY_BLANK = {"fileType": "wav", "countryCode": "US", "subjectIdentifier": " "}
+
+REQUEST_SUBJECT_IDENTIFIER_KEY_INVALID = {"fileType": "wav", "countryCode": "US", "subjectIdentifier": "wiNODNXcccmyu7"}
+
+REQUEST_SUBJECT_IDENTIFIER_KEY_MISSING = {"fileType": "wav", "countryCode": "US"}
+
+STORAGE_API_INVALID_REQUEST_RESPONSE = {"error": "invalid_request"}
+
+INVALID_GRANT_TYPE_RESPONSE = {
+    "error": "unsupported_grant_type"
+}
+
+INVALID_BASE_TOKEN = 'Basic MzFjcG81Y2dyMGxqb3B2dW9lN28yMnVuYmw6cjg3aHJrbGp1OXY4OTMxZTZiNXUxZXNjZDNrampqaThlmMGVhamloM3N2cDRkZ2pocWs51'
+
+EXPIRED_ACCESS_TOKEN = 'eyJraWQiOiIwcDEyN1FaMkhFc1FibWZJaEdxNU95M05jelhQZDE1MmtmKzZtZDByYlwvdz0iLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiIzMWNwbzVjZ3IwbGpvcHZ1b2U3bzIydW5ibCIsInRva2VuX3VzZSI6ImFjY2VzcyIsInNjb3BlIjoic29uZGUtcGxhdGZvcm1cL3N1YmplY3Qud3JpdGUgc29uZGUtcGxhdGZvcm1cL3Njb3Jlcy53cml0ZSBzb25kZS1wbGF0Zm9ybVwvc3RvcmFnZS53cml0ZSBzb25kZS1wbGF0Zm9ybVwvbWVhc3VyZXMubGlzdCBzb25kZS1wbGF0Zm9ybVwvbWVhc3VyZXMucmVhZCIsImF1dGhfdGltZSI6MTU4MjcwMDAyMSwiaXNzIjoiaHR0cHM6XC9cL2NvZ25pdG8taWRwLnVzLWVhc3QtMS5hbWF6b25hd3MuY29tXC91cy1lYXN0LTFfdFpjSWRuS1hiIiwiZXhwIjoxNTgyNzAzNjIxLCJpYXQiOjE1ODI3MDAwMjEsInZlcnNpb24iOjIsImp0aSI6ImQwMWY0NmFiLWZjYWMtNGRiYi04ZWM3LWI4MmQxY2UyN2FjOCIsImNsaWVudF9pZCI6IjMxY3BvNWNncjBsam9wdnVvZTdvMjJ1bmJsIn0.NIKT64Uy6EgmnAkVfrKWidu-p7Jm9K2A8L3WPWVEcG6uibga0a3rGH1hOmMMG-iJxOTDuGSNdtmv4S1GebD9x3gjd3RjOi-t-C_RIjx94AChS0hsAC4FEKqJGElDK_HNAomNiRv-mga2g4sch3PAPEYnMdFC9IAMyr-941of3aNijjdZOlxUGKpYEyilnYW6xkHFrsA29jifbIFYpsgc7nfA9KhL8wt4lA1QsSNOIIxX_gaoaGynn2EB4e8N5TWs0CPBwgmjGBDqLOTA7m3aMWWBWHYFnQwhdOowrhnOsEcYYE-XUW0ZJs86_a2jqv0clApQ3DDBjuffngJz6nS_qQ'
+
+HEADER_KEY_BLANK_VALUE = ' '
+
+STORAGE_API_AUTH_HEADER_MISSING_RESPONSE = {
+    "message": "Missing Authentication Token"
+}
+
+STORAGE_API_AUTH_HEADER_INVALID_RESPONSE = {
+    "message": "Authorization header requires 'Credential' parameter. Authorization header requires 'Signature' parameter. Authorization header requires 'SignedHeaders' parameter. Authorization header requires existence of either a 'X-Amz-Date' or a 'Date' header. Authorization={{access_token1}}"
+}
+
+STORAGE_API_AUTH_HEADER_EXPIRED_ACCESS_TOKEN_RESPONSE = {
+    "message": "Authorization header requires 'Credential' parameter. Authorization header requires 'Signature' parameter. Authorization header requires 'SignedHeaders' parameter. Authorization header requires existence of either a 'X-Amz-Date' or a 'Date' header. Authorization={{access_token1}}"
+}
+
+STORAGE_API_CONTENT_TYPE_HEADER_MISSING_RESPONSE = {
+    "message": "Authorization header requires 'Credential' parameter. Authorization header requires 'Signature' parameter. Authorization header requires 'SignedHeaders' parameter. Authorization header requires existence of either a 'X-Amz-Date' or a 'Date' header. Authorization=eyJraWQiOiIwcDEyN1FaMkhFc1FibWZJaEdxNU95M05jelhQZDE1MmtmKzZtZDByYlwvdz0iLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiIzMWNwbzVjZ3IwbGpvcHZ1b2U3bzIydW5ibCIsInRva2VuX3VzZSI6ImFjY2VzcyIsInNjb3BlIjoic29uZGUtcGxhdGZvcm1cL3N1YmplY3Qud3JpdGUgc29uZGUtcGxhdGZvcm1cL3Njb3Jlcy53cml0ZSBzb25kZS1wbGF0Zm9ybVwvc3RvcmFnZS53cml0ZSBzb25kZS1wbGF0Zm9ybVwvbWVhc3VyZXMubGlzdCBzb25kZS1wbGF0Zm9ybVwvbWVhc3VyZXMucmVhZCIsImF1dGhfdGltZSI6MTU4MjcwMDAyMSwiaXNzIjoiaHR0cHM6XC9cL2NvZ25pdG8taWRwLnVzLWVhc3QtMS5hbWF6b25hd3MuY29tXC91cy1lYXN0LTFfdFpjSWRuS1hiIiwiZXhwIjoxNTgyNzAzNjIxLCJpYXQiOjE1ODI3MDAwMjEsInZlcnNpb24iOjIsImp0aSI6ImQwMWY0NmFiLWZjYWMtNGRiYi04ZWM3LWI4MmQxY2UyN2FjOCIsImNsaWVudF9pZCI6IjMxY3BvNWNncjBsam9wdnVvZTdvMjJ1bmJsIn0.NIKT64Uy6EgmnAkVfrKWidu-p7Jm9K2A8L3WPWVEcG6uibga0a3rGH1hOmMMG-iJxOTDuGSNdtmv4S1GebD9x3gjd3RjOi-t-C_RIjx94AChS0hsAC4FEKqJGElDK_HNAomNiRv-mga2g4sch3PAPEYnMdFC9IAMyr-941of3aNijjdZOlxUGKpYEyilnYW6xkHFrsA29jifbIFYpsgc7nfA9KhL8wt4lA1QsSNOIIxX_gaoaGynn2EB4e8N5TWs0CPBwgmjGBDqLOTA7m3aMWWBWHYFnQwhdOowrhnOsEcYYE-XUW0ZJs86_a2jqv0clApQ3DDBjuffngJz6nS_qQ"
+}
+
+COUNTRY_CODE_NOT_SUPPORTED_RESPONSE = {
+
+    "code": "COUNTRY_NOT_SUPPORTED",
+    "message": "The input country GH is not supported"
+}
+
+COUNTRY_NOT_REGISTERED_RESPONSE = {
+    "code": "UNREGISTERED_COUNTRY",
+    "message": "You are not registered for country IN"
+}
+
+############################################################################
+####################### SUBJECT API DATA ###################################
+############################################################################
+
+
+REQUEST_GENDER_KEY_BLANK = {
+    "gender": "",
+    "yearOfBirth": 1985,
+    "language": "ENGLISH"
+}
+
+REQUEST_GENDER_KEY_INVALID = {
+    "gender": "GENDER",
+    "yearOfBirth": 1985,
+    "language": "ENGLISH"
+}
+
+REQUEST_GENDER_KEY_INVALID_DATA_TYPE = {
+    "gender": 1234,
+    "yearOfBirth": 1985,
+    "language": "ENGLISH"
+}
+
+REQUEST_GENDER_KEY_MISSING = {
+    "yearOfBirth": 1985,
+    "language": "ENGLISH"
+}
+
+REQUEST_YEAROFBIRTH_KEY_BLANK = {
+    "gender": "MALE",
+    "yearOfBirth": '',
+    "language": "ENGLISH"
+}
+
+REQUEST_YEAROFBIRTH_KEY_INVALID = {
+    "gender": "MALE",
+    "yearOfBirth": 123456,
+    "language": "ENGLISH"
+}
+
+REQUEST_YEAROFBIRTH_KEY_MISSING = {
+    "gender": "MALE",
+    "language": "ENGLISH"
+}
+
+REQUEST_YEAROFBIRTH_KEY_INVALID_DATA_TYPE = {
+    "gender": "MALE",
+    "yearOfBirth": "2121",
+    "language": "ENGLISH"
+}
+
+REQUEST_LANGUAGE_KEY_BLANK = {
+    "gender": "MALE",
+    "yearOfBirth": 1985,
+    "language": ""
+}
+
+REQUEST_LANGUAGE_KEY_INVALID = {
+    "gender": "MALE",
+    "yearOfBirth": 1985,
+    "language": 1234
+}
+
+REQUEST_LANGUAGE_KEY_MISSING = {
+    "gender": "MALE",
+    "yearOfBirth": 1985
+}
+
+REQUEST_SUBJECT_API_EXTRA_KEY = {
+    "gender": "MALE",
+    "yearOfBirth": 1985,
+    "language": "ENGLISH",
+    "name": "test"
+}
+
+############################################################################
+####################### SCORE API DATA ###################################
+############################################################################
+
+
+REQUEST_SCORE_SUBJECT_IDENTIFIER_KEY_BLANK = {
+    "subjectIdentifier": "",
+    "fileLocation": "s3://dev-sondeplatform-x-subject-metadata/1b147047-4431-4488-82bb-aabdaae182de/voice-samples/da12a2b4-7755-408d-842e-74d5b379a325.wav",
+    "measureName": "emotional-resilience"
+}
+
+REQUEST_SCORE_SUBJECT_IDENTIFIER_KEY_INVALID = {
+    "subjectIdentifier": "wiNODNcmIYWEUWEWDSDS",
+    "fileLocation": "s3://dev-sondeplatform-x-subject-metadata/1b147047-4431-4488-82bb-aabdaae182de/voice-samples/da12a2b4-7755-408d-842e-74d5b379a325.wav",
+    "measureName": "emotional-resilience"
+}
+
+REQUEST_SCORE_SUBJECT_IDENTIFIER_INVALID_DATA_TYPE = {
+    "subjectIdentifier": 12345,
+    "fileLocation": "s3://dev-sondeplatform-x-subject-metadata/1b147047-4431-4488-82bb-aabdaae182de/voice-samples/da12a2b4-7755-408d-842e-74d5b379a325.wav",
+    "measureName": "emotional-resilience"
+}
+
+REQUEST_SCORE_SUBJECT_IDENTIFIER_KEY_MISSING = {
+    "fileLocation": "s3://dev-sondeplatform-x-subject-metadata/1b147047-4431-4488-82bb-aabdaae182de/voice-samples/da12a2b4-7755-408d-842e-74d5b379a325.wav",
+    "measureName": "emotional-resilience"
+}
+
+REQUEST_FILE_LOCATION_KEY_BLANK = {
+    "subjectIdentifier": "wiNODNcmI",
+    "fileLocation": "",
+    "measureName": "emotional-resilience"
+}
+
+REQUEST_FILE_LOCATION_KEY_INVALID = {
+    "subjectIdentifier": "wiNODNcmI",
+    "fileLocation": "s3://devMDSDKSJDKSDASASAS-sondeplatform-x-subject-metadata/1b147047-4431-4488-82bb-aabdaae182de/voice-samples/da12a2b4-7755-408d-842e-74d5b379a325.wav",
+    "measureName": "emotional-resilience"
+}
+
+REQUEST_FILE_LOCATION_KEY_MISSING = {
+    "subjectIdentifier": "wiNODNcmI",
+    "measureName": "emotional-resilience"
+}
+
+REQUEST_MEASURE_NAME_KEY_BLANK = {
+    "subjectIdentifier": "wiNODNcmI",
+    "fileLocation": "s3://dev-sondeplatform-x-subject-metadata/1b147047-4431-4488-82bb-aabdaae182de/voice-samples/da12a2b4-7755-408d-842e-74d5b379a325.wav",
+    "measureName": ""
+}
+
+REQUEST_MEASURE_NAME_KEY_INVALID = {
+    "subjectIdentifier": "wiNODNcmI",
+    "fileLocation": "s3://dev-sondeplatform-x-subject-metadata/1b147047-4431-4488-82bb-aabdaae182de/voice-samples/da12a2b4-7755-408d-842e-74d5b379a325.wav",
+    "measureName": "INVALID"
+}
+
+REQUEST_MEASURE_NAME_KEY_MISSING = {
+    "subjectIdentifier": "wiNODNcmI",
+    "fileLocation": "s3://dev-sondeplatform-x-subject-metadata/1b147047-4431-4488-82bb-aabdaae182de/voice-samples/da12a2b4-7755-408d-842e-74d5b379a325.wav",
+
+}
+
+REQUEST_MEASURE_NAME_KEY_INVALID_DATA_TYPE = {
+    "subjectIdentifier": "wiNODNcmI",
+    "fileLocation": "s3://dev-sondeplatform-x-subject-metadata/1b147047-4431-4488-82bb-aabdaae182de/voice-samples/da12a2b4-7755-408d-842e-74d5b379a325.wav",
+    "measureName": 123455
+}
+
+REQUEST_SCORE_API_EXTRA_KEY = {
+    "subjectIdentifier": "wiNODNcmI",
+    "fileLocation": "s3://dev-sondeplatform-x-subject-metadata/1b147047-4431-4488-82bb-aabdaae182de/voice-samples/da12a2b4-7755-408d-842e-74d5b379a325.wav",
+    "measureName": "emotional-resilience",
+    "NAME": "SACHIN"
+}
+
+MISSING_COUNTRY_CODE_RESPONSE = {
+    "code": "INVALID_REQUEST",
+    "missingFields": [
+        {
+            "fieldName": "countryCode",
+            "message": "countryCodeis required field"
+        }
+    ]
+
+}
+
+INVALID_COUNTRY_CODE_RESPONSE = {
+    "code": "INVALID_REQUEST",
+    "invalidFields": [
+        {
+            "fieldName": "countryCode",
+            "message": "It should be exact two charcters"
+        }
+    ]
+}
+
+MISSING_SUBJECT_IDENTIFIER_RESPONSE = {
+    "code": "INVALID_REQUEST",
+    "missingFields": [
+        {
+            "fieldName": "subjectIdentifier",
+            "message": "subjectIdentifier is  required field"
+        }
+    ]
+
+}
+
+INVALID_SUBJECT_IDENTIFIER_RESPONSE = {
+    "code": "INVALID_REQUEST",
+    "invalidFields": [
+        {
+            "fieldName": "subjectIdentifier",
+            "message": "It should be exact two charcters"
+        }
+    ]
+}
+
+MISSING_FILE_TYPE_RESPONSE = {
+    "code": "INVALID_REQUEST",
+    "missingFields": [
+        {
+            "fieldName": "fileType",
+            "message": "fileType is  required field"
+        }
+    ]
+
+}
+
+
+
+MISSING_REQUIRED_FIELDS = {
+  "questionnaire": {
+    "id": "{{ques_id}}",
+    "language": "{{ques_language}}",
+    "userIdentifier": "{{subjectIdentifier}}",
+    "respondedAt": "1994-11-05T13:15:30Z",
+    "questionResponses": [
+      {
+        "optionIndexes": [
+          0,
+          1
+        ]
+      },
+      {
+        "response": 10
+      }
+    ]
+  }
+}
+
+EXTRA_FIELD_ADDED = {
+  "questionnaire": {
+    "id": "{{ques_id}}",
+    "language": "{{ques_language}}",
+    "userIdentifier": "{{subjectIdentifier}}",
+    "respondedAt": "1994-11-05T13:15:30Z",
+    "questionResponses": [
+      {
+        "optionIndex": 0
+      },
+      {
+        "optionIndexes": [
+          0,
+          1
+        ]
+      },
+      {
+        "response": 10
+      },
+      {
+        "response": "104F"
+      },
+      {
+         "test": "XYZ"
+      }
+    ]
+  }
+}
+
+
+SKIPPED_OPPOSITE = {
+  "questionnaire": {
+    "id": "{{ques_id}}",
+    "language": "{{ques_language}}",
+    "userIdentifier": "{{subjectIdentifier}}",
+    "respondedAt": "1994-11-05T13:15:30Z",
+    "questionResponses": [
+      {
+        "optionIndex": 0
+      },
+      {
+        "optionIndexes": [
+          0,
+          1
+        ]
+      },
+      {
+        "response": 3
+      },
+      {
+        "isSkipped": True
+      }
+    ]
+  }
+}
+
+LIST_INSTEAD_OF_DICT = {
+  "questionnaire": {
+    "id": "{{ques_id}}",
+    "language": "{{ques_language}}",
+    "userIdentifier": "{{subjectIdentifier}}",
+    "respondedAt": "1994-11-05T13:15:30Z",
+    "questionResponses": [
+      [
+        "optionIndex", 0
+      ],
+      {
+        "optionIndexes": [
+          0,
+          1
+        ]
+      },
+      {
+        "response": 10
+      },
+      {
+        "response": "104F"
+      }
+    ]
+  }
+}
+
+EXTRA_VALUE_OPTION_INDEX = {
+  "questionnaire": {
+    "id": "{{ques_id}}",
+    "language": "{{ques_language}}",
+    "userIdentifier": "{{subjectIdentifier}}",
+    "respondedAt": "1994-11-05T13:15:30Z",
+    "questionResponses": [
+      {
+        "optionIndex": [0, 1]
+      },
+      {
+        "optionIndexes": [
+          0,
+          1
+        ]
+      },
+      {
+        "response": 10
+      },
+      {
+        "response": "104F"
+      }
+    ]
+  }
+}
+
+JUMBLED_SEQUENCE = {
+  "questionnaire": {
+    "id": "{{ques_id}}",
+    "language": "{{ques_language}}",
+    "userIdentifier": "{{subjectIdentifier}}",
+    "respondedAt": "1994-11-05T13:15:30Z",
+    "questionResponses": [
+      {
+        "response": 10
+      },
+      {
+        "optionIndexes": [
+          0,
+          1
+        ]
+      },
+      {
+        "response": "104F"
+      },
+      {
+        "optionIndex": 0
+      }
+    ]
+  }
+}
+
+
+OTHER_TEMPERATURE_UNIT = {
+  "questionnaire": {
+    "id": "{{ques_id}}",
+    "language": "{{ques_language}}",
+    "userIdentifier": "{{subjectIdentifier}}",
+    "respondedAt": "1994-11-05T13:15:30Z",
+    "questionResponses": [
+      {
+        "optionIndex": 0
+      },
+      {
+        "optionIndexes": [
+          0,
+          1
+        ]
+      },
+      {
+        "response": 10
+      },
+      {
+        "response": "104f"
+      }
+    ]
+  }
+}
+
+STRING_INSTEAD_OF_INT = {
+  "questionnaire": {
+    "id": "{{ques_id}}",
+    "language": "{{ques_language}}",
+    "userIdentifier": "{{subjectIdentifier}}",
+    "respondedAt": "1994-11-05T13:15:30Z",
+    "questionResponses": [
+      {
+        "optionIndex": 0
+      },
+      {
+        "optionIndexes": [
+          0,
+          1
+        ]
+      },
+      {
+        "response": "text"
+      },
+      {
+        "response": "104F"
+      }
+    ]
+  }
+}
+
+
+
+################## API 3.0 ####################
+TEST_URL = "https://d2yh7ouv34mvzw.cloudfront.net/platform/v1"
+ASYNC_URL='https://d2yh7ouv34mvzw.cloudfront.net/platform/async/v1'
+TEST_ASYNC_URL='https://d2yh7ouv34mvzw.cloudfront.net/platform/async/v1'
+CLIENT_ID_dummy = '2ucug2d7skpf5ug4n9no2837pd'
+CLIENT_SECRET_dummy = 'tj17nmb0fgffvqgita9lpdbiehc48i42tu9ea2bpt4t2n6d354t'
+ASYNC_SCORE_ENDPOINT = '/inference/voice-feature-scores'
+
+ASYNC_SCORE_API_DATA ={
+    "infer": [
+        {
+            "type": "Acoustic",
+            "version": "v1"
+        }
+    ],
+    "filePath": "s3://qa-sondeplatformlive-us-subject-metadata/ff1c04e0-0bb6-4861-ab6d-faf857e44f90/voice-samples/bc23cc2f-5e85-488d-9712-685069094ac3.wav",
+    "measureName": "mental-fitness"
+}
+
+ASYNC_SCORE_API_DATA_V2 ={
+    "infer": [
+        {
+            "type": "Acoustic",
+            "version": "v2"
+        }
+    ],
+    "filePath": "s3://qa-sondeplatformlive-us-subject-metadata/ff1c04e0-0bb6-4861-ab6d-faf857e44f90/voice-samples/bc23cc2f-5e85-488d-9712-685069094ac3.wav",
+    "measureName": "mental-fitness"
+}
+
+
+ASYNC_SCORE_API_DATA_V3 ={
+    "infer": [
+        {
+            "type": "Acoustic",
+            "version": "v2"
+        }
+    ],
+    "filePath": "s3://qa-sondeplatformlive-us-subject-metadata/ff1c04e0-0bb6-4861-ab6d-faf857e44f90/voice-samples/bc23cc2f-5e85-488d-9712-685069094ac3.wav",
+    "measureName": "mental-fitness"
+}
+
+
+
+
+ASYNC_SCORE_API_DATA_TYPE_KEY_MISSING = {
+"infer": [
+        {
+            "version": "v1"
+        }
+    ],
+    "filePath": "s3://qa-sondeplatformlive-us-subject-metadata/ff1c04e0-0bb6-4861-ab6d-faf857e44f90/voice-samples/bc23cc2f-5e85-488d-9712-685069094ac3.wav",
+    "measureName": "mental-fitness"
+}
+
+
+ASYNC_SCORE_API_DATA_VERSION_KEY_MISSING = {
+"infer": [
+        {
+            "type": "Acoustic"
+        }
+    ],
+    "filePath": "s3://qa-sondeplatformlive-us-subject-metadata/ff1c04e0-0bb6-4861-ab6d-faf857e44f90/voice-samples/bc23cc2f-5e85-488d-9712-685069094ac3.wav",
+    "measureName": "mental-fitness"
+}
+
+
+
+ASYNC_SCORE_NO_DATA_REQUEST = { }
+
+
+ASYNC_SCORE_API_DATA_NO_ACCESS_TO_MEASURE ={
+    "infer": [
+        {
+            "type": "Acoustic",
+            "version": "v1"
+        }
+    ],
+    "filePath": "s3://qa-sondeplatformlive-us-subject-metadata/ff1c04e0-0bb6-4861-ab6d-faf857e44f90/voice-samples/bc23cc2f-5e85-488d-9712-685069094ac3.wav",
+    "measureName": "concentration"
+}
+
+ASYNC_SCORE_API_DATA_INVALID_MEASURE ={
+    "infer": [
+        {
+            "type": "Acoustic",
+            "version": "v1"
+        }
+    ],
+    "filePath": "s3://qa-sondeplatformlive-us-subject-metadata/ff1c04e0-0bb6-4861-ab6d-faf857e44f90/voice-samples/bc23cc2f-5e85-488d-9712-685069094ac3.wav",
+    "measureName": "engagement123"
+}
+
+
+ASYNC_SCORE_API_DATA_FILE_WITH_SILENCE ={
+    "infer": [
+        {
+            "type": "Acoustic",
+            "version": "v1"
+        }
+    ],
+    "filePath": "s3://qa-sondeplatformlive-us-subject-metadata/ff1c04e0-0bb6-4861-ab6d-faf857e44f90/voice-samples/64c62f1f-7f7d-4c71-a145-d628316762b4.wav",
+    "measureName": "mental-fitness"
+}
+
+
+ASYNC_SCORE_API_DATA_FILE_WITH_GREATER_LENGTH ={
+    "infer": [
+        {
+            "type": "Acoustic",
+            "version": "v1"
+        }
+    ],
+    "filePath": "s3://qa-sondeplatformlive-us-subject-metadata/ff1c04e0-0bb6-4861-ab6d-faf857e44f90/voice-samples/9d8abb66-ebca-4088-b367-a472059b32b1.wav",
+    "measureName": "mental-fitness"
+}
+
+GET_ASYNC_SCORE_ENDPOINT = '/inference/voice-feature-scores/{JOB_ID}'
+BLANK_JOB_ID = ''     ''
+
+BLANK_JOB_ID_GET_SCORE_ENDPOINT = '/inference/voice-feature-scores/{BLANK_JOB_ID}'
+
+INVALID_GET_SCORE_ENDPOINT = '/inference/voice-feature-scores1/'
+INVALID_JOB_ID = '/1234567890dasdgahdgahg'
+
+INVALID_JOB_ID_ENDPOINT = '/inference/voice-feature-scores/{INVALID_JOB_ID}'
+JOB_ID_AS_INTEGER = '/123'
+
+ASYNC_SCORE_ENDPOINT_BLANK_JOB_ID  = '/inference/voice-feature-scores/'''
+AUDIO_FILE_WITH_SILENCE = 's3://qa-sondeplatformlive-us-subject-metadata/ff1c04e0-0bb6-4861-ab6d-faf857e44f90/voice-samples/1b2038e8-fab1-4ba4-9d44-dd3177d6a9d5_4528ace0-13f6-4855-b2e0-0ca34a5bd1dd_7922_9940_30sec_silence.wav'
+AUDIO_FILE_WITH_LENGTH_GREATER_30 = 'https://qa-sondeplatformlive-us-subject-metadata.s3.amazonaws.com/ff1c04e0-0bb6-4861-ab6d-faf857e44f90/voice-samples/e69f4d6c-81ba-4b6a-9d41-146e4242eb89_adf7c4d3-a3d5-4b55-930c-a09c3b6738b5_8048_10092_32sec.wav'
+NO_AUDIO_FILE_ON_GIVEN_FILE_PATH  = 's3://qa-sondeplatformlive-us-subject-metadata/ff1c04e0-0bb6-4861-ab6d-faf857e44f90/voice-samples/be1b0af6-6266-4751-bcf3-0a55ca2f629d.wav'
+FILE_PATH_WITH_INVALID_FILE = 's3://qa-sondeplatformlive-us-subject-metadata/ff1c04e0-0bb6-4861-ab6d-faf857e44f90/voice-samples/0a36e099-7b14-4bf8-879b-0e8e7c853fa6.wav'
+#------ GET VOICE FEATURES BY MEASURE_NAME--------#
+FEATURE_BY_MEASURE_NAME = 'mental-fitness'
+FEATURE_BY_MEASURE_NAME_INVALID = 'abc'
+FEATURE_BY_MEASURE_NAME_NO_ACCESS ='concentration'
+FEATURE_BY_MEASURE_NAME_BLANK = '' ''
+FEATURE_BY_MEASURE_NAME_INTEGER = 123
+
+GET_VOICE_FEATURE_MEASURE_ENDPOINT = '/measures/name/{FEATURE_BY_MEASURE_NAME}/voice-features'
+GET_VOICE_FEATURE_MEASURE_ENDPOINT_INVALID = '/measures/name/{FEATURE_BY_MEASURE_NAME}/voice-features1'
+GET_VOICE_FEATURE_MEASURE_ENDPOINT_NO_ACCESS_MEASURE = '/measures/name/{FEATURE_BY_MEASURE_NAME_NO_ACCESS}/voice-features'
+GET_VOICE_FEATURE_MEASURE_ENDPOINT_INVALID_MEASURE = '/measures/name/{FEATURE_BY_MEASURE_NAME_INVALID}/voice-features'
+GET_VOICE_FEATURE_MEASURE_ENDPOINT_BLANK_MEASURE_NAME= '/measures/name/{FEATURE_BY_MEASURE_NAME_BLANK}/voice-features'
+GET_VOICE_FEATURE_MEASURE_ENDPOINT_MEASURE_NAME_IS_MISSING= '/measures/name//voice-features'
+GET_VOICE_FEATURE_MEASURE_ENDPOINT_MEASURE_NAME_IS_INTEGER= '/measures/name/{FEATURE_BY_MEASURE_NAME_INTEGER}/voice-features'
+
+
+############ API_3.0 upgrade for below APIs ##############
+
+VOICE_FEATURE_SCORE_ENDPOINT = '/inference/voice-feature-scores'
+VOICE_FEATURE_SCORE_ENDPOINT_INVALID = '/inference/voice-feature-scorees'
+VOICE_FEATURE_SCORE_ID_INVALID = '3eb5480a-1393-4bb3-bc2e-bb840d9457438'
+VOICE_FEATURE_SCORE_ID_BLANK = '"  "'
+VOICE_FEATURE_SCORE_ENDPOINT_BLANK = '/inference/voice-feature-scores/{VOICE_FEATURE_SCORE_ID_BLANK}'
+VOICE_FEATURE_SCORE_ID_AS_INTEGER = '123'
+VOICE_FEATURE_SCORE_ID_NO_ACCESS = '89e85b9d-65c4-45f2-96f3-0c03d039deba'
+
+
+FROM_TIME = '2021-05-08T04:14:12Z'
+TO_TIME = '2021-05-08T04:35:12Z'
+USER_IDENTIFIER = 'f6c80c590'
+SUB_IDENTIFIER_NO_DATA = '1685c3936'
+
+
+TO_TIME_VALID_DATA  = ''
+FROM_TIME_VALID_DATA = ''
+
+FROM_TIME_VALID_DATA_INCORRECT_DATE_FORMAT = ''
+TO_TIME_VALID_DATA_INCORRECT_DATE_FORMAT = ''
+
+
+SUB_IDENTIFIER_VALID1 = '68a33b5fc'
+SUB_IDENTIFIER_VALID2 = '58b2d96f6'
+SUB_IDENTIFIER_INVALID = 'd61725cdb123'
+
+
+#All params valid test data
+
+SUB_IDENTIFIER_A = 'edc1997b0'
+FROM_TIME_ALL = '2021-06-01T06:23:47Z'
+TO_TIME_ALL = '2021-06-01T06:32:34Z'
+PAGE_INEDX_ALL = '0'
+
+
+
+FROM_TIME_ALL_INCORRECT_DATE_FORMAT = '2021-06-01A06:23:47'
+TO_TIME_ALL_INCORRECT_DATE_FORMAT = '2021-06-01A06:32:34'
+
+
+FROM_TIME_NO_DATA = '2020-06-01T06:23:47Z'
+TO_TIME_NO_DATA = '2020-06-01T06:32:34Z'
+
+
+################ API 3.1 TranscriptionService api ####################
+
+
+TRANSCRIPTION_ENDPOINT = '/transcriptions'
+CLIENT_ID_TRANSCRIPTION = '2dj4hs6h2d7cl0j43mokhotemd'
+CLIENT_SECRET_TRANSCRIPTION = '1ol66bfrthij0iat74v51j1o1lhee5h2t6ur42ggq73mamd27hhj'
+CLIENT_ID_NOACCESS_TRANSCRIPTION = '2dj4hs6h2d7cl0j43mokhotemd'
+CLIENT_SECRET_NOACCESS_TRANSCRIPTION = '1ol66bfrthij0iat74v51j1o1lhee5h2t6ur42ggq73mamd27hhj'
+
+ASYNC_TRANSCRIPTION_NO_DATA_REQUEST = { }
+
+GET_TRANSCRIPTION_ENDPOINT = '/transcriptions/'
+BLANK_ASYNC_JOB_ID = ''     ''
+BLANK_JOB_ID_GET_TRANSCRIPTION_ENDPOINT = '/transcriptions/{BLANK_ASYNC_JOB_ID}'
+MISSING_GET_TRANSCRIPTION_ENDPOINT = '/transcriptions/'
+INVALID_ASYNC_JOB_ID = '/1234567890dasdgahdgahg'
+INVALID_ASYNC_JOB_ID_GET_TRANSCRIPTION_ENDPOINT = '/transcriptions/{INVALID_ASYNC_JOB_ID}'
+
+NO_ACCESS_ASYNC_JOB_ID_GET_TRANSCRIPTION_ENDPOINT = '/transcriptions/{NO_ACCESS_TO_JOB_ID}'
+INVALID_GET_TRANSCRIPTION_ENDPOINT = '/transcriptio/'
+ASYNC_JOB_ID_AS_INTEGER = '123'
+INVALID_JOB_ID_MINOR_CHANGE = '7898b17d-4aee-475e-abda-bb624b21bfdd'
+INTEGER_GET_TRANSCRIPTION_ENDPOINT = '/transcriptions/{ASYNC_JOB_ID_AS_INTEGER}'
+
+STORAGE_TRANSCRIPTION_ENDPOINT = '/storage/files/{filePath}/transcriptions'
+INVALID_STORAGE_TRANSCRIPTION_ENDPOINT = '/storage/files/{filePath}/transcriptions1234'
+INVALID_FILE_PATH="1234"
+INVALID_FILEPATH_STORAGE_TRANSCRIPTION_ENDPOINT = '/storage/files/{INVALID_FILE_PATH}/transcriptions'
+BLANK_FILE_PATH=" "
+INVALID_FILEPATH_STORAGE_TRANSCRIPTION_ENDPOINT_BLANK = '/storage/files/{BLANK_FILE_PATH}/transcriptions'
+
+ACCESS_TOKEN_NOACCESS_FOR_TRANSCRIPTION='eyJraWQiOiJ3RVZzK25pc1wvZXJNTlNuZjRXcVNPc1ZzbTZvVm5uR2V3VWNFdkh3dWFraz0iLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiI0bTZzNmdnZDFwaDdsZjVlMTdsbWIyb2cxdCIsInRva2VuX3VzZSI6ImFjY2VzcyIsInNjb3BlIjoic29uZGUtcGxhdGZvcm1cL3N0b3JhZ2Uud3JpdGUgc29uZGUtcGxhdGZvcm1cL3VzZXJzLndyaXRlIHNvbmRlLXBsYXRmb3JtXC9tZWFzdXJlcy5saXN0IHNvbmRlLXBsYXRmb3JtXC91c2Vycy5yZWFkIHNvbmRlLXBsYXRmb3JtXC9xdWVzdGlvbm5haXJlLXJlc3BvbnNlcy53cml0ZSBzb25kZS1wbGF0Zm9ybVwvdm9pY2UtZmVhdHVyZS1zY29yZXMud3JpdGUgc29uZGUtcGxhdGZvcm1cL3ZvaWNlLWZlYXR1cmUtc2NvcmVzLmxpc3Qgc29uZGUtcGxhdGZvcm1cL3Njb3Jlcy5saXN0IHNvbmRlLXBsYXRmb3JtXC92b2ljZS1mZWF0dXJlLXNjb3Jlcy5yZWFkIHNvbmRlLXBsYXRmb3JtXC9zdG9yYWdlLnJlYWQgc29uZGUtcGxhdGZvcm1cL3Njb3Jlcy53cml0ZSBzb25kZS1wbGF0Zm9ybVwvcXVlc3Rpb25uYWlyZXMucmVhZCBzb25kZS1wbGF0Zm9ybVwvbWVhc3VyZXMucmVhZCBzb25kZS1wbGF0Zm9ybVwvcXVlc3Rpb25uYWlyZS1yZXNwb25zZXMucmVhZCIsImF1dGhfdGltZSI6MTYyMzY1NzEwNSwiaXNzIjoiaHR0cHM6XC9cL2NvZ25pdG8taWRwLnVzLWVhc3QtMS5hbWF6b25hd3MuY29tXC91cy1lYXN0LTFfR0M1bmhPME5qIiwiZXhwIjoxNjIzNjYwNzA1LCJpYXQiOjE2MjM2NTcxMDUsInZlcnNpb24iOjIsImp0aSI6Ijc4YzdhNTc2LWRmYjMtNGY4MC05MDc2LWE4MWFlZjNlYWRkMiIsImNsaWVudF9pZCI6IjRtNnM2Z2dkMXBoN2xmNWUxN2xtYjJvZzF0In0.BjKmafqCuRgJxtZEfTgsXaf6XjIN6Wk_3_thJRh_tOhegGZQgxsOej2Q7sY0_paiU8vO8H8Qdi2vU-0FPoUQ4NOXhnMJAaIsGrWGFlK6Wgp9mLk0O3Ag-zl3zaYMa72jBl6u9Bf9d7mZwCHO88lpnRik-197Kan6-2UjdkMnov2tsEWMy2S2JvN5j3WclhvfapBnew3O4atC0MMft4j5Sa2MI1FdYZRX8l9Nuk9blpWYigXdFXX5GSGxKXJdAETzqu7bNsviKHYtaWpBzNL41N-_x3d5HwQMrZ5y_FX3hV_GjWY8uOvI3CVYkfgJHPBeSlCmDxjVQOAAL3Tw6H5OfA'
+
+NO_ACCESS_TO_FILE_PATH_FOR_TRANSCRIPTION = 's3://qa-sondeplatformlive-us-subject-metadata/381aef74-74e8-4c00-a5de-9d2ff655007f/voice-samples/12cbabff-3f59-4972-8bc6-39a76f786fb1.wav'
+# shruti's comment
+VALID_FILE_PATH_MISSING_FILE = 's3://qa-sondeplatformlive-us-subject-metadata/ff1c04e0-0bb6-4861-ab6d-faf857e44f90/voice-samples/84aab030-76fd-4611-aa74-38ba8fe1ecb6.wav'
+
+FILE_PATH_ENCODED_SAVED = 's3%3A%2F%2Fqa-sondeplatformlive-us-subject-metadata%2Fff1c04e0-0bb6-4861-ab6d-faf857e44f90%2Fvoice-samples%2F6f4ab68a-c6fa-4af2-88dc-2f71d7e71f21.wav'
+
+
+FILE_PATH_ENCODED_SAVED1 = 's3%3A%2F%2Fqa-sondeplatformlive-us-subject-metadata%2Fff1c04e0-0bb6-4861-ab6d-faf857e44f90%2Fvoice-samples%2F4c39d1a1-bb97-4820-afc2-281f48fbb645.wav'
+
+FILE_PATH_ENCODED_SAVED2 = 's3%3A%2F%2Fqa-sooondeplatformlive-us-subject-metadata%2Fff1c04e0-0bb6-4861-ab6d-faf857e44f90%2Fvoice-samples%2F4c39d1a1-bb97-4820-afc2-281f48fbb645.wav'
+
+FILE_PATH_WITHOUT_ENCODING = 's3://qa-sondeplatformlive-us-subject-metadata/ff1c04e0-0bb6-4861-ab6d-faf857e44f90/voice-samples/4c39d1a1-bb97-4820-afc2-281f48fbb645.wavs'
+
+FILE_PATH_AS_INTEGER = 123
+
+FILE_PATH_AS_STRING = 'abc'
+
+FILE_PATH_BLANK = '"       "'
+
+FILE_PATH_BOTH_VALID ='s3%3A%2F%2Fqa-sondeplatformlive-us-subject-metadata%2Fff1c04e0-0bb6-4861-ab6d-faf857e44f90%2Fvoice-samples%2F6f4ab68a-c6fa-4af2-88dc-2f71d7e71f21.wav,s3%3A%2F%2Fqa-sondeplatformlive-us-subject-metadata%2Fff1c04e0-0bb6-4861-ab6d-faf857e44f90%2Fvoice-samples%2F4c39d1a1-bb97-4820-afc2-281f48fbb645.wav'
+FILE_PATHS_ONE_FILE_TRANSCRIPTION_PRESENT = 's3%3A%2F%2Fqa-sondeplatformlive-us-subject-metadata%2Fff1c04e0-0bb6-4861-ab6d-faf857e44f90%2Fvoice-samples%2F6f4ab68a-c6fa-4af2-88dc-2f71d7e71f21.wav,s3%3A%2F%2Fqa-sondeplatformlive-us-subject-metadata%2Fff1c04e0-0bb6-4861-ab6d-faf857e44f90%2Fvoice-samples%2F481e45a9-c1b7-49c9-9e88-3eb992e693ff.wav'
+FILE_PATH_VALID_INVALID = 's3%3A%2F%2Fqa-sondeplatformlive-us-subject-metadata%2Fff1c04e0-0bb6-4861-ab6d-faf857e44f90%2Fvoice-samples%2F6f4ab68a-c6fa-4af2-88dc-2f71d7e71f21.wav,s3%3A%2F%2Fqa-sooondeplatformlive-us-subject-metadata%2Fff1c04e0-0bb6-4861-ab6d-faf857e44f90%2Fvoice-samples%2F4c39d1a1-bb97-4820-afc2-281f48fbb645.wav'
+FILE_PATH_INVALID_FILE_TRANSCRIPTION = 's3:///qa-sondeplatformlive-us-subject-metadata/ff1c04e0-0bb6-4861-ab6d-faf857e44f90/voice-samples/471954b3-09a8-4ba0-8f33-98ee744d2a68.wav'
+
+TRANSCRIPTION_NOT_FOUND = 's3%3A%2F%2Fqa-sondeplatformlive-us-subject-metadata%2Fff1c04e0-0bb6-4861-ab6d-faf857e44f90%2Fvoice-samples%2F481e45a9-c1b7-49c9-9e88-3eb992e693ff.wav'
+
+FILE_PATH_MISSING_AUDIO_FILE ='s3%3A%2F%2Fqa-sondeplatformlive-us-subject-metadata%2Fff1c04e0-0bb6-4861-ab6d-faf857e44f90%2Fvoice-samples%2F618ea43e-02bb-4134-b9da-bbe80dc3e70d.wav'
+#s3://dev-sondeplatform-x-subject-metadata/1b147047-4431-4488-82bb-aabdaae182de/voice-samples/da12a2b4-7755-408d-842e-74d5b379a325.wav
+
+MAX_FILE_PATHS ='s3%3A%2F%2Fqa-sondeplatformlive-us-subject-metadata%2Fff1c04e0-0bb6-4861-ab6d-faf857e44f90%2Fvoice-samples%2F6f4ab68a-c6fa-4af2-88dc-2f71d7e71f21.wav,s3%3A%2F%2Fqa-sondeplatformlive-us-subject-metadata%2Fff1c04e0-0bb6-4861-ab6d-faf857e44f90%2Fvoice-samples%2F6f4ab68a-c6fa-4af2-88dc-2f71d7e71f21.wav,s3%3A%2F%2Fqa-sondeplatformlive-us-subject-metadata%2Fff1c04e0-0bb6-4861-ab6d-faf857e44f90%2Fvoice-samples%2F6f4ab68a-c6fa-4af2-88dc-2f71d7e71f21.wav,s3%3A%2F%2Fqa-sondeplatformlive-us-subject-metadata%2Fff1c04e0-0bb6-4861-ab6d-faf857e44f90%2Fvoice-samples%2F6f4ab68a-c6fa-4af2-88dc-2f71d7e71f21.wav,s3%3A%2F%2Fqa-sondeplatformlive-us-subject-metadata%2Fff1c04e0-0bb6-4861-ab6d-faf857e44f90%2Fvoice-samples%2F6f4ab68a-c6fa-4af2-88dc-2f71d7e71f21.wav,s3%3A%2F%2Fqa-sondeplatformlive-us-subject-metadata%2Fff1c04e0-0bb6-4861-ab6d-faf857e44f90%2Fvoice-samples%2F6f4ab68a-c6fa-4af2-88dc-2f71d7e71f21.wav,s3%3A%2F%2Fqa-sondeplatformlive-us-subject-metadata%2Fff1c04e0-0bb6-4861-ab6d-faf857e44f90%2Fvoice-samples%2F6f4ab68a-c6fa-4af2-88dc-2f71d7e71f21.wav,s3%3A%2F%2Fqa-sondeplatformlive-us-subject-metadata%2Fff1c04e0-0bb6-4861-ab6d-faf857e44f90%2Fvoice-samples%2F6f4ab68a-c6fa-4af2-88dc-2f71d7e71f21.wav,s3%3A%2F%2Fqa-sondeplatformlive-us-subject-metadata%2Fff1c04e0-0bb6-4861-ab6d-faf857e44f90%2Fvoice-samples%2F6f4ab68a-c6fa-4af2-88dc-2f71d7e71f21.wav,s3%3A%2F%2Fqa-sondeplatformlive-us-subject-metadata%2Fff1c04e0-0bb6-4861-ab6d-faf857e44f90%2Fvoice-samples%2F6f4ab68a-c6fa-4af2-88dc-2f71d7e71f21.wav,s3%3A%2F%2Fqa-sondeplatformlive-us-subject-metadata%2Fff1c04e0-0bb6-4861-ab6d-faf857e44f90%2Fvoice-samples%2F6f4ab68a-c6fa-4af2-88dc-2f71d7e71f21.wav,s3%3A%2F%2Fqa-sondeplatformlive-us-subject-metadata%2Fff1c04e0-0bb6-4861-ab6d-faf857e44f90%2Fvoice-samples%2F6f4ab68a-c6fa-4af2-88dc-2f71d7e71f21.wav,s3%3A%2F%2Fqa-sondeplatformlive-us-subject-metadata%2Fff1c04e0-0bb6-4861-ab6d-faf857e44f90%2Fvoice-samples%2F6f4ab68a-c6fa-4af2-88dc-2f71d7e71f21.wav,s3%3A%2F%2Fqa-sondeplatformlive-us-subject-metadata%2Fff1c04e0-0bb6-4861-ab6d-faf857e44f90%2Fvoice-samples%2F6f4ab68a-c6fa-4af2-88dc-2f71d7e71f21.wav,s3%3A%2F%2Fqa-sondeplatformlive-us-subject-metadata%2Fff1c04e0-0bb6-4861-ab6d-faf857e44f90%2Fvoice-samples%2F6f4ab68a-c6fa-4af2-88dc-2f71d7e71f21.wav,s3%3A%2F%2Fqa-sondeplatformlive-us-subject-metadata%2Fff1c04e0-0bb6-4861-ab6d-faf857e44f90%2Fvoice-samples%2F6f4ab68a-c6fa-4af2-88dc-2f71d7e71f21.wav,s3%3A%2F%2Fqa-sondeplatformlive-us-subject-metadata%2Fff1c04e0-0bb6-4861-ab6d-faf857e44f90%2Fvoice-samples%2F6f4ab68a-c6fa-4af2-88dc-2f71d7e71f21.wav,s3%3A%2F%2Fqa-sondeplatformlive-us-subject-metadata%2Fff1c04e0-0bb6-4861-ab6d-faf857e44f90%2Fvoice-samples%2F6f4ab68a-c6fa-4af2-88dc-2f71d7e71f21.wav,s3%3A%2F%2Fqa-sondeplatformlive-us-subject-metadata%2Fff1c04e0-0bb6-4861-ab6d-faf857e44f90%2Fvoice-samples%2F6f4ab68a-c6fa-4af2-88dc-2f71d7e71f21.wav,s3%3A%2F%2Fqa-sondeplatformlive-us-subject-metadata%2Fff1c04e0-0bb6-4861-ab6d-faf857e44f90%2Fvoice-samples%2F6f4ab68a-c6fa-4af2-88dc-2f71d7e71f21.wav,s3%3A%2F%2Fqa-sondeplatformlive-us-subject-metadata%2Fff1c04e0-0bb6-4861-ab6d-faf857e44f90%2Fvoice-samples%2F6f4ab68a-c6fa-4af2-88dc-2f71d7e71f21.wav,s3%3A%2F%2Fqa-sondeplatformlive-us-subject-metadata%2Fff1c04e0-0bb6-4861-ab6d-faf857e44f90%2Fvoice-samples%2F6f4ab68a-c6fa-4af2-88dc-2f71d7e71f21.wav,s3%3A%2F%2Fqa-sondeplatformlive-us-subject-metadata%2Fff1c04e0-0bb6-4861-ab6d-faf857e44f90%2Fvoice-samples%2F6f4ab68a-c6fa-4af2-88dc-2f71d7e71f21.wav,s3%3A%2F%2Fqa-sondeplatformlive-us-subject-metadata%2Fff1c04e0-0bb6-4861-ab6d-faf857e44f90%2Fvoice-samples%2F6f4ab68a-c6fa-4af2-88dc-2f71d7e71f21.wav,s3%3A%2F%2Fqa-sondeplatformlive-us-subject-metadata%2Fff1c04e0-0bb6-4861-ab6d-faf857e44f90%2Fvoice-samples%2F6f4ab68a-c6fa-4af2-88dc-2f71d7e71f21.wav,s3%3A%2F%2Fqa-sondeplatformlive-us-subject-metadata%2Fff1c04e0-0bb6-4861-ab6d-faf857e44f90%2Fvoice-samples%2F6f4ab68a-c6fa-4af2-88dc-2f71d7e71f21.wav,s3%3A%2F%2Fqa-sondeplatformlive-us-subject-metadata%2Fff1c04e0-0bb6-4861-ab6d-faf857e44f90%2Fvoice-samples%2F6f4ab68a-c6fa-4af2-88dc-2f71d7e71f21.wav,s3%3A%2F%2Fqa-sondeplatformlive-us-subject-metadata%2Fff1c04e0-0bb6-4861-ab6d-faf857e44f90%2Fvoice-samples%2F6f4ab68a-c6fa-4af2-88dc-2f71d7e71f21.wav,s3%3A%2F%2Fqa-sondeplatformlive-us-subject-metadata%2Fff1c04e0-0bb6-4861-ab6d-faf857e44f90%2Fvoice-samples%2F6f4ab68a-c6fa-4af2-88dc-2f71d7e71f21.wav,s3%3A%2F%2Fqa-sondeplatformlive-us-subject-metadata%2Fff1c04e0-0bb6-4861-ab6d-faf857e44f90%2Fvoice-samples%2F6f4ab68a-c6fa-4af2-88dc-2f71d7e71f21.wav,s3%3A%2F%2Fqa-sondeplatformlive-us-subject-metadata%2Fff1c04e0-0bb6-4861-ab6d-faf857e44f90%2Fvoice-samples%2F6f4ab68a-c6fa-4af2-88dc-2f71d7e71f21.wav,s3%3A%2F%2Fqa-sondeplatformlive-us-subject-metadata%2Fff1c04e0-0bb6-4861-ab6d-faf857e44f90%2Fvoice-samples%2F6f4ab68a-c6fa-4af2-88dc-2f71d7e71f21.wav,s3%3A%2F%2Fqa-sondeplatformlive-us-subject-metadata%2Fff1c04e0-0bb6-4861-ab6d-faf857e44f90%2Fvoice-samples%2F6f4ab68a-c6fa-4af2-88dc-2f71d7e71f21.wav,s3%3A%2F%2Fqa-sondeplatformlive-us-subject-metadata%2Fff1c04e0-0bb6-4861-ab6d-faf857e44f90%2Fvoice-samples%2F6f4ab68a-c6fa-4af2-88dc-2f71d7e71f21.wav,s3%3A%2F%2Fqa-sondeplatformlive-us-subject-metadata%2Fff1c04e0-0bb6-4861-ab6d-faf857e44f90%2Fvoice-samples%2F6f4ab68a-c6fa-4af2-88dc-2f71d7e71f21.wav,s3%3A%2F%2Fqa-sondeplatformlive-us-subject-metadata%2Fff1c04e0-0bb6-4861-ab6d-faf857e44f90%2Fvoice-samples%2F6f4ab68a-c6fa-4af2-88dc-2f71d7e71f21.wav,s3%3A%2F%2Fqa-sondeplatformlive-us-subject-metadata%2Fff1c04e0-0bb6-4861-ab6d-faf857e44f90%2Fvoice-samples%2F6f4ab68a-c6fa-4af2-88dc-2f71d7e71f21.wav,s3%3A%2F%2Fqa-sondeplatformlive-us-subject-metadata%2Fff1c04e0-0bb6-4861-ab6d-faf857e44f90%2Fvoice-samples%2F6f4ab68a-c6fa-4af2-88dc-2f71d7e71f21.wav,s3%3A%2F%2Fqa-sondeplatformlive-us-subject-metadata%2Fff1c04e0-0bb6-4861-ab6d-faf857e44f90%2Fvoice-samples%2F6f4ab68a-c6fa-4af2-88dc-2f71d7e71f21.wav,s3%3A%2F%2Fqa-sondeplatformlive-us-subject-metadata%2Fff1c04e0-0bb6-4861-ab6d-faf857e44f90%2Fvoice-samples%2F6f4ab68a-c6fa-4af2-88dc-2f71d7e71f21.wav,s3%3A%2F%2Fqa-sondeplatformlive-us-subject-metadata%2Fff1c04e0-0bb6-4861-ab6d-faf857e44f90%2Fvoice-samples%2F6f4ab68a-c6fa-4af2-88dc-2f71d7e71f21.wav'
+
+MAX_FILE_PATH_CHECK = ['s3%3A%2F%2Fqa-sondeplatformlive-us-subject-metadata%2Fff1c04e0-0bb6-4861-ab6d-faf857e44f90%2Fvoice-samples%2F6f4ab68a-c6fa-4af2-88dc-2f71d7e71f21.wav','s3%3A%2F%2Fqa-sondeplatformlive-us-subject-metadata%2Fff1c04e0-0bb6-4861-ab6d-faf857e44f90%2Fvoice-samples%2F6f4ab68a-c6fa-4af2-88dc-2f71d7e71f21.wav','s3%3A%2F%2Fqa-sondeplatformlive-us-subject-metadata%2Fff1c04e0-0bb6-4861-ab6d-faf857e44f90%2Fvoice-samples%2F6f4ab68a-c6fa-4af2-88dc-2f71d7e71f21.wav','s3%3A%2F%2Fqa-sondeplatformlive-us-subject-metadata%2Fff1c04e0-0bb6-4861-ab6d-faf857e44f90%2Fvoice-samples%2F6f4ab68a-c6fa-4af2-88dc-2f71d7e71f21.wav','s3%3A%2F%2Fqa-sondeplatformlive-us-subject-metadata%2Fff1c04e0-0bb6-4861-ab6d-faf857e44f90%2Fvoice-samples%2F6f4ab68a-c6fa-4af2-88dc-2f71d7e71f21.wav','s3%3A%2F%2Fqa-sondeplatformlive-us-subject-metadata%2Fff1c04e0-0bb6-4861-ab6d-faf857e44f90%2Fvoice-samples%2F6f4ab68a-c6fa-4af2-88dc-2f71d7e71f21.wav','s3%3A%2F%2Fqa-sondeplatformlive-us-subject-metadata%2Fff1c04e0-0bb6-4861-ab6d-faf857e44f90%2Fvoice-samples%2F6f4ab68a-c6fa-4af2-88dc-2f71d7e71f21.wav','s3%3A%2F%2Fqa-sondeplatformlive-us-subject-metadata%2Fff1c04e0-0bb6-4861-ab6d-faf857e44f90%2Fvoice-samples%2F6f4ab68a-c6fa-4af2-88dc-2f71d7e71f21.wav','s3%3A%2F%2Fqa-sondeplatformlive-us-subject-metadata%2Fff1c04e0-0bb6-4861-ab6d-faf857e44f90%2Fvoice-samples%2F6f4ab68a-c6fa-4af2-88dc-2f71d7e71f21.wav','s3%3A%2F%2Fqa-sondeplatformlive-us-subject-metadata%2Fff1c04e0-0bb6-4861-ab6d-faf857e44f90%2Fvoice-samples%2F6f4ab68a-c6fa-4af2-88dc-2f71d7e71f21.wav','s3%3A%2F%2Fqa-sondeplatformlive-us-subject-metadata%2Fff1c04e0-0bb6-4861-ab6d-faf857e44f90%2Fvoice-samples%2F6f4ab68a-c6fa-4af2-88dc-2f71d7e71f21.wav','s3%3A%2F%2Fqa-sondeplatformlive-us-subject-metadata%2Fff1c04e0-0bb6-4861-ab6d-faf857e44f90%2Fvoice-samples%2F6f4ab68a-c6fa-4af2-88dc-2f71d7e71f21.wav','s3%3A%2F%2Fqa-sondeplatformlive-us-subject-metadata%2Fff1c04e0-0bb6-4861-ab6d-faf857e44f90%2Fvoice-samples%2F6f4ab68a-c6fa-4af2-88dc-2f71d7e71f21.wav','s3%3A%2F%2Fqa-sondeplatformlive-us-subject-metadata%2Fff1c04e0-0bb6-4861-ab6d-faf857e44f90%2Fvoice-samples%2F6f4ab68a-c6fa-4af2-88dc-2f71d7e71f21.wav','s3%3A%2F%2Fqa-sondeplatformlive-us-subject-metadata%2Fff1c04e0-0bb6-4861-ab6d-faf857e44f90%2Fvoice-samples%2F6f4ab68a-c6fa-4af2-88dc-2f71d7e71f21.wav','s3%3A%2F%2Fqa-sondeplatformlive-us-subject-metadata%2Fff1c04e0-0bb6-4861-ab6d-faf857e44f90%2Fvoice-samples%2F6f4ab68a-c6fa-4af2-88dc-2f71d7e71f21.wav','s3%3A%2F%2Fqa-sondeplatformlive-us-subject-metadata%2Fff1c04e0-0bb6-4861-ab6d-faf857e44f90%2Fvoice-samples%2F6f4ab68a-c6fa-4af2-88dc-2f71d7e71f21.wav','s3%3A%2F%2Fqa-sondeplatformlive-us-subject-metadata%2Fff1c04e0-0bb6-4861-ab6d-faf857e44f90%2Fvoice-samples%2F6f4ab68a-c6fa-4af2-88dc-2f71d7e71f21.wav','s3%3A%2F%2Fqa-sondeplatformlive-us-subject-metadata%2Fff1c04e0-0bb6-4861-ab6d-faf857e44f90%2Fvoice-samples%2F6f4ab68a-c6fa-4af2-88dc-2f71d7e71f21.wav','s3%3A%2F%2Fqa-sondeplatformlive-us-subject-metadata%2Fff1c04e0-0bb6-4861-ab6d-faf857e44f90%2Fvoice-samples%2F6f4ab68a-c6fa-4af2-88dc-2f71d7e71f21.wav','s3%3A%2F%2Fqa-sondeplatformlive-us-subject-metadata%2Fff1c04e0-0bb6-4861-ab6d-faf857e44f90%2Fvoice-samples%2F6f4ab68a-c6fa-4af2-88dc-2f71d7e71f21.wav','s3%3A%2F%2Fqa-sondeplatformlive-us-subject-metadata%2Fff1c04e0-0bb6-4861-ab6d-faf857e44f90%2Fvoice-samples%2F6f4ab68a-c6fa-4af2-88dc-2f71d7e71f21.wav','s3%3A%2F%2Fqa-sondeplatformlive-us-subject-metadata%2Fff1c04e0-0bb6-4861-ab6d-faf857e44f90%2Fvoice-samples%2F6f4ab68a-c6fa-4af2-88dc-2f71d7e71f21.wav','s3%3A%2F%2Fqa-sondeplatformlive-us-subject-metadata%2Fff1c04e0-0bb6-4861-ab6d-faf857e44f90%2Fvoice-samples%2F6f4ab68a-c6fa-4af2-88dc-2f71d7e71f21.wav','s3%3A%2F%2Fqa-sondeplatformlive-us-subject-metadata%2Fff1c04e0-0bb6-4861-ab6d-faf857e44f90%2Fvoice-samples%2F6f4ab68a-c6fa-4af2-88dc-2f71d7e71f21.wav','s3%3A%2F%2Fqa-sondeplatformlive-us-subject-metadata%2Fff1c04e0-0bb6-4861-ab6d-faf857e44f90%2Fvoice-samples%2F6f4ab68a-c6fa-4af2-88dc-2f71d7e71f21.wav','s3%3A%2F%2Fqa-sondeplatformlive-us-subject-metadata%2Fff1c04e0-0bb6-4861-ab6d-faf857e44f90%2Fvoice-samples%2F6f4ab68a-c6fa-4af2-88dc-2f71d7e71f21.wav','s3%3A%2F%2Fqa-sondeplatformlive-us-subject-metadata%2Fff1c04e0-0bb6-4861-ab6d-faf857e44f90%2Fvoice-samples%2F6f4ab68a-c6fa-4af2-88dc-2f71d7e71f21.wav','s3%3A%2F%2Fqa-sondeplatformlive-us-subject-metadata%2Fff1c04e0-0bb6-4861-ab6d-faf857e44f90%2Fvoice-samples%2F6f4ab68a-c6fa-4af2-88dc-2f71d7e71f21.wav','s3%3A%2F%2Fqa-sondeplatformlive-us-subject-metadata%2Fff1c04e0-0bb6-4861-ab6d-faf857e44f90%2Fvoice-samples%2F6f4ab68a-c6fa-4af2-88dc-2f71d7e71f21.wav','s3%3A%2F%2Fqa-sondeplatformlive-us-subject-metadata%2Fff1c04e0-0bb6-4861-ab6d-faf857e44f90%2Fvoice-samples%2F6f4ab68a-c6fa-4af2-88dc-2f71d7e71f21.wav','s3%3A%2F%2Fqa-sondeplatformlive-us-subject-metadata%2Fff1c04e0-0bb6-4861-ab6d-faf857e44f90%2Fvoice-samples%2F6f4ab68a-c6fa-4af2-88dc-2f71d7e71f21.wav','s3%3A%2F%2Fqa-sondeplatformlive-us-subject-metadata%2Fff1c04e0-0bb6-4861-ab6d-faf857e44f90%2Fvoice-samples%2F6f4ab68a-c6fa-4af2-88dc-2f71d7e71f21.wav','s3%3A%2F%2Fqa-sondeplatformlive-us-subject-metadata%2Fff1c04e0-0bb6-4861-ab6d-faf857e44f90%2Fvoice-samples%2F6f4ab68a-c6fa-4af2-88dc-2f71d7e71f21.wav','s3%3A%2F%2Fqa-sondeplatformlive-us-subject-metadata%2Fff1c04e0-0bb6-4861-ab6d-faf857e44f90%2Fvoice-samples%2F6f4ab68a-c6fa-4af2-88dc-2f71d7e71f21.wav','s3%3A%2F%2Fqa-sondeplatformlive-us-subject-metadata%2Fff1c04e0-0bb6-4861-ab6d-faf857e44f90%2Fvoice-samples%2F6f4ab68a-c6fa-4af2-88dc-2f71d7e71f21.wav','s3%3A%2F%2Fqa-sondeplatformlive-us-subject-metadata%2Fff1c04e0-0bb6-4861-ab6d-faf857e44f90%2Fvoice-samples%2F6f4ab68a-c6fa-4af2-88dc-2f71d7e71f21.wav','s3%3A%2F%2Fqa-sondeplatformlive-us-subject-metadata%2Fff1c04e0-0bb6-4861-ab6d-faf857e44f90%2Fvoice-samples%2F6f4ab68a-c6fa-4af2-88dc-2f71d7e71f21.wav','s3%3A%2F%2Fqa-sondeplatformlive-us-subject-metadata%2Fff1c04e0-0bb6-4861-ab6d-faf857e44f90%2Fvoice-samples%2F6f4ab68a-c6fa-4af2-88dc-2f71d7e71f21.wav','s3%3A%2F%2Fqa-sondeplatformlive-us-subject-metadata%2Fff1c04e0-0bb6-4861-ab6d-faf857e44f90%2Fvoice-samples%2F6f4ab68a-c6fa-4af2-88dc-2f71d7e71f21.wav','s3%3A%2F%2Fqa-sondeplatformlive-us-subject-metadata%2Fff1c04e0-0bb6-4861-ab6d-faf857e44f90%2Fvoice-samples%2F6f4ab68a-c6fa-4af2-88dc-2f71d7e71f21.wav']
+#s3://qa-sondeplatformlive-us-subject-metadata/5d2991ca-6931-470c-97f1-872784721971/voice-samples/062dc1ea-56f8-477d-8618-9c5023803fd2.wav
+NO_ACCESS_DOWNLOAD_FILE = 's3%3A%2F%2Fqa-sondeplatformlive-us-subject-metadata%2F381aef74-74e8-4c00-a5de-9d2ff655007f%2Fvoice-samples%2F12cbabff-3f59-4972-8bc6-39a76f786fb1.wav'
+
+speechtexturlexpire = 'https://qa-sondeplatformlive-us-subject-metadata.s3.amazonaws.com/transcript/AWS/v1/6f4ab68a-c6fa-4af2-88dc-2f71d7e71f21/speech.txt?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAXLBVNRN44RPKN55Y%2F20210830%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20210830T130831Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEIb%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLWVhc3QtMSJHMEUCIQDyDvNe443gR%2F5m7RMhKKeZd1WFdMvdXz3BT4FgYZl2TQIgBtUG8jLSJtsGZNnQ3b3%2FPy84pyL6Ja%2FlWS%2FHIpw9mOEqvwIIvv%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARACGgw1MDQ3NzA2OTQwMDkiDKLMimXwCgiLPtiswCqTAse9ybiFeui%2Bzu6LSmAX5jhOxK8HW4xYmzf9FsSyZwDuREagbHhjuy8eP45ln0lUubDirm1E%2BCgpQxN6ZFNT7scgEdg5XVpUqDK%2FQuLgsDX%2FzcRWWH%2Fm52g8mFDV%2Bw0jE98mg65bnpdi2uSDE7J3O1N129pTxR3Xd9Y4t0gceTpNea8nI0qboMcm3AVtVbH8FRcwSPyAGl6jueSVQVofJjKiF%2BXzWW%2BnCV3oDhaazMa2yvnIs39Kk8kWgfQjXLvToSvp51ivGRo8KmqLkhW%2B5BKseCFI5mFjtEpOlG%2BpqIvtMkWD9qmiK7YnG9mE1KuuLx2giZi%2BpVS3lNw7nEAf78BcK5Q1E5k8Me5GfNLBZmVbrE%2FFMOSus4kGOpoBouAxOze6d0iFDf671g3pK8s5pOJ%2F1el4ZvPReIj3R94PYk%2BU00nJ%2BwMeko5flQwZI3trZpHKnq4hMs%2FYCdbKPzH4i681cWA%2FQgSnhLABQSXCFidISaaBT9%2FdBZdJLhwGIch9CUfkWyT%2B7oHBdTBoyI1yleYVbqpQa8mfICUvJPodGDo5dj9Ace3wAU8HHQBuEM0zUizS9H5JVw%3D%3D&X-Amz-Signature=4dce9cbda115e7726efd3824ff6d5e19c643454f41325a7fbf6085bf1855cd24'
+
+NO_ACCESS_TO_JOB_ID = '142cff29-df0b-4c67-8d3f-a72dc6ed234f'
+
+New_variable='123'
+
+
+########################## 2nd party to check transcriptions #################################
+#14june1@yopmail.com
+#client id : 62mu613ksoghu9b69rp07lhpin
+#client secret : 1gs2ua8ekanabh4365967t6ieucunf8spa5h7e4jefpmom4ced2b
+#base64: NjJtdTYxM2tzb2dodTliNjlycDA3bGhwaW46MWdzMnVhOGVrYW5hYmg0MzY1OTY3dDZpZXVjdW5mOHNwYTVoN2U0amVmcG1vbTRjZWQyYg==
+#############################################################################################################
+
+Shruti_AUDIO_FILE_PATH = 'C:\\Users\\gs-1431\\Downloads\\shrutiD_audio_30sec.wav'
+Shruti_AUDIO_FILE_PATH2 = 'C:\\Users\\gs-1431\\Downloads\\ahh_SK.wav'
+
+
+BASE_URLV2 = 'https://d2yh7ouv34mvzw.cloudfront.net/platform/v2'
+INFERENCE_PARAMETER_ENDPOINT = '/inference/inference-parameters'
+INFERENCE_PARAMETER_PUTENDPOINT = '/inference/inference-parameters/'
+INFERENCE_ENDPOINT = '/inference/scores'
+
+
+TC1_FILE_PATH1 = "C:\\Users\\gs-1431\\Downloads\\Two_sample_scroing_api\\Reliable_score\\first.wav"
+TC1_FILE_PATH2 = "C:\\Users\\gs-1431\\Downloads\\Two_sample_scroing_api\\Reliable_score\\second.wav"
+
+ELECITATION_FILED_FILE=""
+INVALID_FILE_DURATION_8SEC="C:\\Users\\gs-1431\\Downloads\\Two_sample_scoring_api\\ahh_8sec_44k.wav"
+FILE_BELONGS_TO_OTHER_USER = ""
+FILE_BELONGS_TO_DIFFERENT_COUNTRY = ""
+ 
+INFERENCE_PARAMETER_ALREADY_CONSTRUCTED='inp_b4ed94832'
+#mp4 file
+INVALID_FILE_FORMAT="s3://qa-sondeplatformlive-us-subject-metadata/ff1c04e0-0bb6-4861-ab6d-faf857e44f90/voice-samples/aaa3c27d-0cfb-4345-b84b-071ab0c612c3.wav"
+
+######################## PHQ2 ###########################
+MEASURE_NAME='mental-fitness'
+INVALID_MEASURE_NAME='mentall-fitnesss'
+BLANK_MEASURE_NAME=""
+INTEGER_MEASURE_NAME= 123
+BLANK_VARIANT=""
+GET_QUESTIONNAIRE_BY_MEASURENAME_ENDPOINT='/measures/name/{measureName}?variant=v2';
+GET_QUESTIONNAIRE_BY_MEASURENAME_INVALID_ENDPOINT='/measures/name/{measureName}/123?variant=v2';
+GET_QUESTIONNAIRE_BY_MEASURENAME_INVALID_MEASURENAME='/measures/name/{invalidMeasureName}?variant=v2';
+GET_QUESTIONNAIRE_BY_MEASURENAME_BLANK='/measures/name/{blankMeasureName}?variant=v2';
+GET_QUESTIONNAIRE_BY_MEASURENAME_MISSING='/measures/name?variant=v2';
+GET_QUESTIONNAIRE_BY_MEASURENAME_INTEGER='/measures/name/{integerMeasureName}?variant=v2';
+GET_QUESTIONNAIRE_BY_MEASURENAME_INVALID_VARIANT='/measures/name/{measureName}?variant=v22';
+GET_QUESTIONNAIRE_BY_MEASURENAME_VARIANT_BLANK='/measures/name/{measureName}?variant={blankVariant}';
+GET_QUESTIONNAIRE_BY_VARIENT_MISSING='/measures/name/{measureName}';
+GET_QUESTIONNAIRE_BY_VARIENT_INTEGER='/measures/name/{measureName}?variant=123';
+
+INFERENCE_PARAMETER_ALREADY_CONSTRUCTED=''
+
+
+Shruti_AUDIO_FILE_PATH = 'C:\\Users\\gs-1431\\Downloads\\shrutiD_audio_30sec.wav'
+Shruti_AUDIO_FILE_PATH2 = 'C:\\Users\\gs-1431\\Downloads\\ahh_SK.wav'
+
+TC1_FILE_PATH1 = 'C:\\Users\\gs-1431\\Downloads\\Two_sample_scoring_api\\Reliable_score\\first.wav'
+TC1_FILE_PATH2 = 'C:\\Users\\gs-1431\\Downloads\\Two_sample_scoring_api\\Reliable_score\\second.wav'
+
+TC3_FILE_PATH1= 'C:\\Users\\gs-1431\\Downloads\\Two_sample_scoring_api\\Unreliable_score\\filestouse\\first.wav'
+TC3_FILE_PATH2= 'C:\\Users\\gs-1431\\Downloads\\Two_sample_scoring_api\\Unreliable_score\\filestouse\\second.wav'
+
+TC4_FILE_PATH1= 'C:\\Users\\gs-1431\\Downloads\\Two_sample_scoring_api\\Reliable_score\\first.wav'
+
+#TC5_FILE_PATH1= 'C:\\Users\\gs-1431\\Downloads\\test.txt'
+TC5_FILE_PATH1='s3://qa-sondeplatformlive-us-subject-metadata/ff1c04e0-0bb6-4861-ab6d-faf857e44f90/voice-samples/2e1a8161-95ec-4f9c-9e22-04959cccb93f.wav'
+#TC8_FILE_PATH1= 'C:\\Users\\gs-1431\\Downloads\\Two_sample_scoring_api\\elck\\elckfailed.wav'
+TC8_FILE_PATH1 = 's3://qa-sondeplatformlive-us-subject-metadata/ff1c04e0-0bb6-4861-ab6d-faf857e44f90/voice-samples/748a82d7-1d05-4a82-bcb3-fa140749e2ca.wav'
+TC9_FILE_PATH1= 's3://qa-sondeplatformlive-us-subject-metadata/ff1c04e0-0bb6-4861-ab6d-faf857e44f90/voice-samples/c7c02a96-4e14-4c68-9e76-42c266445f1b.wav'
+
+#TC9_FILE_PATH1= 'C:\\Users\\gs-1431\\Downloads\\Two_sample_scoring_api\\ahh_8sec_44k.wav'
+TC9_FILE_PATH_FS = 'C:\\Users\\gs-1431\\Downloads\\Two_sample_scoring_api\\fs.wav'
+TC10_FILE_PATH1 = 'C:\\Users\\gs-1431\\Downloads\\Two_sample_scoring_api\\22k.wav'
+
+FILE_PATH_MISSING_TS = 's3://qa-sondeplatformlive-us-subject-metadata/ff1c04e0-0bb6-4861-ab6d-faf857e44f90/voice-samples/a0ea3fa0-dce0-4946-86da-15ad76a23338.wav'
+New=""
+
+
+INFERENCE_PARAMETER_INVALID = 'inp_2400007a6'
+INFERENCE_PARAMETER_ALREADY_CONSTRUCTED2 = 'inp_bf333609f'
+INFERENCE_PARAMETER_NOT_FOUND = 'inp123456g78'
+
+
+#----------create questionnaire API-------------#
+
+CREATE_QUESTIONNAIRE_ENDPOINT = '/questionnaires'
+
+CREATE_QUESTIONNAIRE_DATA = {
+
+        "title": "covidques_26july_22_12",
+        "language": "en",
+        "questions": [
+            {
+                "type": "MULTIPLE_CHOICE",
+                "text": "Have you been within 6 feet of a person with a lab confirmed case of COVID-19 or with symptoms of COVID-19 for at least 15 minutes, or had direct contact with their mucus or saliva,in the past 14 days?",
+                "isSkippable": False,
+                "options": [
+                    {
+                        "text": "No",
+                        "score": 0
+                    },
+                    {
+                        "text": "Yes",
+                        "score": 1
+                    }
+                ]
+            },
+            {
+                "type": "MULTIPLE_SELECT",
+                "text": "In the last 48 hours, have you had any of the following NEW symptoms? Select all that apply.",
+                "isSkippable": False,
+                "options": [
+                    {
+                        "text": "Fever of 100.4° F or above",
+                        "score": 3
+                    },
+                    {
+                        "text": "Cough",
+                        "score": 2
+                    },
+                    {
+                        "text": "Trouble breathing",
+                        "score": 1
+                    },
+                    {
+                        "text": "None of the above",
+                        "score": 0
+                    }
+                ]
+            },
+            {
+                "type": "TEXT_FIELD",
+                "text": "How many covid center do you have in your city?",
+                "isSkippable": True,
+                "inputDataType": "INTEGER"
+            },
+            {
+                "type": "TEXT_FIELD",
+                "text": "What is your text temperature?",
+                "isSkippable": True,
+                "inputDataType": "BODY_TEMPERATURE"
+            }
+        ]
+    }
+
+
+CREATE_QUESTIONNAIRE_DATA_HI = {
+        "title": "covidques_26july12_222",
+        "language": "hi",
+        "questions": [
+            {
+                "type": "MULTIPLE_CHOICE",
+                "text": "Have you been within 6 feet of a person with a lab confirmed case of COVID-19 or with symptoms of COVID-19 for at least 15 minutes, or had direct contact with their mucus or saliva,in the past 14 days?",
+                "isSkippable": False,
+                "options": [
+                    {
+                        "text": "No",
+                        "score": 0
+                    },
+                    {
+                        "text": "Yes",
+                        "score": 1
+                    }
+                ]
+            },
+            {
+                "type": "MULTIPLE_SELECT",
+                "text": "In the last 48 hours, have you had any of the following NEW symptoms? Select all that apply.",
+                "isSkippable": False,
+                "options": [
+                    {
+                        "text": "Fever of 100.4° F or above",
+                        "score": 3
+                    },
+                    {
+                        "text": "Cough",
+                        "score": 2
+                    },
+                    {
+                        "text": "Trouble breathing",
+                        "score": 1
+                    },
+                    {
+                        "text": "None of the above",
+                        "score": 0
+                    }
+                ]
+            },
+            {
+                "type": "TEXT_FIELD",
+                "text": "How many covid center do you have in your city?",
+                "isSkippable": True,
+                "inputDataType": "INTEGER"
+            },
+            {
+                "type": "TEXT_FIELD",
+                "text": "What is your text temperature?",
+                "isSkippable": True,
+                "inputDataType": "BODY_TEMPERATURE"
+            }
+        ]
+    }
+
+CREATE_QUESTIONNAIRE_DATA_E2E = {
+       "title": "covid_19_teston26july2022",
+        # "title" :"ques_52772fe84aa74529b2433e83b9119bb7",
+        "language": "en",
+        "questions": [
+            {
+                "type": "MULTIPLE_CHOICE",
+                "text": "Have you been within 6 feet of a person with a lab confirmed case of COVID-19 or with symptoms of COVID-19 for at least 15 minutes, or had direct contact with their mucus or saliva,in the past 14 days?",
+                "isSkippable": False,
+                "options": [
+                    {
+                        "text": "No",
+                        "score": 0
+                    },
+                    {
+                        "text": "Yes",
+                        "score": 1
+                    }
+                ]
+            },
+            {
+                "type": "MULTIPLE_SELECT",
+                "text": "In the last 48 hours, have you had any of the following NEW symptoms? Select all that apply.",
+                "isSkippable": False,
+                "options": [
+                    {
+                        "text": "Fever of 100.4° F or above",
+                        "score": 3
+                    },
+                    {
+                        "text": "Cough",
+                        "score": 2
+                    },
+                    {
+                        "text": "Trouble breathing",
+                        "score": 1
+                    },
+                    {
+                        "text": "None of the above",
+                        "score": 0
+                    }
+                ]
+            },
+            {
+                "type": "TEXT_FIELD",
+                "text": "How many covid center do you have in your city?",
+                "isSkippable": True,
+                "inputDataType": "INTEGER"
+            },
+            {
+                "type": "TEXT_FIELD",
+                "text": "What is your text temperature?",
+                "isSkippable": True,
+                "inputDataType": "BODY_TEMPERATURE"
+            }
+        ]
+    }
+
+
+CREATE_QUESTIONNAIRE_DATA_NO_BODY = { }
+
+
+
+CREATE_QUESTIONNAIRE_DATA_TEXT_1001 = {
+        "title": "covid_19_26_jul_22_text1001",
+        "language": "en",
+        "questions": [
+            {
+                "type": "MULTIPLE_CHOICE",
+                "text": "Have you been within 6 feet of a person with a lab confirmed case of COVID-19 or with symptoms of COVID-19 for at least 15 minutes, or had direct contact with their mucus or saliva,in the past 14 days?Have you been within 6 feet of a person with a lab confirmed case of COVID-19 or with symptoms of COVID-19 for at least 15 minutes, or had direct contact with their mucus or saliva,in the past 14 days?Have you been within 6 feet of a person with a lab confirmed case of COVID-19 or with symptoms of COVID-19 for at least 15 minutes, or had direct contact with their mucus or saliva,in the past 14 days?Have you been within 6 feet of a person with a lab confirmed case of COVID-19 or with symptoms of COVID-19 for at least 15 minutes, or had direct contact with their mucus or saliva,in the past 14 days?Have you been within 6 feet of a person with a lab confirmed case of COVID-19 or with symptoms of COVID-19 for at least 15 minutes, or had direct contact with their mucus or saliva,in the past 14 days?Have you been within 6 feet of a person with a lab co",
+                "isSkippable": False,
+                "options": [
+                    {
+                        "text": "No",
+                        "score": 0
+                    },
+                    {
+                        "text": "Yes",
+                        "score": 1
+                    }
+                ]
+            },
+            {
+                "type": "MULTIPLE_SELECT",
+                "text": "In the last 48 hours, have you had any of the following NEW symptoms? Select all that apply.",
+                "isSkippable": False,
+                "options": [
+                    {
+                        "text": "Fever of 100.4° F or above",
+                        "score": 3
+                    },
+                    {
+                        "text": "Cough",
+                        "score": 2
+                    },
+                    {
+                        "text": "Trouble breathing",
+                        "score": 1
+                    },
+                    {
+                        "text": "None of the above",
+                        "score": 0
+                    }
+                ]
+            },
+            {
+                "type": "TEXT_FIELD",
+                "text": "How many covid center do you have in your city?",
+                "isSkippable": True,
+                "inputDataType": "INTEGER"
+            },
+            {
+                "type": "TEXT_FIELD",
+                "text": "What is your text temperature?",
+                "isSkippable": False,
+                "inputDataType": "text_TEMPERATURE"
+            }
+        ]
+    }
+
+
+
+CREATE_QUESTIONNAIRE_DATA_MULTIPLE_CHOICE = {
+	"title": "covid_19",
+	"language": "en",
+	"questions": [
+        {
+		"type": "MULTIPLE_CHOICE",
+		"text": "Have you been within 6 feet of a person with a lab confirmed case of COVID-19 or with symptoms of COVID-19 for at least 15 minutes, or had direct contact with their mucus or saliva,in the past 14 days?",
+		"isSkippable": False,
+		"options": [{
+				"text": "No",
+				"score": 0
+			},
+			{
+				"text": "Yes",
+				"score": 1
+			}
+		]
+	}
+    ]
+}
+
+
+CREATE_QUESTIONNAIRE_DATA_MULTIPLE_CHOICE_MISSING_ATTRIBUTE_OPTIONS = {
+	"title": "covid_19_26_jul22_22",
+	"language": "en",
+	"questions": [
+        {
+		"type": "MULTIPLE_CHOICE",
+		"text": "Have you been within 6 feet of a person with a lab confirmed case of COVID-19 or with symptoms of COVID-19 for at least 15 minutes, or had direct contact with their mucus or saliva,in the past 14 days?",
+		"isSkippable": False,
+
+	}
+    ]
+}
+
+
+
+
+
+CREATE_QUESTIONNAIRE_DATA_INPUT_TEXT1 = {
+
+        "title": "input_text_questionnaire1",
+        "language": "en",
+        "questions": [
+            {
+                "type": "TEXT_FIELD",
+                "text": "How many covid center do you have in your city?",
+                "isSkippable": True,
+                "inputDataType": "INTEGER"
+            }
+        ]
+
+}
+
+
+CREATE_QUESTIONNAIRE_DATA_INPUT_TEXT2 = {
+
+        "title": "input_text_questionnaire2",
+        "language": "en",
+        "questions": [
+            {
+                "type": "TEXT_FIELD",
+                "text": "How many covid center do you have in your city?",
+                "isSkippable": True,
+                "inputDataType": "INTEGER"
+            },
+            {
+                "type": "TEXT_FIELD",
+                "text": "What is your text temperature?",
+                "isSkippable": False,
+                "inputDataType": "BODY_TEMPERATURE"
+            }
+        ]
+
+}
+
+CREATE_QUESTIONNAIRE_DATA_INPUT_TEXT3 = {
+
+        "title": "input_text_questionnaire3",
+        "language": "en",
+        "questions": [
+            {
+                "type": "TEXT_FIELD",
+                "text": "How much years of experience you have?",
+                "isSkippable": True,
+                "inputDataType": "FLOAT"
+            }
+        ]
+
+}
+
+CREATE_QUESTIONNAIRE_DATA_INPUT_TEXT4 = {
+        "title": "input_text_questionnaire4",
+        "language": "en",
+        "questions": [
+            {
+                "type": "TEXT_FIELD",
+                "text": "Are you married?",
+                "isSkippable": True,
+                "inputDataType": "STRING"
+            }
+        ]
+    }
+
+
+
+CREATE_QUESTIONNAIRE_DATA_INPUT_TEXT5 =  {
+        "title": "input_text_questionnaire4",
+        "language": "en",
+        "questions": [
+            {
+                "type": "TEXT_FIELD",
+                "text": "How are feeling at this moment?How are feeling at this moment?How are feeling at this moment?How are feeling at this moment?How are feeling at this moment?How are feeling at this moment?How are feeling at this moment?How are feeling at this moment?How are feeling at this moment?How are feeling at this moment?How are feeling at this moment?How are feeling at this moment?How are feeling at this moment?How are feeling at this moment?How are feeling at this moment?How are feeling at this moment?How are feeling at this moment?How are feeling at this moment?How are feeling at this moment?How are feeling at this moment?How are feeling at this moment?How are feeling at this moment?How are feeling at this moment?How are feeling at this moment?How are feeling at this moment?How are feeling at this moment?How are feeling at this moment?How are feeling at this moment?How are feeling at this moment?How are feeling at this moment?How are feeling at this moment?How are feeling at this moment?How ar1",
+                "isSkippable": True,
+                "inputDataType": "STRING"
+            }
+        ]
+    }
+
+
+CREATE_QUESTIONNAIRE_DATA_INPUT_TEXT6 = {
+
+        "title": "input_text_questionnaire6",
+        "language": "en",
+        "questions": [
+            {
+                "type": "TEXT_FIELD",
+                "text": "12How are feeling at this moment?How are feeling at this moment?How are feeling at this moment?How are feeling at this moment?How are feeling at this moment?How are feeling at this moment?How are feeling at this moment?How are feeling at this moment?How are feeling at this moment?How are feeling at this moment?How are feeling at this moment?How are feeling at this moment?How are feeling at this moment?How are feeling at this moment?How are feeling at this moment?How are feeling at this moment?How are feeling at this moment?How are feeling at this moment?How are feeling at this moment?How are feeling at this moment?How are feeling at this moment?How are feeling at this moment?How are feeling at this moment?How are feeling at this moment?How are feeling at this moment?How are feeling at this moment?How are feeling at this moment?How are feeling at this moment?How are feeling at this moment?How are feeling at this moment?How are feeling at this moment?How are feeling at this moment?How are",
+                "isSkippable": True,
+                "inputDataType": "STRING"
+            }
+        ]
+
+}
+
+
+CREATE_QUESTIONNAIRE_DATA_MULTISELECT2 = {
+
+        "title": "multiselect2",
+        "language": "en",
+        "questions": [
+            {
+            "type": "MULTIPLE_SELECT",
+            "text": "In the last 48 hours, have you had any of the following NEW symptoms? Select all that apply.",
+            "isSkippable": False,
+             "options": [
+                {
+             "text": "Fever of 100.4° F or above",
+             "score": 3
+                },
+                {
+             "text": "Cough",
+             "score": 2
+                },
+                {
+             "text": "Trouble breathing",
+             "score": 1
+                },
+                {
+             "text": "None of the above",
+             "score": 0
+                }
+            ]
+            },
+           {
+            "type": "MULTIPLE_SELECT",
+            "text": "In the last 48 hours, have you had any of the following NEW changed symptoms? Select all that apply.",
+            "isSkippable": True,
+             "options": [
+                        {
+                        "text": "Fever of 100.4° F or above",
+                        "score": 3
+                        },
+                        {
+                        "text": "Cough",
+                        "score": 2
+                        },
+                        {
+                        "text": "Trouble breathing",
+                        "score": 1
+                        },
+                        {
+                        "text": "None of the above",
+                        "score": 0
+                        }
+                        ]
+            }
+        ]
+
+}
+
+
+CREATE_QUESTIONNAIRE_DATA_MULTISELECT1 =  {
+        "title": "multiselect1",
+        "language": "en",
+        "questions": [
+            {
+            "type": "MULTIPLE_SELECT",
+            "text": "In the last 48 hours, have you had any of the following NEW symptoms? Select all that apply test.",
+            "isSkippable": False,
+             "options": [
+                {
+             "text": "Fever of 100.4° F or above",
+             "score": 3
+                },
+                {
+             "text": "Cough",
+             "score": 2
+                },
+                {
+             "text": "Trouble breathing",
+             "score": 1
+                },
+                {
+             "text": "None of the above",
+             "score": 0
+                }
+            ]
+            }
+        ]
+    }
+
+
+
+CREATE_QUESTIONNAIRE_DATA_MULTISELECT3 = {
+
+        "title": "multiselect3",
+        "language": "en",
+        "questions": [
+            {
+            "type": "MULTIPLE_SELECT",
+            "text": "In the last 48 hours, have you had any of the following NEW symptoms? Select all that apply test.",
+            "isSkippable": False,
+             "options": [
+                {
+             "text": "1How are feeling at this moment?How are feeling at this moment?How are feeling at this moment?How are feeling at this moment?How are feeling at this moment?How are feeling at this moment?How are feeling at this moment?How are feeling at this moment?How are feeling at this moment?How are feeling at this moment?How are feeling at this moment?How are feeling at this moment?How are feeling at this moment?How are feeling at this moment?How are feeling at this moment?How are feeling at this moment?How are feeling at this moment?How are feeling at this moment?How are feeling at this moment?How are feeling at this moment?How are feeling at this moment?How are feeling at this moment?How are feeling at this moment?How are feeling at this moment?How are feeling at this moment?How are feeling at this moment?How are feeling at this moment?How are feeling at this moment?How are feeling at this moment?How are feeling at this moment?How are feeling at this moment?How are feeling at this moment?How are32131",
+             "score": 3
+                },
+                {
+             "text": "Cough",
+             "score": 2
+                },
+                {
+             "text": "Trouble breathing",
+             "score": 1
+                },
+                {
+             "text": "None of the above",
+             "score": 0
+                }
+            ]
+            }
+        ]
+
+}
+
+
+CREATE_QUESTIONNAIRE_DATA_MULTICHOICE1 = {
+
+        "title": "multichoice125july22",
+        "language": "en",
+        "questions": [
+            {
+            "type": "MULTIPLE_CHOICE",
+            "text": "In the last 48 hours, have you had any of the following NEW symptoms? Select all that apply test.",
+            "isSkippable": False,
+             "options": [
+                {
+             "text": "Fever of 100.4° F or above",
+             "score": 3
+                },
+                {
+             "text": "Cough",
+             "score": 2
+                },
+                {
+             "text": "Trouble breathing",
+             "score": 1
+                },
+                {
+             "text": "None of the above",
+             "score": 0
+                }
+            ]
+            }
+        ]
+
+}
+
+
+CREATE_QUESTIONNAIRE_DATA_DIFF_PARTNER = {
+
+        "title": "multichoice125july221",
+        "language": "en",
+        "questions": [
+            {
+            "type": "MULTIPLE_CHOICE",
+            "text": "In the last 48 hours, have you had any of the following NEW symptoms? Select all that apply test.",
+            "isSkippable": False,
+             "options": [
+                {
+             "text": "Fever of 100.4° F or above",
+             "score": 3
+                },
+                {
+             "text": "Cough",
+             "score": 2
+                },
+                {
+             "text": "Trouble breathing",
+             "score": 1
+                },
+                {
+             "text": "None of the above",
+             "score": 0
+                }
+            ]
+            }
+        ]
+
+}
+
+
+
+CREATE_QUESTIONNAIRE_DATA_MULTICHOICE2 = {
+
+        "title": "multichoice2",
+        "language": "en",
+        "questions": [
+            {
+            "type": "MULTIPLE_CHOICE",
+            "text": "In the last 48 hours, have you had any of the following NEW symptoms? Select all that apply.",
+            "isSkippable": False,
+             "options": [
+                {
+             "text": "Fever of 100.4° F or above",
+             "score": 3
+                },
+                {
+             "text": "Cough",
+             "score": 2
+                },
+                {
+             "text": "Trouble breathing",
+             "score": 1
+                },
+                {
+             "text": "None of the above",
+             "score": 0
+                }
+            ]
+            },
+           {
+            "type": "MULTIPLE_CHOICE",
+            "text": "In the last 48 hours, have you had any of the following NEW changed symptoms? Select all that apply.",
+            "isSkippable": True,
+             "options": [
+                        {
+                        "text": "Fever of 100.4° F or above",
+                        "score": 3
+                        },
+                        {
+                        "text": "Cough",
+                        "score": 2
+                        },
+                        {
+                        "text": "Trouble breathing",
+                        "score": 1
+                        },
+                        {
+                        "text": "None of the above",
+                        "score": 0
+                        }
+                        ]
+            }
+        ]
+
+}
+
+CREATE_QUESTIONNAIRE_DATA_ALL_TYPE_Q = {
+
+        "title": "alltype",
+        "language": "en",
+        "questions": [
+            {
+            "type": "MULTIPLE_CHOICE",
+            "text": "In the last 48 hours, have you had any of the following NEW symptoms? Select all that apply.",
+            "isSkippable": False,
+             "options": [
+                {
+             "text": "Fever of 100.4° F or above",
+             "score": 3
+                },
+                {
+             "text": "Cough",
+             "score": 2
+                },
+                {
+             "text": "Trouble breathing",
+             "score": 1
+                },
+                {
+             "text": "None of the above",
+             "score": 0
+                }
+            ]
+            },
+           {
+            "type": "MULTIPLE_SELECT",
+            "text": "In the last 48 hours, have you had any of the following NEW changed symptoms? Select all that apply.",
+            "isSkippable": True,
+             "options": [
+                        {
+                        "text": "Fever of 100.4° F or above",
+                        "score": 3
+                        },
+                        {
+                        "text": "Cough",
+                        "score": 2
+                        },
+                        {
+                        "text": "Trouble breathing",
+                        "score": 1
+                        },
+                        {
+                        "text": "None of the above",
+                        "score": 0
+                        }
+                        ]
+            },
+            {
+                "type": "TEXT_FIELD",
+                 "text": "How many covid center do you have in your city?",
+                 "isSkippable": True,
+                "inputDataType": "INTEGER"
+           }
+        ]
+
+}
+
+
+
+CREATE_QUESTIONNAIRE_DATA_MULTIPLE_SELECT_CHOICE = {
+
+        "title": "multiple_select_choice",
+        "language": "en",
+        "questions": [
+            {
+            "type": "MULTIPLE_CHOICE",
+            "text": "In the last 48 hours, have you had any of the following NEW symptoms? Select all that apply.",
+            "isSkippable": False,
+             "options": [
+                {
+             "text": "Fever of 100.4° F or above",
+             "score": 3
+                },
+                {
+             "text": "Cough",
+             "score": 2
+                },
+                {
+             "text": "Trouble breathing",
+             "score": 1
+                },
+                {
+             "text": "None of the above",
+             "score": 0
+                }
+            ]
+            },
+           {
+            "type": "MULTIPLE_SELECT",
+            "text": "In the last 48 hours, have you had any of the following NEW changed symptoms? Select all that apply.",
+            "isSkippable": True,
+             "options": [
+                        {
+                        "text": "Fever of 100.4° F or above",
+                        "score": 3
+                        },
+                        {
+                        "text": "Cough",
+                        "score": 2
+                        },
+                        {
+                        "text": "Trouble breathing",
+                        "score": 1
+                        },
+                        {
+                        "text": "None of the above",
+                        "score": 0
+                        }
+                        ]
+            }
+
+        ]
+
+}
+
+
+CREATE_QUESTIONNAIRE_DATA_MULTIPLE_CHOICE_INPUT_TEXT = {
+
+        "title": "multiple_choice_input_text",
+        "language": "en",
+        "questions": [
+            {
+            "type": "MULTIPLE_CHOICE",
+            "text": "In the last 48 hours, have you had any of the following NEW symptoms? Select all that apply.",
+            "isSkippable": False,
+             "options": [
+                {
+             "text": "Fever of 100.4° F or above",
+             "score": 3
+                },
+                {
+             "text": "Cough",
+             "score": 2
+                },
+                {
+             "text": "Trouble breathing",
+             "score": 1
+                },
+                {
+             "text": "None of the above",
+             "score": 0
+                }
+            ]
+            },
+
+            {
+                "type": "TEXT_FIELD",
+                 "text": "How many covid center do you have in your city?",
+                 "isSkippable": True,
+                "inputDataType": "INTEGER"
+           }
+        ]
+
+}
+
+CREATE_QUESTIONNAIRE_DATA_MULTIPLE_SELECT_INPUT_TEXT = {
+
+        "title": "multiple_select_input_text",
+        "language": "en",
+        "questions": [
+            {
+                "type": "MULTIPLE_CHOICE",
+                "text": "In the last 48 hours, have you had any of the following NEW symptoms? Select all that apply.",
+                "isSkippable": False,
+                "options": [
+                    {
+                        "text": "Fever of 100.4° F or above",
+                        "score": 3
+                    },
+                    {
+                        "text": "Cough",
+                        "score": 2
+                    },
+                    {
+                        "text": "Trouble breathing",
+                        "score": 1
+                    },
+                    {
+                        "text": "None of the above",
+                        "score": 0
+                    }
+                ]
+            },
+
+            {
+                "type": "TEXT_FIELD",
+                "text": "How many covid center do you have in your city?",
+                "isSkippable": True,
+                "inputDataType": "INTEGER"
+            }
+        ]
+
+}
+
+
+CREATE_QUESTIONNAIRE_DATA_ALL_LARGE_TEXT_QUESTIONS = {
+
+        "title": "all_type_large_questions",
+        "language": "en",
+        "questions": [
+            {
+            "type": "MULTIPLE_CHOICE",
+            "text": "In the last 48 hours, have you had any of the following NEW symptoms? Select all that apply.In the last 48 hours, have you had any of the following NEW symptoms? Select all that apply.",
+            "isSkippable": False,
+             "options": [
+                {
+             "text": "Fever of 100.4° F or above",
+             "score": 3
+                },
+                {
+             "text": "Cough",
+             "score": 2
+                },
+                {
+             "text": "Trouble breathing",
+             "score": 1
+                },
+                {
+             "text": "None of the above",
+             "score": 0
+                }
+            ]
+            },
+           {
+            "type": "MULTIPLE_SELECT",
+            "text": "In the last 48 hours, have you had any of the following NEW changed symptoms? Select all that apply.In the last 48 hours, have you had any of the following NEW symptoms? Select all that apply.In the last 48 hours, have you had any of the following NEW symptoms? Select all that apply.",
+            "isSkippable": True,
+             "options": [
+                        {
+                        "text": "Fever of 100.4° F or above",
+                        "score": 3
+                        },
+                        {
+                        "text": "Cough",
+                        "score": 2
+                        },
+                        {
+                        "text": "Trouble breathing",
+                        "score": 1
+                        },
+                        {
+                        "text": "None of the above",
+                        "score": 0
+                        }
+                        ]
+            },
+            {
+                "type": "TEXT_FIELD",
+                 "text": "How many covid center do you have in your city?How many covid center do you have in your city?How many covid center do you have in your city?",
+                 "isSkippable": True,
+                "inputDataType": "INTEGER"
+           }
+        ]
+
+}
+
+
+
+CREATE_QUESTIONNAIRE_DATA_ALL_TYPE_LARGE_TEXT_OPTIONS = {
+
+        "title": "all_type_large_options",
+        "language": "en",
+        "questions": [
+            {
+            "type": "MULTIPLE_CHOICE",
+            "text": "In the last 48 hours, have you had any of the following NEW symptoms? Select all that apply.",
+            "isSkippable": False,
+             "options": [
+                {
+             "text": "Fever of 100.4° F or aboveFever of 100.4° F or aboveFever of 100.4° F or aboveFever of 100.4° F or aboveFever of 100.4° F or above",
+             "score": 3
+                },
+                {
+             "text": "CoughFever of 100.4° F or aboveFever of 100.4° F or aboveFever of 100.4° F or aboveFever of 100.4° F or above",
+             "score": 2
+                },
+                {
+             "text": "Trouble breathingFever of 100.4° F or aboveFever of 100.4° F or aboveFever of 100.4° F or aboveFever of 100.4° F or above",
+             "score": 1
+                },
+                {
+             "text": "None of the aboveFever of 100.4° F or aboveFever of 100.4° F or aboveFever of 100.4° F or aboveFever of 100.4° F or above",
+             "score": 0
+                }
+            ]
+            },
+           {
+            "type": "MULTIPLE_SELECT",
+            "text": "In the last 48 hours, have you had any of the following NEW changed symptoms? Select all that apply.",
+            "isSkippable": True,
+             "options": [
+                        {
+                        "text": "Fever of 100.4° F or above",
+                        "score": 3
+                        },
+                        {
+                        "text": "Cough",
+                        "score": 2
+                        },
+                        {
+                        "text": "Trouble breathing",
+                        "score": 1
+                        },
+                        {
+                        "text": "None of the above",
+                        "score": 0
+                        }
+                        ]
+            },
+            {
+                "type": "TEXT_FIELD",
+                 "text": "How many covid center do you have in your city?",
+                 "isSkippable": True,
+                "inputDataType": "INTEGER"
+           }
+        ]
+
+}
+
+
+CREATE_QUESTIONNAIRE_DATA_ALL_TYPE_Q_10 = {
+
+        "title": "all_type_10_q",
+        "language": "en",
+        "questions": [
+            {
+            "type": "MULTIPLE_CHOICE",
+            "text": "In the last 48 hours, have you had any of the following NEW symptoms? Select all that apply.",
+            "isSkippable": False,
+             "options": [
+                {
+             "text": "Fever of 100.4° F or above",
+             "score": 3
+                },
+                {
+             "text": "Cough",
+             "score": 2
+                },
+                {
+             "text": "Trouble breathing",
+             "score": 1
+                },
+                {
+             "text": "None of the above",
+             "score": 0
+                }
+            ]
+            },
+            {
+            "type": "MULTIPLE_CHOICE",
+            "text": "What is your age.",
+            "isSkippable": False,
+             "options": [
+                {
+             "text": "20 and above",
+             "score": 3
+                },
+                {
+             "text": "30 above",
+             "score": 2
+                },
+                {
+             "text": "40 above",
+             "score": 1
+                },
+                {
+             "text": "50 above",
+             "score": 0
+                }
+            ]
+            },
+            {
+            "type": "MULTIPLE_CHOICE",
+            "text": "what is your profession.",
+            "isSkippable": False,
+             "options": [
+                {
+             "text": "business",
+             "score": 3
+                },
+                {
+             "text": "service",
+             "score": 2
+                },
+                {
+             "text": "government servant",
+             "score": 1
+                },
+                {
+             "text": "None of the above",
+             "score": 0
+                }
+                ]
+            },
+           {
+            "type": "MULTIPLE_SELECT",
+            "text": "In the last 48 hours, have you had any of the following NEW changed symptoms? Select all that apply.q1",
+            "isSkippable": True,
+             "options": [
+                        {
+                        "text": "Fever of 100.4° F or above",
+                        "score": 3
+                        },
+                        {
+                        "text": "Cough",
+                        "score": 2
+                        },
+                        {
+                        "text": "Trouble breathing",
+                        "score": 1
+                        },
+                        {
+                        "text": "None of the above",
+                        "score": 0
+                        }
+                        ]
+            },
+            {
+            "type": "MULTIPLE_SELECT",
+            "text": "In the last 48 hours, have you had any of the following NEW changed symptoms? Select all that apply.q2",
+            "isSkippable": True,
+             "options": [
+                        {
+                        "text": "Fever of 100.4° F or above",
+                        "score": 3
+                        },
+                        {
+                        "text": "Cough",
+                        "score": 2
+                        },
+                        {
+                        "text": "Trouble breathing",
+                        "score": 1
+                        },
+                        {
+                        "text": "None of the above",
+                        "score": 0
+                        }
+                        ]
+            },
+            {
+            "type": "MULTIPLE_SELECT",
+            "text": "In the last 48 hours, have you had any of the following NEW changed symptoms? Select all that apply.q3",
+            "isSkippable": True,
+             "options": [
+                        {
+                        "text": "Fever of 100.4° F or above",
+                        "score": 3
+                        },
+                        {
+                        "text": "Cough",
+                        "score": 2
+                        },
+                        {
+                        "text": "Trouble breathing",
+                        "score": 1
+                        },
+                        {
+                        "text": "None of the above",
+                        "score": 0
+                        }
+                        ]
+            },
+            {
+            "type": "MULTIPLE_SELECT",
+            "text": "In the last 48 hours, have you had any of the following NEW changed symptoms? Select all that apply.q4",
+            "isSkippable": True,
+             "options": [
+                        {
+                        "text": "Fever of 100.4° F or above",
+                        "score": 3
+                        },
+                        {
+                        "text": "Cough",
+                        "score": 2
+                        },
+                        {
+                        "text": "Trouble breathing",
+                        "score": 1
+                        },
+                        {
+                        "text": "None of the above",
+                        "score": 0
+                        }
+                        ]
+            },
+            {
+                "type": "TEXT_FIELD",
+                 "text": "How many covid center do you have in your city?",
+                 "isSkippable": True,
+                "inputDataType": "INTEGER"
+           },
+            {
+                "type": "TEXT_FIELD",
+                 "text": "How many children you have",
+                 "isSkippable": True,
+                "inputDataType": "INTEGER"
+           },
+            {
+                "type": "TEXT_FIELD",
+                 "text": "salary",
+                 "isSkippable": True,
+                "inputDataType": "INTEGER"
+           }
+        ]
+
+}
+
+CREATE_QUESTIONNAIRE_DATA_ALL_TYPE_Q_SINGLE_Q = {
+
+        "title": "alltype",
+        "language": "en",
+        "questions": [
+            {
+            "type": "MULTIPLE_CHOICE",
+            "text": "What is your age?",
+            "isSkippable": False,
+             "options": [
+                {
+             "text": "above20",
+             "score": 3
+                },
+                {
+             "text": "above30",
+             "score": 2
+                },
+                {
+             "text": "above40",
+             "score": 1
+                },
+                {
+             "text": "above50",
+             "score": 0
+                }
+            ]
+            },
+           {
+            "type": "MULTIPLE_SELECT",
+            "text": "What is your age?",
+            "isSkippable": True,
+             "options": [
+                        {
+                        "text": "between20-30",
+                        "score": 3
+                        },
+                        {
+                        "text": "between 30-40",
+                        "score": 2
+                        },
+                        {
+                        "text": "between40-50",
+                        "score": 1
+                        },
+                        {
+                        "text": "between50-80",
+                        "score": 0
+                        }
+                        ]
+            },
+            {
+                "type": "TEXT_FIELD",
+                 "text": "What is your age?",
+                 "isSkippable": True,
+                "inputDataType": "INTEGER"
+           }
+        ]
+
+}
+
+
+CREATE_QUESTIONNAIRE_DATA_INPUT_TEXT_WITH_OPTIONS = {
+
+        "title": "covid_19",
+        "language": "en",
+        "questions": [
+
+            {
+                "type": "TEXT_FIELD",
+                "text": "How many covid center do you have in your city?",
+                "isSkippable": True,
+                "options": [
+                    {
+                        "text": "Fever of 100.4° F or above",
+                        "score": 3
+                    },
+                    {
+                        "text": "Cough",
+                        "score": 2
+                    },
+                    {
+                        "text": "Trouble breathing",
+                        "score": 1
+                    },
+                    {
+                        "text": "None of the above",
+                        "score": 0
+                    }
+                ]
+            }
+
+        ]
+
+}
+
+CREATE_QUESTIONNAIRE_DATA_MULTIPLE_CHOICE_SENDING_INPUT_FIELD = {
+
+        "title": "multi_choice_input_field",
+        "language": "en",
+        "questions": [
+            {
+                "type": "MULTIPLE_CHOICE",
+                "text": "Have you been within 6 feet of a person with a lab confirmed case of COVID-19 or with symptoms of COVID-19 for at least 15 minutes, or had direct contact with their mucus or saliva,in the past 14 days?",
+                "isSkippable": False,
+                "inputDataType": "INTEGER"
+
+            }
+
+        ]
+
+}
+
+CREATE_QUESTIONNAIRE_DATA_MULTIPLE_SELECT_SENDING_INPUT_FIELD = {
+
+        "title": "multi_select_input_field",
+        "language": "en",
+        "questions": [
+
+
+            {
+                "type": "MULTIPLE_SELECT",
+                "text": "In the last 48 hours, have you had any of the following NEW symptoms? Select all that apply.",
+                "isSkippable": False,
+                "inputDataType": "INTEGER"
+
+            }
+        ]
+
+}
+
+
+
+CREATE_QUESTIONNAIRE_DATA_SEQUENCE_SHUFFLE = {
+
+        "questions": [
+            {
+                "type": "MULTIPLE_CHOICE",
+                "text": "Have you been within 6 feet of a person with a lab confirmed case of COVID-19 or with symptoms of COVID-19 for at least 15 minutes, or had direct contact with their mucus or saliva,in the past 14 days?",
+                "isSkippable": False,
+                "options": [
+                    {
+                        "text": "No",
+                        "score": 0
+                    },
+                    {
+                        "text": "Yes",
+                        "score": 1
+                    }
+                ]
+            },
+            {
+                "type": "MULTIPLE_SELECT",
+                "text": "In the last 48 hours, have you had any of the following NEW symptoms? Select all that apply.",
+                "isSkippable": False,
+                "options": [
+                    {
+                        "text": "Fever of 100.4° F or above",
+                        "score": 3
+                    },
+                    {
+                        "text": "Cough",
+                        "score": 2
+                    },
+                    {
+                        "text": "Trouble breathing",
+                        "score": 1
+                    },
+                    {
+                        "text": "None of the above",
+                        "score": 0
+                    }
+                ]
+            },
+            {
+                "type": "TEXT_FIELD",
+                "text": "How many covid center do you have in your city?",
+                "isSkippable": True,
+                "inputDataType": "INTEGER"
+            },
+            {
+                "type": "TEXT_FIELD",
+                "text": "What is your text temperature?",
+                "isSkippable": False,
+                "inputDataType": "BODY_TEMPERATURE"
+            }
+        ],
+
+        "title": "seq_shuffle",
+        "language": "en"
+
+}
+
+CREATE_QUESTIONNAIRE_DATA_HINDI_QUES_WITH_SAME_Q_IN_ENGLISH = {
+
+        "title": "testhindi",
+        "language": "hi",
+        "questions": [
+            {
+                "type": "MULTIPLE_CHOICE",
+                "text": "Have you been within 6 feet of a person with a lab confirmed case of COVID-19 or with symptoms of COVID-19 for at least 15 minutes, or had direct contact with their mucus or saliva,in the past 14 days?",
+                "isSkippable": False,
+                "options": [
+                    {
+                        "text": "No",
+                        "score": 0
+                    },
+                    {
+                        "text": "Yes",
+                        "score": 1
+                    }
+                ]
+            }
+        ]
+
+}
+

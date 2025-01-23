@@ -1,0 +1,96 @@
+{
+  "definitions": {},
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://example.com/root.json",
+  "type": "object",
+  "title": "The Root Schema",
+  "required": [
+    "code",
+    "missingFields",
+    "invalidFields"
+  ],
+  "properties": {
+    "code": {
+      "$id": "#/properties/code",
+      "type": "string",
+      "title": "The Code Schema",
+      "default": "",
+      "examples": [
+        "INVALID_REQUEST"
+      ],
+      "pattern": "^(.*)$"
+    },
+    "missingFields": {
+      "$id": "#/properties/missingFields",
+      "type": "array",
+      "title": "The Missingfields Schema",
+      "items": {
+        "$id": "#/properties/missingFields/items",
+        "type": "object",
+        "title": "The Items Schema",
+        "required": [
+          "fieldName",
+          "message"
+        ],
+        "properties": {
+          "fieldName": {
+            "$id": "#/properties/missingFields/items/properties/fieldName",
+            "type": "string",
+            "title": "The Fieldname Schema",
+            "default": "",
+            "examples": [
+              "gender"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "message": {
+            "$id": "#/properties/missingFields/items/properties/message",
+            "type": "string",
+            "title": "The Message Schema",
+            "default": "",
+            "examples": [
+              "gender is required field"
+            ],
+            "pattern": "^(.*)$"
+          }
+        }
+      }
+    },
+    "invalidFields": {
+      "$id": "#/properties/invalidFields",
+      "type": "array",
+      "title": "The Invalidfields Schema",
+      "items": {
+        "$id": "#/properties/invalidFields/items",
+        "type": "object",
+        "title": "The Items Schema",
+        "required": [
+          "fieldName",
+          "message"
+        ],
+        "properties": {
+          "fieldName": {
+            "$id": "#/properties/invalidFields/items/properties/fieldName",
+            "type": "string",
+            "title": "The Fieldname Schema",
+            "default": "",
+            "examples": [
+              "yearOfBirth"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "message": {
+            "$id": "#/properties/invalidFields/items/properties/message",
+            "type": "string",
+            "title": "The Message Schema",
+            "default": "",
+            "examples": [
+              "It should be integer"
+            ],
+            "pattern": "^(.*)$"
+          }
+        }
+      }
+    }
+  }
+}

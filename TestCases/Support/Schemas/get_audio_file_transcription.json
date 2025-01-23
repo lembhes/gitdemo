@@ -1,0 +1,13 @@
+{
+   "transcripts":{
+      "type":"array",
+      "items":{
+         "type":"object",
+         "properties":{
+            "speechTextURL":{
+               "type":"string"
+            }
+         }
+      }
+   }
+}

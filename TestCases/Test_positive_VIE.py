@@ -183,6 +183,13 @@ def test_async_score_v3_api_with_access_token_Bearer_keyword():
     assert status == 202
     assertion.assert_valid_schema(score_json_data, 'score_3.0_api.json')
 
+def test_async_score_v3_api_with_access_token_Bearer_keyword1():
+    ACCESS_TOKEN_BEARER = 'Bearer ' + ACCESS_TOKEN
+    print(ACCESS_TOKEN_BEARER)
+    status, score_json_data = API_Calls.post_async_score_api(ASYNC_URL, ASYNC_SCORE_API_DATA_V3, ACCESS_TOKEN_BEARER, CONTENT_TYPE_APPLICATION_JSON)
+    print(status, score_json_data)
+    assert status == 202
+    assertion.assert_valid_schema(score_json_data, 'score_3.0_api.json')
 
 @pytest.mark.API_VIE
 def test_get_async_score_v1_api():

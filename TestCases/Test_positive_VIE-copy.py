@@ -200,7 +200,7 @@ def test_async_score_v3_api_with_access_token_Bearer_keyword1():
     assert status == 202
     assertion.assert_valid_schema(score_json_data, 'score_3.0_api.json')
 
-
+    
 @pytest.mark.API_VIE
 def test_get_async_score_v1_api():
     status, get_score_json =  API_Calls.get_async_score_api(ASYNC_URL,ACCESS_TOKEN,JOB_ID)
